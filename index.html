@@ -3,1008 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INTLAW AI - Presentación Completa</title>
+    <title>INTLAW AI - Propuesta Completa</title>
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: #000000;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
-        .slide {
+        .slide-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 0;
+        }
+        .slide-content {
             width: 1280px;
             min-height: 720px;
-            margin: 0 auto;
-            background: #ffffff;
+            box-shadow: 0 20px 80px rgba(0,0,0,0.8);
         }
         .slide-separator {
-            height: 2px;
-            background: #333333;
-        }
-        
-        /* Slide 1: Cover */
-        .slide-1 {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            padding: 80px;
-            position: relative;
-            overflow: hidden;
-        }
-        .slide-1::before {
-            content: '';
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            top: -100px;
-            right: -100px;
-        }
-        .slide-1::after {
-            content: '';
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: rgba(255,255,255,0.08);
-            border-radius: 50%;
-            bottom: -80px;
-            left: -80px;
-        }
-        .slide-1 .title {
-            font-size: 96px;
-            font-weight: 800;
-            margin-bottom: 30px;
-            letter-spacing: -2px;
-            position: relative;
-            z-index: 1;
-        }
-        .slide-1 .subtitle {
-            font-size: 36px;
-            font-weight: 400;
-            margin-bottom: 50px;
-            opacity: 0.95;
-            max-width: 900px;
-            line-height: 1.4;
-            position: relative;
-            z-index: 1;
-        }
-        .slide-1 .tagline {
-            font-size: 26px;
-            font-weight: 300;
-            opacity: 0.9;
-            max-width: 800px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        /* Slide 2: Agenda */
-        .slide-2 {
-            padding: 80px 100px;
-        }
-        .slide-2 .title {
-            font-size: 64px;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 60px;
-            border-bottom: 5px solid #667eea;
-            padding-bottom: 20px;
-        }
-        .slide-2 .agenda-list {
-            margin-top: 50px;
-        }
-        .slide-2 .agenda-item {
-            font-size: 32px;
-            color: #374151;
-            margin-bottom: 45px;
-            padding-left: 60px;
-            position: relative;
-            line-height: 1.4;
-        }
-        .slide-2 .agenda-item::before {
-            content: '▸';
-            position: absolute;
-            left: 0;
-            color: #667eea;
-            font-size: 40px;
-            font-weight: 700;
-        }
-        
-        /* Slide 3: Desafíos */
-        .slide-3 {
-            padding: 50px 90px;
-        }
-        .slide-3 .title {
-            font-size: 64px;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 30px;
-            border-bottom: 5px solid #667eea;
-            padding-bottom: 15px;
-        }
-        .slide-3 .pain-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-        .slide-3 .pain-card {
-            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
-            border-left: 6px solid #667eea;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
-        }
-        .slide-3 .pain-number {
-            display: inline-block;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 50px;
-            font-weight: 700;
-            font-size: 24px;
-            margin-bottom: 12px;
-            box-shadow: 0 4px 8px rgba(102,126,234,0.3);
-        }
-        .slide-3 .pain-title {
-            font-size: 26px;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 8px;
-        }
-        .slide-3 .pain-desc {
-            font-size: 19px;
-            color: #4b5563;
-            line-height: 1.5;
-        }
-        
-        /* Slide 4: Vision */
-        .slide-4 {
-            padding: 70px 90px;
-        }
-        .slide-4 .title {
-            font-size: 64px;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 50px;
-            border-bottom: 5px solid #667eea;
-            padding-bottom: 20px;
-        }
-        .slide-4 .dashboard {
-            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-            border: 4px solid #667eea;
-            padding: 50px;
-            margin-top: 40px;
-            border-radius: 12px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-        }
-        .slide-4 .dash-title {
-            font-size: 36px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 50px;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        .slide-4 .metrics {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-        }
-        .slide-4 .metric {
-            text-align: center;
-            background: rgba(255,255,255,0.1);
-            padding: 35px;
-            border-radius: 12px;
-            border: 2px solid rgba(102,126,234,0.3);
-            backdrop-filter: blur(10px);
-        }
-        .slide-4 .metric-value {
-            font-size: 72px;
-            font-weight: 800;
-            background: linear-gradient(135deg, #667eea 0%, #10b981 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 15px;
-        }
-        .slide-4 .metric-label {
-            font-size: 20px;
-            color: #e0e7ff;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        /* Módulos - Shared Styles */
-        .slide-modulo {
-            padding: 70px 90px;
-            display: flex;
-            gap: 60px;
-        }
-        .slide-modulo .left-column,
-        .slide-modulo .left {
-            flex: 1;
-        }
-        .slide-modulo .right-column,
-        .slide-modulo .right {
-            flex: 1;
-        }
-        .slide-modulo .module-title {
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 20px;
-            border-bottom: 5px solid #667eea;
-            padding-bottom: 15px;
-        }
-        .slide-5 .module-title {
-            font-size: 48px;
-        }
-        .slide-6 .module-title {
-            font-size: 44px;
-        }
-        .slide-7 .module-title {
-            font-size: 42px;
-        }
-        .slide-8 .module-title {
-            font-size: 40px;
-        }
-        .slide-modulo .module-price {
-            font-size: 32px;
-            font-weight: 700;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 35px;
-        }
-        .slide-modulo .feature {
-            margin-bottom: 30px;
-            padding-left: 35px;
-            position: relative;
-        }
-        .slide-modulo .feature::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 28px;
-            height: 28px;
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 16px;
-        }
-        .slide-modulo .feature-title {
-            font-size: 24px;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 10px;
-        }
-        .slide-modulo .feature-desc {
-            font-size: 18px;
-            color: #4b5563;
-            line-height: 1.6;
-        }
-        
-        /* Módulo 1: Chatbot Mockup */
-        .slide-5 .chatbot-mockup {
-            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-            border: 3px solid #667eea;
-            border-radius: 16px;
-            padding: 0;
-            min-height: 480px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-        }
-        .slide-5 .mockup-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            font-size: 22px;
-            font-weight: 700;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 2px solid rgba(255,255,255,0.2);
-        }
-        .slide-5 .chat-container {
-            padding: 30px;
-            max-height: 400px;
-            overflow-y: auto;
-        }
-        .slide-5 .message {
-            margin-bottom: 20px;
-            animation: fadeIn 0.3s ease-in;
-        }
-        .slide-5 .msg-bot {
-            background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
-            padding: 16px 20px;
-            font-size: 17px;
-            color: #1e293b;
-            border-radius: 18px 18px 18px 4px;
-            max-width: 85%;
-            box-shadow: 0 2px 8px rgba(102,126,234,0.2);
-            position: relative;
-        }
-        .slide-5 .msg-bot::before {
-            content: '🤖';
-            position: absolute;
-            left: -35px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 24px;
-        }
-        .slide-5 .msg-user {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 16px 20px;
-            font-size: 17px;
-            margin-left: auto;
-            max-width: 75%;
-            border-radius: 18px 18px 4px 18px;
-            box-shadow: 0 2px 8px rgba(102,126,234,0.3);
-            text-align: right;
-        }
-        
-        /* Módulo 2: Filtrado Mockup */
-        .slide-6 .mockup {
-            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
-            border: 3px solid #667eea;
-            border-radius: 16px;
-            padding: 35px;
-            min-height: 480px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-        .slide-6 .mockup-title {
-            font-size: 26px;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 28px;
-            text-align: center;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #667eea;
-        }
-        .slide-6 .client-card {
-            background: white;
-            border: 2px solid #e5e7eb;
-            border-left: 5px solid #667eea;
-            padding: 20px;
-            margin-bottom: 18px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .slide-6 .client-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(102,126,234,0.2);
-        }
-        .slide-6 .client-name {
-            font-size: 20px;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .slide-6 .client-name::before {
-            content: '👤';
-            font-size: 20px;
-        }
-        .slide-6 .client-info {
-            font-size: 16px;
-            color: #4b5563;
-            margin-bottom: 6px;
-            padding-left: 30px;
-        }
-        .slide-6 .status-badge {
-            display: inline-block;
-            padding: 8px 16px;
-            font-size: 13px;
-            font-weight: 700;
-            margin-top: 10px;
-            margin-left: 30px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .slide-6 .status-high {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            color: white;
-            box-shadow: 0 4px 12px rgba(16,185,129,0.3);
-        }
-        .slide-6 .status-medium {
-            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-            color: white;
-            box-shadow: 0 4px 12px rgba(245,158,11,0.3);
-        }
-        
-        /* Módulo 3: Analyzer Mockup */
-        .slide-7 .analyzer {
-            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-            border: 3px solid #667eea;
-            border-radius: 16px;
-            padding: 35px;
-            min-height: 480px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-        }
-        .slide-7 .mock-title {
-            font-size: 26px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 25px;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .slide-7 .accuracy-badge {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            color: white;
-            padding: 15px 24px;
-            font-size: 20px;
-            font-weight: 800;
-            text-align: center;
-            margin-bottom: 25px;
-            border-radius: 8px;
-            box-shadow: 0 8px 20px rgba(16,185,129,0.4);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .slide-7 table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-            margin-top: 15px;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        .slide-7 th {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 16px;
-            text-align: left;
-            font-size: 17px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .slide-7 td {
-            padding: 16px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            font-size: 17px;
-            color: #e0e7ff;
-            background: rgba(255,255,255,0.05);
-        }
-        .slide-7 tr:hover td {
-            background: rgba(255,255,255,0.1);
-        }
-        .slide-7 .badge {
-            padding: 6px 14px;
-            font-size: 13px;
-            font-weight: 700;
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            color: white;
-            border-radius: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            box-shadow: 0 2px 8px rgba(16,185,129,0.3);
-        }
-        
-        /* Módulo 4: Templates Mockup */
-        .slide-8 .templates {
-            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
-            border: 3px solid #667eea;
-            border-radius: 16px;
-            padding: 35px;
-            min-height: 480px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-        .slide-8 .mock-title {
-            font-size: 26px;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 25px;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .slide-8 .stats {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 25px;
-            padding: 25px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(102,126,234,0.3);
-        }
-        .slide-8 .stat-item {
-            text-align: center;
-        }
-        .slide-8 .stat-value {
-            font-size: 48px;
-            font-weight: 800;
-            color: white;
-            margin-bottom: 8px;
-            text-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-        .slide-8 .stat-label {
-            font-size: 16px;
-            color: rgba(255,255,255,0.9);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .slide-8 .template-item {
-            background: white;
-            border: 2px solid #e5e7eb;
-            border-left: 5px solid #667eea;
-            padding: 16px 20px;
-            margin-bottom: 12px;
-            font-size: 17px;
-            color: #374151;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .slide-8 .template-item:hover {
-            transform: translateX(5px);
-            box-shadow: 0 4px 16px rgba(102,126,234,0.2);
-        }
-        .slide-8 .template-name {
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .slide-8 .template-name::before {
-            content: '📄';
-            font-size: 20px;
-        }
-        .slide-8 .ai-badge {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 6px 14px;
-            font-size: 12px;
-            font-weight: 700;
-            border-radius: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            box-shadow: 0 2px 8px rgba(102,126,234,0.3);
-        }
-        
-        /* Slide 9: Beneficios */
-        .slide-9 {
-            padding: 60px 90px;
-        }
-        .slide-9 .title {
-            font-size: 64px;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 45px;
-            border-bottom: 5px solid #667eea;
-            padding-bottom: 18px;
-        }
-        .slide-9 .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-        }
-        .slide-9 .benefit-box {
-            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-            border: 5px solid #10b981;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(16,185,129,0.2);
-            transition: transform 0.2s;
-        }
-        .slide-9 .benefit-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(16,185,129,0.3);
-        }
-        .slide-9 .benefit-number {
-            display: inline-block;
-            width: 55px;
-            height: 55px;
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            color: white;
-            text-align: center;
-            line-height: 55px;
-            font-weight: 800;
-            font-size: 28px;
-            margin-bottom: 20px;
-            border-radius: 12px;
-            box-shadow: 0 6px 16px rgba(16,185,129,0.4);
-        }
-        .slide-9 .benefit-title {
-            font-size: 28px;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 14px;
-        }
-        .slide-9 .benefit-desc {
-            font-size: 20px;
-            color: #4b5563;
-            line-height: 1.5;
-        }
-        
-        /* Slide 10: Pricing */
-        .slide-10 {
-            padding: 32px 90px;
-        }
-        .slide-10 .title {
-            font-size: 64px;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 14px;
-            border-bottom: 5px solid #667eea;
-            padding-bottom: 10px;
-        }
-        .slide-10 .price-box {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 20px;
-            text-align: center;
-            margin-bottom: 12px;
-            border-radius: 12px;
-            box-shadow: 0 12px 30px rgba(102,126,234,0.4);
-        }
-        .slide-10 .price-old {
-            font-size: 42px;
-            font-weight: 700;
-            text-decoration: line-through;
-            opacity: 0.7;
-            margin-bottom: 4px;
-            line-height: 1;
-        }
-        .slide-10 .price-amount {
-            font-size: 72px;
-            font-weight: 800;
-            margin-bottom: 4px;
-            line-height: 1;
-            text-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-        .slide-10 .price-description {
-            font-size: 22px;
-            font-weight: 600;
-        }
-        .slide-10 .price-savings {
-            font-size: 20px;
-            margin-top: 8px;
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            padding: 8px 18px;
-            display: inline-block;
-            font-weight: 800;
-            border-radius: 20px;
-            box-shadow: 0 4px 12px rgba(16,185,129,0.4);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .slide-10 .refund-guarantee {
-            background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
-            border: 4px solid #ef4444;
-            padding: 14px;
-            margin-bottom: 12px;
-            text-align: center;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(239,68,68,0.2);
-        }
-        .slide-10 .refund-title {
-            font-size: 24px;
-            font-weight: 800;
-            color: #ef4444;
-            margin-bottom: 6px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .slide-10 .refund-text {
-            font-size: 18px;
-            color: #991b1b;
-            font-weight: 600;
-            line-height: 1.3;
-        }
-        .slide-10 .content-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 18px;
-            margin-bottom: 10px;
-        }
-        .slide-10 .section-title {
-            font-size: 24px;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 8px;
-        }
-        .slide-10 .module-item {
-            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
-            padding: 10px 16px;
-            margin-bottom: 6px;
-            border: 2px solid #667eea;
-            border-left: 5px solid #667eea;
-            font-size: 17px;
-            color: #374151;
-            display: flex;
-            justify-content: space-between;
-            border-radius: 6px;
-            box-shadow: 0 2px 6px rgba(102,126,234,0.1);
-        }
-        .slide-10 .module-price {
-            font-weight: 700;
-            color: #667eea;
-        }
-        .slide-10 .guarantee-item {
-            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-            border: 3px solid #10b981;
-            padding: 10px;
-            margin-bottom: 6px;
-            border-radius: 6px;
-            box-shadow: 0 2px 6px rgba(16,185,129,0.1);
-        }
-        .slide-10 .guarantee-title {
-            font-size: 18px;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 2px;
-        }
-        .slide-10 .guarantee-desc {
-            font-size: 15px;
-            color: #4b5563;
-        }
-        .slide-10 .payment-structure {
-            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-            padding: 14px;
-            margin-top: 8px;
-            border-radius: 8px;
-            border: 2px solid #f59e0b;
-            box-shadow: 0 4px 12px rgba(245,158,11,0.2);
-        }
-        .slide-10 .payment-title {
-            font-size: 22px;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 8px;
-            text-align: center;
-        }
-        .slide-10 .payment-item {
-            font-size: 17px;
-            color: #92400e;
-            margin-bottom: 4px;
-            font-weight: 600;
-        }
-        
-        /* Slide 11: Próximos Pasos */
-        .slide-11 {
-            padding: 70px 90px;
-            display: flex;
-            gap: 60px;
-        }
-        .slide-11 .left {
-            flex: 1.2;
-        }
-        .slide-11 .right {
-            flex: 0.8;
-        }
-        .slide-11 .title {
-            font-size: 64px;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 45px;
-            border-bottom: 5px solid #667eea;
-            padding-bottom: 20px;
-        }
-        .slide-11 .option-box {
-            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
-            border: 4px solid #667eea;
-            padding: 40px;
-            margin-bottom: 35px;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(102,126,234,0.2);
-        }
-        .slide-11 .option-box.express {
-            border-color: #10b981;
-            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-            box-shadow: 0 8px 20px rgba(16,185,129,0.2);
-        }
-        .slide-11 .option-label {
-            font-size: 20px;
-            color: #667eea;
-            font-weight: 700;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .slide-11 .option-label.express-label {
-            color: #10b981;
-        }
-        .slide-11 .option-days {
-            font-size: 56px;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 12px;
-        }
-        .slide-11 .option-price {
-            font-size: 32px;
-            font-weight: 700;
-            color: #667eea;
-            margin-bottom: 15px;
-        }
-        .slide-11 .option-price.express-price {
-            color: #10b981;
-        }
-        .slide-11 .option-desc {
-            font-size: 19px;
-            color: #4b5563;
-            line-height: 1.5;
-        }
-        .slide-11 .contact-box {
-            background: linear-gradient(135deg, #f8fafc 0%, #e5e7eb 100%);
-            padding: 40px;
-            border: 2px solid #d1d5db;
-            margin-top: 80px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        .slide-11 .contact-title {
-            font-size: 24px;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 25px;
-        }
-        .slide-11 .contact-item {
-            font-size: 16px;
-            color: #4b5563;
-            margin-bottom: 10px;
-            line-height: 1.6;
-        }
-        .slide-11 .contact-label {
-            font-weight: 600;
-            color: #374151;
-        }
-        
-        /* Slide 12: Gracias */
-        .slide-12 {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            padding: 80px;
-            position: relative;
-            overflow: hidden;
-        }
-        .slide-12::before {
-            content: '';
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            top: -150px;
-            right: -150px;
-        }
-        .slide-12::after {
-            content: '';
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: rgba(255,255,255,0.08);
-            border-radius: 50%;
-            bottom: -100px;
-            left: -100px;
-        }
-        .slide-12 .thanks-title {
-            font-size: 96px;
-            font-weight: 800;
-            margin-bottom: 50px;
-            position: relative;
-            z-index: 1;
-        }
-        .slide-12 .thanks-text {
-            font-size: 28px;
-            font-weight: 400;
-            margin-bottom: 70px;
-            opacity: 0.95;
-            max-width: 900px;
-            line-height: 1.6;
-            position: relative;
-            z-index: 1;
-        }
-        .slide-12 .brand {
-            background: white;
-            color: #667eea;
-            padding: 35px 70px;
-            font-size: 42px;
-            font-weight: 800;
-            border-radius: 12px;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
-            position: relative;
-            z-index: 1;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            height: 60px;
+            background: #000000;
         }
     </style>
 </head>
 <body>
-    <!-- Slide 1: Cover -->
-    <div class="slide slide-1">
+<div class="slide-wrapper" id="slide-1">
+<div class="slide-content">
+<div class="slide-container">
         <div class="title">INTLAW AI</div>
         <div class="subtitle">Propuesta de Sistema Integral de Automatización Legal</div>
         <div class="tagline">Transformando la Práctica Jurídica con Inteligencia Artificial</div>
     </div>
-    <div class="slide-separator"></div>
-    
-    <!-- Slide 2: Agenda -->
-    <div class="slide slide-2">
+</div>
+</div>
+<div class="slide-separator"></div>
+<div class="slide-wrapper" id="slide-2">
+<div class="slide-content">
+<div class="slide-container">
         <h2 class="title">Agenda</h2>
         <div class="agenda-list">
-            <div class="agenda-item">Desafíos Actuales</div>
-            <div class="agenda-item">Visión INTLAW AI</div>
-            <div class="agenda-item">4 Módulos de Solución</div>
-            <div class="agenda-item">Beneficios Clave</div>
-            <div class="agenda-item">Inversión y Garantías</div>
-            <div class="agenda-item">Próximos Pasos</div>
+            <div class="agenda-item">
+                <div class="item-number">1</div>
+                <div class="item-text">Desafíos Actuales</div>
+            </div>
+            <div class="agenda-item">
+                <div class="item-number">2</div>
+                <div class="item-text">Visión INTLAW AI</div>
+            </div>
+            <div class="agenda-item">
+                <div class="item-number">3</div>
+                <div class="item-text">4 Módulos de Solución</div>
+            </div>
+            <div class="agenda-item">
+                <div class="item-number">4</div>
+                <div class="item-text">Beneficios Clave</div>
+            </div>
+            <div class="agenda-item">
+                <div class="item-number">5</div>
+                <div class="item-text">Inversión y Garantías</div>
+            </div>
+            <div class="agenda-item">
+                <div class="item-number">6</div>
+                <div class="item-text">Próximos Pasos</div>
+            </div>
         </div>
     </div>
-    <div class="slide-separator"></div>
-    
-    <!-- Slide 3: Desafíos -->
-    <div class="slide slide-3">
+</div>
+</div>
+<div class="slide-separator"></div>
+<div class="slide-wrapper" id="slide-3">
+<div class="slide-content">
+<div class="slide-container">
         <h2 class="title">Desafíos Actuales</h2>
         <div class="pain-grid">
             <div class="pain-card">
                 <div class="pain-number">1</div>
                 <div class="pain-title">Optimización del Tiempo</div>
-                <div class="pain-desc">Necesidad de aumentar eficiencia en tareas diarias</div>
+                <div class="pain-desc">Aumentar eficiencia operativa</div>
             </div>
             <div class="pain-card">
                 <div class="pain-number">2</div>
-                <div class="pain-title">Potencial de IA Limitado</div>
-                <div class="pain-desc">Falta comprensión del valor que IA puede generar</div>
+                <div class="pain-title">Potencial IA Desconocido</div>
+                <div class="pain-desc">Falta visión del valor generado</div>
             </div>
             <div class="pain-card">
                 <div class="pain-number">3</div>
                 <div class="pain-title">Tareas Repetitivas</div>
-                <div class="pain-desc">Dificultad para identificar procesos automatizables</div>
+                <div class="pain-desc">Procesos manuales automatizables</div>
             </div>
             <div class="pain-card">
                 <div class="pain-number">4</div>
-                <div class="pain-title">Comunicación con Clientes</div>
-                <div class="pain-desc">Proceso manual lento en consultas iniciales</div>
+                <div class="pain-title">Comunicación Clientes</div>
+                <div class="pain-desc">Consultas iniciales lentas</div>
             </div>
             <div class="pain-card">
                 <div class="pain-number">5</div>
-                <div class="pain-title">Documentos Legales</div>
-                <div class="pain-desc">Redacción manual consume tiempo valioso</div>
+                <div class="pain-title">Redacción Documentos</div>
+                <div class="pain-desc">Generación manual consume tiempo</div>
             </div>
             <div class="pain-card">
                 <div class="pain-number">6</div>
-                <div class="pain-title">Grandes Volúmenes</div>
-                <div class="pain-desc">Herramientas actuales fallan con muchos documentos</div>
+                <div class="pain-title">Volúmenes Masivos</div>
+                <div class="pain-desc">Herramientas fallan con miles de páginas</div>
             </div>
         </div>
     </div>
-    <div class="slide-separator"></div>
-    
-    <!-- Slide 4: Vision -->
-    <div class="slide slide-4">
+</div>
+</div>
+<div class="slide-separator"></div>
+<div class="slide-wrapper" id="slide-4">
+<div class="slide-content">
+<div class="slide-container">
         <h2 class="title">Visión: INTLAW AI</h2>
         <div class="dashboard">
             <div class="dash-title">Dashboard Principal</div>
@@ -1024,353 +137,1110 @@
             </div>
         </div>
     </div>
-    <div class="slide-separator"></div>
-    
-    <!-- Slide 5: Módulo 1 -->
-    <div class="slide slide-5 slide-modulo">
+</div>
+</div>
+<div class="slide-separator"></div>
+<div class="slide-wrapper" id="slide-5">
+<div class="slide-content">
+<div class="slide-container">
         <div class="left-column">
-            <h2 class="module-title">Módulo 1: IA en Web</h2>
+            <div class="module-badge">Módulo 1</div>
+            <h2 class="module-title">IA en Web</h2>
             <div class="module-price">€15,000</div>
             
-            <div class="feature">
-                <div class="feature-title">Chatbot 24/7</div>
-                <div class="feature-desc">Atención automatizada en cualquier momento del día</div>
-            </div>
-            
-            <div class="feature">
-                <div class="feature-title">Lead Gathering Automático</div>
-                <div class="feature-desc">Captura y cualifica clientes potenciales automáticamente</div>
-            </div>
-            
-            <div class="feature">
-                <div class="feature-title">Implementaciones IA Adicionales</div>
-                <div class="feature-desc">Otras funcionalidades inteligentes integradas en la web</div>
-            </div>
-        </div>
-        <div class="right-column">
-            <div class="chatbot-mockup">
-                <div class="mockup-header">INTLAW AI - Asistente Web</div>
-                <div class="chat-container">
-                    <div class="message">
-                        <div class="msg-bot">¡Hola! ¿En qué área legal necesitas ayuda?</div>
-                    </div>
-                    <div class="message">
-                        <div class="msg-user">Derecho mercantil</div>
-                    </div>
-                    <div class="message">
-                        <div class="msg-bot">Perfecto. ¿Podrías indicarme tu email y teléfono para que un especialista te contacte?</div>
-                    </div>
-                    <div class="message">
-                        <div class="msg-user">cliente@empresa.com / 600123456</div>
-                    </div>
-                    <div class="message">
-                        <div class="msg-bot">Gracias. Un abogado especializado te contactará en menos de 24 horas.</div>
-                    </div>
+            <div class="features-list">
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-text">Chatbot 24/7</div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="slide-separator"></div>
-    
-    <!-- Slide 6: Módulo 2 -->
-    <div class="slide slide-6 slide-modulo">
-        <div class="left-column">
-            <h2 class="module-title">Módulo 2: Filtrado y Auto-Chatting</h2>
-            <div class="module-price">€15,000</div>
-            
-            <div class="feature">
-                <div class="feature-title">Filtrado Inicial Automático</div>
-                <div class="feature-desc">Clasifica clientes potenciales según criterios predefinidos</div>
-            </div>
-            
-            <div class="feature">
-                <div class="feature-title">Conversación Automatizada</div>
-                <div class="feature-desc">Interacción inteligente para recopilar información clave</div>
-            </div>
-            
-            <div class="feature">
-                <div class="feature-title">Cualificación de Leads</div>
-                <div class="feature-desc">Prioriza contactos según potencial de negocio</div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-text">Lead Gathering</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-text">Respuestas Instantáneas</div>
+                </div>
             </div>
         </div>
         
         <div class="right-column">
-            <div class="mockup">
-                <div class="mockup-title">Sistema de Cualificación</div>
-                
-                <div class="client-card">
-                    <div class="client-name">Empresa Tech SL</div>
-                    <div class="client-info">Área: Derecho Mercantil</div>
-                    <div class="client-info">Presupuesto: €10,000+</div>
-                    <div class="client-info">Urgencia: Alta</div>
-                    <span class="status-badge status-high">Prioridad Alta</span>
-                </div>
-                
-                <div class="client-card">
-                    <div class="client-name">Juan Pérez</div>
-                    <div class="client-info">Área: Derecho Laboral</div>
-                    <div class="client-info">Presupuesto: €2,000-5,000</div>
-                    <div class="client-info">Urgencia: Media</div>
-                    <span class="status-badge status-medium">Prioridad Media</span>
-                </div>
-                
-                <div class="client-card">
-                    <div class="client-name">Startup Innovación</div>
-                    <div class="client-info">Área: Propiedad Intelectual</div>
-                    <div class="client-info">Presupuesto: €15,000+</div>
-                    <div class="client-info">Urgencia: Alta</div>
-                    <span class="status-badge status-high">Prioridad Alta</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="slide-separator"></div>
-    
-    <!-- Slide 7: Módulo 3 -->
-    <div class="slide slide-7 slide-modulo">
-        <div class="left">
-            <h2 class="module-title">Módulo 3: Agente Interno Documentos</h2>
-            <div class="module-price">€15,000</div>
-            
-            <div class="feature">
-                <div class="feature-title">0% Alucinaciones</div>
-                <div class="feature-desc">Precisión absoluta en análisis y respuestas</div>
-            </div>
-            
-            <div class="feature">
-                <div class="feature-title">Gestión Masiva Local</div>
-                <div class="feature-desc">Procesa miles de documentos legales localmente</div>
-            </div>
-            
-            <div class="feature">
-                <div class="feature-title">Cálculos y Tratamiento</div>
-                <div class="feature-desc">Analiza, calcula y gestiona información compleja</div>
-            </div>
-            
-            <div class="feature">
-                <div class="feature-title">Sin Imprecisiones</div>
-                <div class="feature-desc">Resultados verificables y exactos</div>
-            </div>
-        </div>
-        <div class="right">
-            <div class="analyzer">
-                <div class="mock-title">Agente Interno INTLAW</div>
-                <div class="accuracy-badge">Precisión: 100% - 0% Alucinaciones</div>
-                
-                <table>
-                    <tr>
-                        <th>Operación</th>
-                        <th>Documentos</th>
-                        <th>Estado</th>
-                    </tr>
-                    <tr>
-                        <td>Análisis Contratos</td>
-                        <td>2,450</td>
-                        <td><span class="badge">Verificado</span></td>
-                    </tr>
-                    <tr>
-                        <td>Cálculo Plazos</td>
-                        <td>1,820</td>
-                        <td><span class="badge">Verificado</span></td>
-                    </tr>
-                    <tr>
-                        <td>Extracción Cláusulas</td>
-                        <td>3,100</td>
-                        <td><span class="badge">Verificado</span></td>
-                    </tr>
-                    <tr>
-                        <td>Gestión Expedientes</td>
-                        <td>890</td>
-                        <td><span class="badge">Verificado</span></td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </div>
-    <div class="slide-separator"></div>
-    
-    <!-- Slide 8: Módulo 4 -->
-    <div class="slide slide-8 slide-modulo">
-        <div class="left">
-            <h2 class="module-title">Módulo 4: Generación Documentos Legales</h2>
-            <div class="module-price">€15,000</div>
-            
-            <div class="feature">
-                <div class="feature-title">20 Plantillas Iniciales</div>
-                <div class="feature-desc">Configuración de plantillas para casos más comunes</div>
-            </div>
-            
-            <div class="feature">
-                <div class="feature-title">Plantillas Ilimitadas</div>
-                <div class="feature-desc">Añade todas las plantillas que necesites</div>
-            </div>
-            
-            <div class="feature">
-                <div class="feature-title">Personalización IA</div>
-                <div class="feature-desc">Adapta cada documento a las particularidades del caso</div>
-            </div>
-        </div>
-        <div class="right">
-            <div class="templates">
-                <div class="mock-title">Biblioteca de Plantillas</div>
-                
-                <div class="stats">
-                    <div class="stat-item">
-                        <div class="stat-value">20</div>
-                        <div class="stat-label">Iniciales</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-value">∞</div>
-                        <div class="stat-label">Ilimitadas</div>
+            <div class="chatbot-mockup">
+                <div class="chat-header">
+                    <div class="chat-avatar">🤖</div>
+                    <div class="chat-info">
+                        <div class="chat-name">INTLAW AI Assistant</div>
+                        <div class="chat-status">
+                            <span class="status-dot"></span>
+                            Online ahora
+                        </div>
                     </div>
                 </div>
                 
-                <div class="template-item">
-                    <span class="template-name">Contrato Mercantil</span>
-                    <span class="ai-badge">IA Personalizable</span>
-                </div>
-                <div class="template-item">
-                    <span class="template-name">Acta Junta Directiva</span>
-                    <span class="ai-badge">IA Personalizable</span>
-                </div>
-                <div class="template-item">
-                    <span class="template-name">Contrato Laboral</span>
-                    <span class="ai-badge">IA Personalizable</span>
-                </div>
-                <div class="template-item">
-                    <span class="template-name">Escritura Constitución</span>
-                    <span class="ai-badge">IA Personalizable</span>
-                </div>
-                <div class="template-item">
-                    <span class="template-name">Poder Notarial</span>
-                    <span class="ai-badge">IA Personalizable</span>
-                </div>
-                <div class="template-item">
-                    <span class="template-name">+ 15 plantillas más...</span>
-                    <span class="ai-badge">IA Personalizable</span>
+                <div class="chat-messages">
+                    <div class="message message-bot">
+                        ¡Hola! Soy el asistente de INTLAW. ¿En qué puedo ayudarte?
+                    </div>
+                    <div class="message message-user">
+                        Necesito consultar sobre un contrato mercantil
+                    </div>
+                    <div class="message message-bot">
+                        Perfecto. Para ofrecerte la mejor asesoría, ¿podrías indicarme el tipo de contrato y las partes involucradas?
+                    </div>
+                    <div class="message message-user">
+                        Es una compraventa entre dos empresas españolas
+                    </div>
+                    <div class="message message-bot">
+                        Entendido. Nuestro equipo especializado en derecho mercantil puede ayudarte. ¿Cuál es tu email para enviarte información detallada?
+                    </div>
+                    <div class="typing">
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="slide-separator"></div>
-    
-    <!-- Slide 9: Beneficios -->
-    <div class="slide slide-9">
+</div>
+</div>
+<div class="slide-separator"></div>
+<div class="slide-wrapper" id="slide-6">
+<div class="slide-content">
+<div class="slide-container">
+        <h2 class="slide-title">Integración en intlaw.eu</h2>
+        
+        <div class="browser-mockup">
+            <div class="browser-bar">
+                <div class="browser-dot dot-red"></div>
+                <div class="browser-dot dot-yellow"></div>
+                <div class="browser-dot dot-green"></div>
+                <div class="browser-url">🔒 https://intlaw.eu</div>
+            </div>
+            
+            <div class="website-content">
+                <!-- INTLAW Website Header -->
+                <div class="top-bar">
+                    <div class="social-icons">
+                        <span>🐦</span>
+                        <span>📘</span>
+                        <span>💼</span>
+                    </div>
+                    <div class="contact-info">
+                        <span>info@intlaw.eu</span>
+                        <span>+34 931125423</span>
+                    </div>
+                </div>
+                <div class="main-header">
+                    <div class="logo-box">
+                        <div class="logo-top">INT</div>
+                        <div class="logo-bottom">LAW</div>
+                    </div>
+                    <div class="nav-menu">
+                        <span>Team</span>
+                        <span>Solutions</span>
+                        <span>Desk</span>
+                        <span>News</span>
+                        <span>Contact</span>
+                    </div>
+                    <div class="cta-btn">Schedule a Consultation</div>
+                </div>
+                
+                <!-- Hero Section -->
+                <div class="hero-section">
+                    <div class="hero-overlay"></div>
+                    <div class="carousel-arrows">
+                        <div class="arrow">‹</div>
+                        <div class="arrow">›</div>
+                    </div>
+                    <div class="hero-content">
+                        <div class="hero-title">MEET THE TEAM</div>
+                        <div class="hero-subtitle">We provide a team that is perfectly-placed to advise you in a comprehensive manner.</div>
+                        <div class="hero-buttons">
+                            <div class="btn-contact">Get In Contact</div>
+                            <div class="btn-team">Meet the Team</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Old WhatsApp Widget -->
+                <div class="whatsapp-widget">💬</div>
+                
+                <!-- Modern AI Chatbot Widget -->
+                <div class="chatbot-widget">
+                    <div class="ai-badge">INTLAW AI</div>
+                    <div class="chatbot-header">
+                        <div class="chatbot-title-section">
+                            <div class="bot-avatar">🤖</div>
+                            <div class="chatbot-title-text">
+                                <div class="chatbot-title">Asistente Legal IA</div>
+                                <div class="chatbot-subtitle">Respuesta instantánea 24/7</div>
+                            </div>
+                        </div>
+                        <div class="status-section">
+                            <div class="status-indicator"></div>
+                            <div class="status-text">Online</div>
+                        </div>
+                    </div>
+                    <div class="chatbot-body">
+                        <div class="chat-message">
+                            <div class="msg-bot">¡Hola! Soy el asistente legal de INTLAW. ¿En qué área del derecho necesitas asesoramiento?</div>
+                        </div>
+                        <div class="chat-message">
+                            <div class="msg-user">Derecho mercantil para mi empresa</div>
+                        </div>
+                        <div class="chat-message">
+                            <div class="msg-bot">Perfecto. Nuestros especialistas en derecho mercantil pueden ayudarte. Para conectarte con un abogado, ¿podrías compartir tu email y teléfono?</div>
+                        </div>
+                        <div class="chat-message">
+                            <div class="msg-user">empresa@mail.com / 600123456</div>
+                        </div>
+                        <div class="chat-message">
+                            <div class="msg-bot">¡Gracias! Un especialista se pondrá en contacto en las próximas 24h. ¿Algo más en lo que pueda ayudarte ahora?</div>
+                        </div>
+                        <div class="chat-message">
+                            <div class="typing-indicator">
+                                <div class="typing-dot"></div>
+                                <div class="typing-dot"></div>
+                                <div class="typing-dot"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chatbot-input">
+                        <div class="input-field">Escribe tu mensaje...</div>
+                        <div class="send-button">Enviar ✈</div>
+                    </div>
+                    <div class="powered-by">Powered by <strong>INTLAW AI</strong></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="slide-separator"></div>
+<div class="slide-wrapper" id="slide-7">
+<div class="slide-content">
+<div class="slide-container">
+        <h2 class="demo-title">Módulo 1 en Acción: Chatbot Capturando Lead</h2>
+        
+        <div class="browser-window">
+            <div class="browser-header">
+                <div class="browser-dots">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                </div>
+                <div class="browser-url">🔒 intlaw.eu</div>
+            </div>
+            
+            <div class="browser-content">
+                <div class="website-content">
+                    <div class="website-header">
+                        <div class="website-title">INTLAW</div>
+                        <div class="website-subtitle">Asesoría Legal Empresarial</div>
+                    </div>
+                    <div class="website-section">
+                        <div class="section-title">Servicios Legales</div>
+                        <div class="section-text">Ofrecemos asesoría especializada en derecho mercantil, contratos, constitución de sociedades...</div>
+                    </div>
+                    <div class="website-section">
+                        <div class="section-title">Nuestro Equipo</div>
+                        <div class="section-text">Abogados especializados con amplia experiencia en el sector empresarial...</div>
+                    </div>
+                </div>
+                
+                <!-- Lead Captured Notification -->
+                <div class="lead-captured">
+                    <div class="notif-icon">✓</div>
+                    <div class="notif-content">
+                        <div class="notif-title">Lead Capturado</div>
+                        <div class="notif-text">Carlos Martínez · Compraventa €250K · Prioridad ALTA</div>
+                    </div>
+                </div>
+                
+                <!-- Chatbot Widget -->
+                <div class="chatbot-widget">
+                    <div class="chat-header">
+                        <div class="chat-avatar">🤖</div>
+                        <div class="chat-info">
+                            <div class="chat-name">INTLAW AI</div>
+                            <div class="chat-status">
+                                <span class="status-dot"></span>
+                                Online · Respondiendo
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-messages">
+                        <div class="message msg-bot">
+                            ¡Hola! Soy el asistente de INTLAW. ¿En qué puedo ayudarte hoy?
+                        </div>
+                        <div class="message msg-user">
+                            Hola, necesito asesoría para un contrato de compraventa
+                        </div>
+                        <div class="message msg-bot">
+                            Perfecto, puedo ayudarte con eso. ¿Podrías darme más detalles sobre el tipo de compraventa?
+                        </div>
+                        <div class="message msg-user">
+                            Es una compraventa de software entre dos empresas por 250.000€
+                        </div>
+                        <div class="message msg-bot">
+                            Entiendo. Se trata de una operación importante. Nuestro equipo de derecho mercantil puede asesorarte. ¿Cuál es tu nombre y email para enviarte información detallada?
+                        </div>
+                        <div class="message msg-user">
+                            Carlos Martínez, carlos.martinez@techcorp.es
+                        </div>
+                        <div class="message msg-bot">
+                            Gracias Carlos. He registrado tu consulta con prioridad ALTA. Un abogado especializado te contactará en las próximas 2 horas.
+                            <div class="ai-processing">
+                                <span class="ai-icon">⚡</span>
+                                IA guardando lead y notificando equipo...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="slide-separator"></div>
+<div class="slide-wrapper" id="slide-8">
+<div class="slide-content">
+<div class="slide-container">
+        <div class="left-column">
+            <div class="module-badge">Módulo 2</div>
+            <h2 class="module-title">Filtrado Auto-Chatting</h2>
+            <div class="module-price">€15,000</div>
+            
+            <div class="features-list">
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-text">Filtrado Automático</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-text">Cualificación IA</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-text">Priorización Leads</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="right-column">
+            <div class="crm-dashboard">
+                <div class="dashboard-header">
+                    <div class="dashboard-title">Leads Cualificados</div>
+                    <div class="dashboard-subtitle">Ordenados por prioridad</div>
+                </div>
+                
+                <div class="leads-grid">
+                    <div class="lead-card">
+                        <div class="lead-avatar">👤</div>
+                        <div class="lead-info">
+                            <div class="lead-name">TechCorp SL</div>
+                            <div class="lead-type">Derecho Mercantil · €250K</div>
+                        </div>
+                        <div class="lead-score">
+                            <div class="score-value">95</div>
+                            <div class="priority-badge priority-high">ALTA</div>
+                        </div>
+                    </div>
+                    
+                    <div class="lead-card">
+                        <div class="lead-avatar">👤</div>
+                        <div class="lead-info">
+                            <div class="lead-name">InnoSolutions SA</div>
+                            <div class="lead-type">Contratos · €180K</div>
+                        </div>
+                        <div class="lead-score">
+                            <div class="score-value">92</div>
+                            <div class="priority-badge priority-high">ALTA</div>
+                        </div>
+                    </div>
+                    
+                    <div class="lead-card">
+                        <div class="lead-avatar">👤</div>
+                        <div class="lead-info">
+                            <div class="lead-name">StartupXYZ Ltd</div>
+                            <div class="lead-type">Constitución · €45K</div>
+                        </div>
+                        <div class="lead-score">
+                            <div class="score-value">78</div>
+                            <div class="priority-badge priority-medium">MEDIA</div>
+                        </div>
+                    </div>
+                    
+                    <div class="lead-card">
+                        <div class="lead-avatar">👤</div>
+                        <div class="lead-info">
+                            <div class="lead-name">GlobalTrade Inc</div>
+                            <div class="lead-type">Internacional · €320K</div>
+                        </div>
+                        <div class="lead-score">
+                            <div class="score-value">88</div>
+                            <div class="priority-badge priority-high">ALTA</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="slide-separator"></div>
+<div class="slide-wrapper" id="slide-9">
+<div class="slide-content">
+<div class="slide-container">
+        <h2 class="demo-title">Módulo 2 en Acción: Cualificación Automática de Leads</h2>
+        
+        <div class="dashboard">
+            <div class="dash-header">
+                <div class="dash-title">🎯 CRM INTLAW AI</div>
+                <div class="ai-badge">
+                    <span class="ai-icon">⚡</span>
+                    IA Cualificando en Tiempo Real
+                </div>
+            </div>
+            
+            <div class="stats-bar">
+                <div class="stat-card">
+                    <div class="stat-label">Total Leads</div>
+                    <div class="stat-value">47</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Alta Prioridad</div>
+                    <div class="stat-value">12</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Tasa Conversión</div>
+                    <div class="stat-value">68%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Valor Potencial</div>
+                    <div class="stat-value">€2.4M</div>
+                </div>
+            </div>
+            
+            <div class="dash-content">
+                <div class="leads-section">
+                    <div class="section-header">
+                        <div class="section-title">Leads Cualificados</div>
+                        <div class="filter-pills">
+                            <div class="pill pill-active">Todos</div>
+                            <div class="pill pill-inactive">Alta</div>
+                            <div class="pill pill-inactive">Media</div>
+                        </div>
+                    </div>
+                    
+                    <div class="leads-list">
+                        <div class="lead-item">
+                            <div class="lead-avatar">👤</div>
+                            <div class="lead-info">
+                                <div class="lead-name">TechCorp SL</div>
+                                <div class="lead-details">Compraventa Software · €250K · Urgente</div>
+                            </div>
+                            <div class="lead-score-container">
+                                <div class="score-circle score-high">95</div>
+                                <div class="priority-label priority-high">ALTA</div>
+                            </div>
+                        </div>
+                        
+                        <div class="lead-item">
+                            <div class="lead-avatar">👤</div>
+                            <div class="lead-info">
+                                <div class="lead-name">InnoSolutions SA</div>
+                                <div class="lead-details">Contratos Mercantiles · €180K · 2 semanas</div>
+                            </div>
+                            <div class="lead-score-container">
+                                <div class="score-circle score-high">92</div>
+                                <div class="priority-label priority-high">ALTA</div>
+                            </div>
+                        </div>
+                        
+                        <div class="lead-item">
+                            <div class="lead-avatar">👤</div>
+                            <div class="lead-info">
+                                <div class="lead-name">GlobalTrade Inc</div>
+                                <div class="lead-details">Derecho Internacional · €320K · 1 mes</div>
+                            </div>
+                            <div class="lead-score-container">
+                                <div class="score-circle score-high">88</div>
+                                <div class="priority-label priority-high">ALTA</div>
+                            </div>
+                        </div>
+                        
+                        <div class="lead-item">
+                            <div class="lead-avatar">👤</div>
+                            <div class="lead-info">
+                                <div class="lead-name">StartupXYZ Ltd</div>
+                                <div class="lead-details">Constitución Sociedad · €45K · Consulta</div>
+                            </div>
+                            <div class="lead-score-container">
+                                <div class="score-circle score-medium">76</div>
+                                <div class="priority-label priority-medium">MEDIA</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ai-panel">
+                    <div class="panel-title">
+                        <span>🤖</span>
+                        Procesamiento IA
+                    </div>
+                    
+                    <div class="processing-item">
+                        <div class="process-header">
+                            <div class="process-name">Análisis Conversación</div>
+                            <div class="process-status">✓ 100%</div>
+                        </div>
+                        <div class="process-bar">
+                            <div class="process-fill" style="--fill-width: 100%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="processing-item">
+                        <div class="process-header">
+                            <div class="process-name">Extracción Datos</div>
+                            <div class="process-status">✓ 100%</div>
+                        </div>
+                        <div class="process-bar">
+                            <div class="process-fill" style="--fill-width: 100%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="processing-item">
+                        <div class="process-header">
+                            <div class="process-name">Cálculo Score</div>
+                            <div class="process-status">✓ 100%</div>
+                        </div>
+                        <div class="process-bar">
+                            <div class="process-fill" style="--fill-width: 100%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="processing-item">
+                        <div class="process-header">
+                            <div class="process-name">Priorización</div>
+                            <div class="process-status">⚡ 85%</div>
+                        </div>
+                        <div class="process-bar">
+                            <div class="process-fill" style="--fill-width: 85%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="processing-item">
+                        <div class="process-header">
+                            <div class="process-name">Asignación Equipo</div>
+                            <div class="process-status">⏳ 40%</div>
+                        </div>
+                        <div class="process-bar">
+                            <div class="process-fill" style="--fill-width: 40%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="slide-separator"></div>
+<div class="slide-wrapper" id="slide-10">
+<div class="slide-content">
+<div class="slide-container">
+        <div class="left-column">
+            <div class="module-badge">Módulo 3</div>
+            <h2 class="module-title">Agente Documentos</h2>
+            <div class="module-price">€15,000</div>
+            
+            <div class="features-list">
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-text">0% Alucinaciones</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-text">Miles de Páginas</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-text">100% Precisión</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="right-column">
+            <div class="copilot-interface">
+                <div class="copilot-header">
+                    <div class="header-left">
+                        <div class="copilot-icon">🤖</div>
+                        <div class="copilot-title">INTLAW AI Copilot</div>
+                    </div>
+                    <div class="accuracy-badge">0% Alucinaciones</div>
+                </div>
+                
+                <div class="chat-area">
+                    <div class="msg-user">
+                        Analiza expediente "Mercantil XYZ vs ABC" (3,000+ páginas). Extrae cláusulas de incumplimiento y calcula plazos.
+                    </div>
+                    
+                    <div class="tool-call">
+                        <div class="tool-header">
+                            <div class="tool-icon">📄</div>
+                            <div class="tool-name">analyze_massive_documents</div>
+                            <div class="tool-status">✓ Completado</div>
+                        </div>
+                        <span class="tool-metric tool-metric-big">3,247 páginas</span>
+                        <span class="tool-metric">127 archivos</span>
+                        <span class="tool-metric">4 min</span>
+                    </div>
+                    
+                    <div class="tool-call">
+                        <div class="tool-header">
+                            <div class="tool-icon">🔍</div>
+                            <div class="tool-name">extract_clauses</div>
+                            <div class="tool-status">✓ Completado</div>
+                        </div>
+                        <span class="tool-metric">18 cláusulas</span>
+                        <span class="tool-metric">100% precisión</span>
+                    </div>
+                    
+                    <div class="tool-call">
+                        <div class="tool-header">
+                            <div class="tool-icon">📅</div>
+                            <div class="tool-name">calculate_deadlines</div>
+                            <div class="tool-status">✓ Completado</div>
+                        </div>
+                        <span class="tool-metric">12 plazos</span>
+                        <span class="tool-metric">5 activos</span>
+                    </div>
+                    
+                    <div class="result-summary">
+                        <div class="summary-title">✓ Análisis Completado</div>
+                        <div class="summary-stats">
+                            <div>
+                                <div class="summary-value">3,247</div>
+                                <div class="summary-label">Páginas</div>
+                            </div>
+                            <div>
+                                <div class="summary-value">100%</div>
+                                <div class="summary-label">Precisión</div>
+                            </div>
+                            <div>
+                                <div class="summary-value">0</div>
+                                <div class="summary-label">Errores</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="slide-separator"></div>
+<div class="slide-wrapper" id="slide-11">
+<div class="slide-content">
+<div class="slide-container">
+        <div class="left-column">
+            <div class="module-badge">Módulo 3</div>
+            <h2 class="module-title">Agente Documentos</h2>
+            <div class="module-price">€15,000</div>
+            
+            <div class="features-list">
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-text">0% Alucinaciones</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-text">Miles de Páginas</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-text">100% Precisión</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="right-column">
+            <div class="copilot-interface">
+                <div class="copilot-header">
+                    <div class="header-left">
+                        <div class="copilot-icon">🤖</div>
+                        <div class="copilot-title">INTLAW AI Copilot</div>
+                    </div>
+                    <div class="accuracy-badge">0% Alucinaciones</div>
+                </div>
+                
+                <div class="chat-area">
+                    <div class="msg-user">
+                        Analiza expediente "Mercantil XYZ vs ABC" completo. Extrae todas las cláusulas de incumplimiento, calcula plazos legales y genera resumen ejecutivo.
+                    </div>
+                    
+                    <div class="tool-call">
+                        <div class="tool-header">
+                            <div class="tool-icon">📄</div>
+                            <div class="tool-name">scan_massive_documents()</div>
+                            <div class="tool-status">✓ Completado</div>
+                        </div>
+                        <span class="tool-metric tool-metric-big">3,247 páginas</span>
+                        <span class="tool-metric">127 archivos</span>
+                        <span class="tool-metric">4 min 12 seg</span>
+                    </div>
+                    
+                    <div class="tool-call">
+                        <div class="tool-header">
+                            <div class="tool-icon">🔍</div>
+                            <div class="tool-name">extract_breach_clauses()</div>
+                            <div class="tool-status">✓ Completado</div>
+                        </div>
+                        <span class="tool-metric tool-metric-success">18 cláusulas</span>
+                        <span class="tool-metric tool-metric-success">100% precisión</span>
+                        <span class="tool-metric">0 errores</span>
+                    </div>
+                    
+                    <div class="tool-call">
+                        <div class="tool-header">
+                            <div class="tool-icon">📅</div>
+                            <div class="tool-name">calculate_legal_deadlines()</div>
+                            <div class="tool-status">✓ Completado</div>
+                        </div>
+                        <span class="tool-metric">12 plazos totales</span>
+                        <span class="tool-metric tool-metric-success">5 activos</span>
+                        <span class="tool-metric">7 vencidos</span>
+                    </div>
+                    
+                    <div class="tool-call">
+                        <div class="tool-header">
+                            <div class="tool-icon">💰</div>
+                            <div class="tool-name">calculate_amounts()</div>
+                            <div class="tool-status">✓ Completado</div>
+                        </div>
+                        <span class="tool-metric tool-metric-big">€847,000</span>
+                        <span class="tool-metric tool-metric-success">Verificado</span>
+                    </div>
+                    
+                    <div class="result-summary">
+                        <div class="summary-title">✓ Análisis Completado</div>
+                        <div class="summary-stats">
+                            <div>
+                                <div class="summary-value">3,247</div>
+                                <div class="summary-label">Páginas</div>
+                            </div>
+                            <div>
+                                <div class="summary-value">100%</div>
+                                <div class="summary-label">Precisión</div>
+                            </div>
+                            <div>
+                                <div class="summary-value">0</div>
+                                <div class="summary-label">Errores</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="slide-separator"></div>
+<div class="slide-wrapper" id="slide-12">
+<div class="slide-content">
+<div class="slide-container">
+        <div class="left-column">
+            <div class="module-badge">Módulo 4</div>
+            <h2 class="module-title">Generación Documentos</h2>
+            <div class="module-price">€15,000</div>
+            
+            <div class="features-list">
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-text">20 Plantillas Base</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-text">∞ Personalizables</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-text">IA Adaptable</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="right-column">
+            <div class="copilot-interface">
+                <div class="copilot-header">
+                    <div class="header-left">
+                        <div class="copilot-icon">📝</div>
+                        <div class="copilot-title">INTLAW AI Copilot</div>
+                    </div>
+                    <div class="templates-badge">20 + ∞</div>
+                </div>
+                
+                <div class="chat-area">
+                    <div class="msg-user">
+                        Genera contrato compraventa mercantil: TechCorp SL → InnoSolutions SA. Software €250K. Garantía extendida, soporte 24/7, penalizaciones retraso. Barcelona.
+                    </div>
+                    
+                    <div class="tool-call">
+                        <div class="tool-header">
+                            <div class="tool-icon">📋</div>
+                            <div class="tool-name">load_template</div>
+                            <div class="tool-status">✓ Completado</div>
+                        </div>
+                        <span class="tool-metric">Compraventa Mercantil</span>
+                        <span class="tool-metric">12 cláusulas base</span>
+                    </div>
+                    
+                    <div class="tool-call">
+                        <div class="tool-header">
+                            <div class="tool-icon">🤖</div>
+                            <div class="tool-name">analyze_case</div>
+                            <div class="tool-status">✓ Completado</div>
+                        </div>
+                        <span class="tool-metric">Software €250K</span>
+                        <span class="tool-metric">6 requisitos especiales</span>
+                    </div>
+                    
+                    <div class="tool-call">
+                        <div class="tool-header">
+                            <div class="tool-icon">✨</div>
+                            <div class="tool-name">personalize_clauses</div>
+                            <div class="tool-status">✓ Completado</div>
+                        </div>
+                        <span class="tool-metric">18 cláusulas</span>
+                        <span class="tool-metric">47 modificaciones</span>
+                    </div>
+                    
+                    <div class="tool-call">
+                        <div class="tool-header">
+                            <div class="tool-icon">⚖️</div>
+                            <div class="tool-name">adapt_jurisdiction</div>
+                            <div class="tool-status">✓ Completado</div>
+                        </div>
+                        <span class="tool-metric">Barcelona</span>
+                        <span class="tool-metric">Código Civil Catalán</span>
+                    </div>
+                    
+                    <div class="result-summary">
+                        <div class="summary-title">✓ Contrato Generado</div>
+                        <div class="summary-content">
+                            28 páginas · 18 cláusulas personalizadas · Normativa Barcelona · PDF + DOCX
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="slide-separator"></div>
+<div class="slide-wrapper" id="slide-13">
+<div class="slide-content">
+<div class="slide-container">
+        <h2 class="demo-title">Módulo 4 en Acción: Generando Contrato Personalizado</h2>
+        
+        <div class="interface">
+            <div class="interface-header">
+                <div class="header-left">
+                    <div class="interface-icon">📝</div>
+                    <div class="interface-title">Generador Documentos INTLAW AI</div>
+                </div>
+                <div class="template-badge">Plantilla: Compraventa Mercantil</div>
+                <div class="ai-status">
+                    <span>⚡</span>
+                    IA Personalizando...
+                </div>
+            </div>
+            
+            <div class="interface-content">
+                <div class="document-preview">
+                    <div class="doc-header">
+                        <div class="doc-title">CONTRATO DE COMPRAVENTA MERCANTIL</div>
+                        <div class="doc-subtitle">TechCorp SL → InnoSolutions SA · Software €250,000</div>
+                    </div>
+                    
+                    <div class="doc-section">
+                        <div class="section-title">
+                            <span>1.</span> PARTES CONTRATANTES
+                        </div>
+                        <div class="section-content">
+                            <div class="clause clause-ai">
+                                <div class="ai-badge">IA Adaptado</div>
+                                De una parte, <strong>TechCorp SL</strong>, con CIF B-12345678, domicilio en Barcelona, representada por su administrador único, actúa como VENDEDOR de solución software empresarial.
+                            </div>
+                            <div class="clause clause-ai">
+                                <div class="ai-badge">IA Adaptado</div>
+                                De otra parte, <strong>InnoSolutions SA</strong>, con CIF A-87654321, domicilio en Madrid, representada por su consejo de administración, actúa como COMPRADOR.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="doc-section">
+                        <div class="section-title">
+                            <span>2.</span> OBJETO DEL CONTRATO
+                        </div>
+                        <div class="section-content">
+                            <div class="clause clause-ai">
+                                <div class="ai-badge">IA Personalizado</div>
+                                El VENDEDOR se compromete a transferir la propiedad y derechos de explotación del software empresarial denominado "TechSuite Pro" al COMPRADOR por el precio de <strong>DOSCIENTOS CINCUENTA MIL EUROS (€250,000)</strong>, incluyendo garantía extendida de 24 meses y soporte técnico 24/7.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="doc-section">
+                        <div class="section-title">
+                            <span>3.</span> GARANTÍAS Y SOPORTE
+                        </div>
+                        <div class="section-content">
+                            <div class="clause clause-ai">
+                                <div class="ai-badge">IA Añadido</div>
+                                El VENDEDOR garantiza el funcionamiento óptimo del software durante 24 meses desde la entrega, incluyendo actualizaciones de seguridad y corrección de errores sin coste adicional.
+                            </div>
+                            <div class="clause clause-ai">
+                                <div class="ai-badge">IA Añadido</div>
+                                Se proporciona soporte técnico 24/7 mediante canal prioritario con tiempo de respuesta máximo de 2 horas para incidencias críticas y 8 horas para incidencias no críticas.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="doc-section">
+                        <div class="section-title">
+                            <span>4.</span> PENALIZACIONES POR RETRASO
+                        </div>
+                        <div class="section-content">
+                            <div class="clause clause-ai">
+                                <div class="ai-badge">IA Personalizado</div>
+                                En caso de retraso en la entrega superior a 15 días naturales, el VENDEDOR abonará al COMPRADOR una penalización de 0.5% del precio total por cada día de retraso, con un máximo del 15% del valor del contrato.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ai-panel">
+                    <div class="panel-card">
+                        <div class="panel-title">
+                            <span>🤖</span>
+                            Personalizaciones IA
+                        </div>
+                        <div class="ai-action">
+                            <div class="action-header">
+                                <div class="action-name">Partes Contratantes</div>
+                                <div class="action-status">✓ Completado</div>
+                            </div>
+                            <div class="action-detail">Datos empresas insertados</div>
+                        </div>
+                        <div class="ai-action">
+                            <div class="action-header">
+                                <div class="action-name">Objeto + Precio</div>
+                                <div class="action-status">✓ Completado</div>
+                            </div>
+                            <div class="action-detail">€250K + Software especificado</div>
+                        </div>
+                        <div class="ai-action">
+                            <div class="action-header">
+                                <div class="action-name">Garantía Extendida</div>
+                                <div class="action-status">✓ Añadido</div>
+                            </div>
+                            <div class="action-detail">Cláusula 24 meses generada</div>
+                        </div>
+                        <div class="ai-action">
+                            <div class="action-header">
+                                <div class="action-name">Soporte 24/7</div>
+                                <div class="action-status">✓ Añadido</div>
+                            </div>
+                            <div class="action-detail">SLA tiempos respuesta</div>
+                        </div>
+                        <div class="ai-action">
+                            <div class="action-header">
+                                <div class="action-name">Penalizaciones</div>
+                                <div class="action-status">⚡ Generando</div>
+                            </div>
+                            <div class="action-detail">Cálculo 0.5% por día retraso</div>
+                        </div>
+                    </div>
+                    
+                    <div class="panel-card">
+                        <div class="panel-title">
+                            <span>📊</span>
+                            Estadísticas
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-box">
+                                <div class="stat-value">28</div>
+                                <div class="stat-label">Páginas</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-value">18</div>
+                                <div class="stat-label">Cláusulas</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-value">47</div>
+                                <div class="stat-label">Modificaciones</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-value">6</div>
+                                <div class="stat-label">Añadidas</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="slide-separator"></div>
+<div class="slide-wrapper" id="slide-14">
+<div class="slide-content">
+<div class="slide-container">
         <h2 class="title">Beneficios Clave</h2>
         <div class="benefits-grid">
             <div class="benefit-box">
                 <div class="benefit-number">1</div>
-                <div class="benefit-title">Eficiencia Operativa</div>
-                <div class="benefit-desc">Reducción del 60% del tiempo en tareas repetitivas</div>
+                <div class="benefit-title">Eficiencia +60%</div>
+                <div class="benefit-desc">Reducción drástica en tareas repetitivas</div>
             </div>
             <div class="benefit-box">
                 <div class="benefit-number">2</div>
                 <div class="benefit-title">Escalabilidad</div>
-                <div class="benefit-desc">Atiende más clientes sin necesidad de aumentar personal</div>
+                <div class="benefit-desc">Más clientes sin aumentar personal</div>
             </div>
             <div class="benefit-box">
                 <div class="benefit-number">3</div>
-                <div class="benefit-title">Calidad Consistente</div>
-                <div class="benefit-desc">Documentos sin errores humanos y cumplimiento normativo</div>
+                <div class="benefit-title">Calidad 100%</div>
+                <div class="benefit-desc">Sin errores humanos ni imprecisiones</div>
             </div>
             <div class="benefit-box">
                 <div class="benefit-number">4</div>
                 <div class="benefit-title">Ventaja Competitiva</div>
-                <div class="benefit-desc">Tecnología de vanguardia en el sector legal</div>
+                <div class="benefit-desc">Tecnología vanguardia sector legal</div>
             </div>
         </div>
     </div>
-    <div class="slide-separator"></div>
-    
-    <!-- Slide 10: Pricing -->
-    <div class="slide slide-10">
-        <h2 class="title">Inversión</h2>
+</div>
+</div>
+<div class="slide-separator"></div>
+<div class="slide-wrapper" id="slide-15">
+<div class="slide-content">
+<div class="slide-container">
+        <h2 class="slide-title">Modelo de Inversión</h2>
         
-        <div class="price-box">
-            <div class="price-old">€60,000</div>
-            <div class="price-amount">€45,000</div>
-            <div class="price-description">Paquete Completo - 4 Módulos</div>
-            <div class="price-savings">Ahorro de €15,000</div>
-        </div>
-        
-        <div class="refund-guarantee">
-            <div class="refund-title">⚠️ Garantía de Reembolso Total ⚠️</div>
-            <div class="refund-text">Cualquier alucinación, error o funcionalidad que no trabaje como debe será corregida inmediatamente o REEMBOLSO COMPLETO garantizado</div>
-        </div>
-        
-        <div class="content-grid">
-            <div>
-                <div class="section-title">Módulos Incluidos:</div>
-                <div class="module-item">
-                    <span>✓ Implementación IA en Web</span>
-                    <span class="module-price">€15,000</span>
+        <div class="pricing-container">
+            <!-- Plan 1 -->
+            <div class="plan-card">
+                <div class="plan-header">
+                    <div class="plan-name">Plan 1: Financiado</div>
+                    <div class="plan-total">€57,000</div>
                 </div>
-                <div class="module-item">
-                    <span>✓ Filtrado y Auto-Chatting</span>
-                    <span class="module-price">€15,000</span>
+                <div class="plan-breakdown">
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Pago Inicial</div>
+                        <div class="breakdown-value">€9,000</div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Mensualidad</div>
+                        <div class="breakdown-value">€4,000</div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Duración</div>
+                        <div class="breakdown-value">12 meses</div>
+                    </div>
                 </div>
-                <div class="module-item">
-                    <span>✓ Agente Interno Documentos</span>
-                    <span class="module-price">€15,000</span>
-                </div>
-                <div class="module-item">
-                    <span>✓ Generación Documentos Legales</span>
-                    <span class="module-price">€15,000</span>
+                <div class="plan-features">
+                    <div class="feature-item">4 Módulos completos incluidos</div>
+                    <div class="feature-item">Implementación en 80 días</div>
+                    <div class="feature-item">Soporte durante financiación</div>
                 </div>
             </div>
             
-            <div>
-                <div class="section-title">Garantías Adicionales:</div>
-                <div class="guarantee-item">
-                    <div class="guarantee-title">12 Meses Soporte</div>
-                    <div class="guarantee-desc">Corrección de errores sin costo</div>
+            <!-- Plan 2 -->
+            <div class="plan-card recommended">
+                <div class="plan-header">
+                    <div class="plan-name">Plan 2: Pago por Hitos</div>
+                    <div class="plan-original">€60,000</div>
+                    <div class="plan-total">€45,000</div>
+                    <div class="plan-savings">Ahorro €15,000</div>
                 </div>
-                <div class="guarantee-item">
-                    <div class="guarantee-title">Precio Prioritario</div>
-                    <div class="guarantee-desc">Tarifas preferenciales para nuevas funcionalidades</div>
+                <div class="plan-breakdown">
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Pago 1 (Inicio)</div>
+                        <div class="breakdown-value">€15,000</div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Pago 2 (Despliegue)</div>
+                        <div class="breakdown-value">€15,000</div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Pago 3 (3 meses)</div>
+                        <div class="breakdown-value">€15,000</div>
+                    </div>
                 </div>
-                <div class="guarantee-item">
-                    <div class="guarantee-title">0% Alucinaciones</div>
-                    <div class="guarantee-desc">Precisión absoluta garantizada</div>
+                <div class="plan-features">
+                    <div class="feature-item">4 Módulos completos incluidos</div>
+                    <div class="feature-item">Implementación en 80 días</div>
+                    <div class="feature-item">Ahorro máximo garantizado</div>
                 </div>
             </div>
         </div>
         
-        <div class="payment-structure">
-            <div class="payment-title">Estructura de Pago</div>
-            <div class="payment-item">• 40% inicial (€18,000) - Al firmar contrato</div>
-            <div class="payment-item">• 30% al despliegue (€13,500) - Cuando todo funcione correctamente</div>
-            <div class="payment-item">• 30% final (€13,500) - Tres meses después del despliegue</div>
+        <div class="guarantees-section">
+            <div class="guarantees-title">⚠️ Garantías Incluidas en Ambos Planes ⚠️</div>
+            <div class="guarantees-grid">
+                <div class="guarantee-item">
+                    <div class="guarantee-icon">💯</div>
+                    <div class="guarantee-text">Reembolso Total si hay alucinaciones o errores</div>
+                </div>
+                <div class="guarantee-item">
+                    <div class="guarantee-icon">🛠️</div>
+                    <div class="guarantee-text">12 Meses Soporte Continuo</div>
+                </div>
+                <div class="guarantee-item">
+                    <div class="guarantee-icon">⚡</div>
+                    <div class="guarantee-text">Precio Prioritario Nuevas Funcionalidades</div>
+                </div>
+                <div class="guarantee-item">
+                    <div class="guarantee-icon">🎓</div>
+                    <div class="guarantee-text">Capacitación Completa Incluida</div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="slide-separator"></div>
-    
-    <!-- Slide 11: Próximos Pasos -->
-    <div class="slide slide-11">
+</div>
+</div>
+<div class="slide-separator"></div>
+<div class="slide-wrapper" id="slide-16">
+<div class="slide-content">
+<div class="slide-container">
         <div class="left">
             <h2 class="title">Próximos Pasos</h2>
             
             <div class="option-box">
                 <div class="option-label">Implementación Estándar</div>
                 <div class="option-days">80 Días</div>
-                <div class="option-price">Incluido en €45,000</div>
-                <div class="option-desc">Tiempo óptimo para personalización y capacitación</div>
+                <div class="option-price">Incluido</div>
+                <div class="option-desc">Personalización completa y capacitación</div>
             </div>
             
             <div class="option-box express">
                 <div class="option-label express-label">Pack Express</div>
                 <div class="option-days">40 Días</div>
                 <div class="option-price express-price">+€4,000</div>
-                <div class="option-desc">Equipo dedicado con prioridad máxima</div>
+                <div class="option-desc">Equipo dedicado, prioridad máxima</div>
             </div>
         </div>
         
         <div class="right">
             <div class="contact-box">
-                <div class="contact-title">Información de Contacto</div>
+                <div class="contact-title">Contacto</div>
                 <div class="contact-item"><span class="contact-label">Email:</span> sami@agentsai.ltd</div>
                 <div class="contact-item"><span class="contact-label">Empresa:</span> AGENTS AI Limited</div>
-                <div class="contact-item" style="margin-top: 15px;">
+                <div class="contact-item" style="margin-top: 12px;">
                     27 Old Gloucester Street<br>
                     London WC1N 3AX<br>
                     United Kingdom
@@ -1378,14 +1248,18 @@
             </div>
         </div>
     </div>
-    <div class="slide-separator"></div>
-    
-    <!-- Slide 12: Gracias -->
-    <div class="slide slide-12">
+</div>
+</div>
+<div class="slide-separator"></div>
+<div class="slide-wrapper" id="slide-17">
+<div class="slide-content">
+<div class="slide-container">
         <div class="thanks-title">¡Gracias!</div>
         <div class="thanks-text">Esperamos colaborar en la transformación digital de INTLAW y potenciar su práctica legal con inteligencia artificial.</div>
         <div class="brand">INTLAW AI</div>
     </div>
+</div>
+</div>
+
 </body>
 </html>
-
