@@ -44,28 +44,20 @@
             border: none;
             display: block;
             background: white;
-            /* Fixed 16:9 aspect ratio */
-            width: 177.78vh; /* 16:9 ratio based on height */
-            height: 100vh;
-            max-width: 100vw;
-            max-height: 56.25vw; /* 16:9 ratio based on width */
-        }
-        
-        /* Scale the iframe content to fit */
-        .slide-frame {
-            transform-origin: center center;
+            transform-origin: 0 0;
         }
         
         .nav-arrow {
             position: fixed;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 48px;
-            width: 60px;
-            height: 60px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 32px;
+            width: 50px;
+            height: 50px;
             cursor: pointer;
             z-index: 1000;
             transition: all 0.3s ease;
@@ -73,16 +65,18 @@
             align-items: center;
             justify-content: center;
             user-select: none;
-            border-radius: 8px;
+            border-radius: 12px;
+            font-weight: 300;
         }
         
         .nav-arrow:hover {
-            background: rgba(255, 255, 255, 0.2);
-            color: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.25);
+            color: rgba(255, 255, 255, 1);
         }
         
         .nav-arrow:active {
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.35);
+            transform: translateY(-50%) scale(0.95);
         }
         
         .nav-arrow:disabled {
@@ -91,18 +85,34 @@
         }
         
         .nav-arrow.prev {
-            left: 20px;
+            left: 15px;
         }
         
         .nav-arrow.next {
-            right: 20px;
+            right: 15px;
         }
         
         @media (max-width: 768px) {
             .nav-arrow {
                 width: 44px;
                 height: 44px;
-                font-size: 32px;
+                font-size: 28px;
+            }
+            
+            .nav-arrow.prev {
+                left: 10px;
+            }
+            
+            .nav-arrow.next {
+                right: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .nav-arrow {
+                width: 40px;
+                height: 40px;
+                font-size: 24px;
             }
             
             .nav-arrow.prev {
@@ -113,27 +123,11 @@
                 right: 8px;
             }
         }
-        
-        @media (max-width: 480px) {
-            .nav-arrow {
-                width: 40px;
-                height: 40px;
-                font-size: 28px;
-            }
-            
-            .nav-arrow.prev {
-                left: 5px;
-            }
-            
-            .nav-arrow.next {
-                right: 5px;
-            }
-        }
     </style>
 </head>
 <body>
     <div class="slideshow-container">
-        <div class="slide-wrapper">
+        <div class="slide-wrapper" id="slideWrapper">
             <iframe id="slideFrame" class="slide-frame" src="cover.html" scrolling="no"></iframe>
         </div>
     </div>
@@ -159,32 +153,42 @@
         
         let currentSlide = 0;
         const slideFrame = document.getElementById('slideFrame');
+        const slideWrapper = document.getElementById('slideWrapper');
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
         
-        // Scale iframe content to fit
+        const SLIDE_WIDTH = 1280;
+        const SLIDE_HEIGHT = 720;
+        const ASPECT_RATIO = SLIDE_WIDTH / SLIDE_HEIGHT;
+        
         function scaleSlide() {
-            const slideWidth = 1280;
-            const slideHeight = 720;
-            const aspectRatio = slideWidth / slideHeight;
-            
             const viewportWidth = window.innerWidth;
             const viewportHeight = window.innerHeight;
             const viewportAspectRatio = viewportWidth / viewportHeight;
             
-            let scale;
-            if (viewportAspectRatio > aspectRatio) {
-                // Viewport is wider, scale based on height
-                scale = viewportHeight / slideHeight;
+            let scale, width, height, left, top;
+            
+            if (viewportAspectRatio > ASPECT_RATIO) {
+                // Viewport is wider - fit to height
+                scale = viewportHeight / SLIDE_HEIGHT;
+                height = viewportHeight;
+                width = SLIDE_WIDTH * scale;
+                left = (viewportWidth - width) / 2;
+                top = 0;
             } else {
-                // Viewport is taller, scale based on width
-                scale = viewportWidth / slideWidth;
+                // Viewport is taller - fit to width
+                scale = viewportWidth / SLIDE_WIDTH;
+                width = viewportWidth;
+                height = SLIDE_HEIGHT * scale;
+                left = 0;
+                top = (viewportHeight - height) / 2;
             }
             
-            // Apply scaling via CSS transform
-            slideFrame.style.width = slideWidth + 'px';
-            slideFrame.style.height = slideHeight + 'px';
-            slideFrame.style.transform = `scale(${scale})`;
+            slideFrame.style.width = width + 'px';
+            slideFrame.style.height = height + 'px';
+            slideFrame.style.position = 'absolute';
+            slideFrame.style.left = left + 'px';
+            slideFrame.style.top = top + 'px';
         }
         
         function updateSlide() {
@@ -224,30 +228,49 @@
         
         document.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
-        });
+        }, { passive: true });
         
         document.addEventListener('touchend', (e) => {
             touchEndX = e.changedTouches[0].screenX;
             handleSwipe();
-        });
+        }, { passive: true });
         
         function handleSwipe() {
             const swipeThreshold = 50;
-            if (touchEndX < touchStartX - swipeThreshold && currentSlide < slides.length - 1) {
-                currentSlide++;
-                updateSlide();
-            }
-            if (touchEndX > touchStartX + swipeThreshold && currentSlide > 0) {
-                currentSlide--;
-                updateSlide();
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0 && currentSlide < slides.length - 1) {
+                    // Swipe left - next slide
+                    currentSlide++;
+                    updateSlide();
+                } else if (diff < 0 && currentSlide > 0) {
+                    // Swipe right - previous slide
+                    currentSlide--;
+                    updateSlide();
+                }
             }
         }
         
         // Initialize
         window.addEventListener('resize', scaleSlide);
+        window.addEventListener('orientationchange', () => {
+            setTimeout(scaleSlide, 100);
+        });
+        
+        // Wait for DOM to be ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                scaleSlide();
+                updateSlide();
+            });
+        } else {
+            scaleSlide();
+            updateSlide();
+        }
+        
+        // Also scale on load
         window.addEventListener('load', scaleSlide);
-        scaleSlide();
-        updateSlide();
     </script>
 </body>
 </html>
