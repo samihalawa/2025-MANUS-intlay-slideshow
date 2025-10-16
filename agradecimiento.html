@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Inter', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            color: white;
+        }
+        .main-title {
+            font-size: 96px;
+            font-weight: 800;
+            letter-spacing: -2px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+        .subtitle {
+            font-size: 28px;
+            font-weight: 500;
+            opacity: 0.95;
+            margin-bottom: 60px;
+            max-width: 800px;
+        }
+        .brand-box {
+            background: rgba(255,255,255,0.95);
+            padding: 30px 50px;
+            margin-top: 40px;
+        }
+        .brand-text {
+            font-size: 20px;
+            color: #4b5563;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        .brand-name {
+            font-size: 40px;
+            color: #667eea;
+            font-weight: 800;
+        }
+        .footer-text {
+            position: absolute;
+            bottom: 40px;
+            font-size: 16px;
+            opacity: 0.8;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content">
+            <h1 class="main-title">¡Gracias!</h1>
+            <p class="subtitle">Esperamos colaborar en la transformación digital de INTLAW y potenciar su práctica legal con inteligencia artificial.</p>
+            <div class="brand-box">
+                <p class="brand-text">Propuesta presentada por:</p>
+                <div class="brand-name">INTLAW AI</div>
+            </div>
+        </div>
+        <p class="footer-text">INTLAW AI - Propuesta de Automatización Legal</p>
+    </div>
+</body>
+</html>

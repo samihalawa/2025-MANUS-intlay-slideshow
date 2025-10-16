@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Inter', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+            padding: 60px 80px;
+            position: relative;
+        }
+        .slide-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #e5e7eb;
+            position: relative;
+        }
+        .title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .subtitle {
+            font-size: 19px;
+            color: #4b5563;
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 60px;
+            margin-top: 30px;
+        }
+        
+        /* Timeline Options */
+        .timeline-section {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .timeline-option {
+            background: white;
+            border: 3px solid #e5e7eb;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .timeline-option.express {
+            border-color: #667eea;
+            background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+        }
+        
+        .option-label {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #4b5563;
+        }
+        
+        .option-label.express-label {
+            color: #667eea;
+        }
+        
+        .option-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: #111827;
+        }
+        
+        .option-price {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2563eb;
+        }
+        
+        .option-desc {
+            font-size: 16px;
+            color: #4b5563;
+            line-height: 1.6;
+        }
+        
+        /* Contact Section */
+        .contact-box {
+            background: #f9fafb;
+            padding: 35px;
+            border: 1px solid #e5e7eb;
+            min-height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .contact-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 25px;
+        }
+        .contact-item {
+            margin-bottom: 8px;
+            font-size: 15px;
+            color: #4b5563;
+            line-height: 1.6;
+        }
+        .contact-label {
+            font-weight: 600;
+            color: #111827;
+        }
+        .company-name {
+            font-weight: 600;
+            color: #111827;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h2 class="title">Próximos Pasos</h2>
+        
+        <p class="subtitle">Opciones de implementación para INTLAW AI.</p>
+        
+        <div class="content-grid">
+            <div class="timeline-section">
+                <div class="timeline-option">
+                    <div class="option-label">Implementación Estándar</div>
+                    <div class="option-title">80 Días</div>
+                    <div class="option-price">Incluido en €45,000</div>
+                    <div class="option-desc">
+                        Implementación completa de todos los módulos con tiempo óptimo para personalización, pruebas exhaustivas y capacitación del equipo.
+                    </div>
+                </div>
+                
+                <div class="timeline-option express">
+                    <div class="option-label express-label">Pack Express</div>
+                    <div class="option-title">40 Días</div>
+                    <div class="option-price">+€4,000</div>
+                    <div class="option-desc">
+                        Implementación acelerada con equipo dedicado y prioridad máxima. Ideal para organizaciones que necesitan resultados inmediatos.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-box">
+                <h3 class="contact-title">Información de Contacto</h3>
+                
+                <div class="contact-item">
+                    <span class="contact-label">Email:</span> sami@agentsai.ltd
+                </div>
+                
+                <div class="company-name">AGENTS AI Limited</div>
+                <div class="contact-item">27 Old Gloucester Street</div>
+                <div class="contact-item">London WC1N 3AX</div>
+                <div class="contact-item">United Kingdom</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

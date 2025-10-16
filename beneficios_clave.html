@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Inter', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+            padding: 60px 80px;
+            position: relative;
+        }
+        .slide-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #e5e7eb;
+            position: relative;
+        }
+        .title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .subtitle {
+            font-size: 19px;
+            color: #4b5563;
+            line-height: 1.7;
+            margin-bottom: 35px;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .benefit-box {
+            background: #f0fdf4;
+            border: 3px solid #10b981;
+            padding: 35px;
+            min-height: 200px;
+        }
+        .benefit-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #10b981;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            font-weight: 800;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        .benefit-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #065f46;
+            margin-bottom: 12px;
+        }
+        .benefit-desc {
+            font-size: 16px;
+            color: #047857;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h2 class="title">Beneficios Clave de la Implementación</h2>
+        
+        <p class="subtitle">
+            La suite INTLAW AI ofrece ventajas competitivas significativas que transformarán la operación del despacho.
+        </p>
+        
+        <div class="benefits-grid">
+            <div class="benefit-box">
+                <div class="benefit-number">1</div>
+                <h3 class="benefit-title">Eficiencia Operativa</h3>
+                <p class="benefit-desc">
+                    Reducción drástica del tiempo dedicado a tareas repetitivas y administrativas, permitiendo al equipo legal enfocarse en actividades de mayor valor y estrategia jurídica.
+                </p>
+            </div>
+            
+            <div class="benefit-box">
+                <div class="benefit-number">2</div>
+                <h3 class="benefit-title">Precisión y Consistencia</h3>
+                <p class="benefit-desc">
+                    Minimización de errores humanos en la redacción de documentos y el procesamiento de información, asegurando la uniformidad y calidad legal en todos los entregables.
+                </p>
+            </div>
+            
+            <div class="benefit-box">
+                <div class="benefit-number">3</div>
+                <h3 class="benefit-title">Crecimiento Estratégico</h3>
+                <p class="benefit-desc">
+                    Mejora en la adquisición de clientes y la identificación de nuevas oportunidades de negocio a través de análisis de mercado avanzados y segmentación inteligente.
+                </p>
+            </div>
+            
+            <div class="benefit-box">
+                <div class="benefit-number">4</div>
+                <h3 class="benefit-title">Experiencia del Cliente Mejorada</h3>
+                <p class="benefit-desc">
+                    Respuestas rápidas y personalizadas, disponibles 24/7, que elevan la satisfacción del cliente y fortalecen la imagen profesional de INTLAW en el mercado.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

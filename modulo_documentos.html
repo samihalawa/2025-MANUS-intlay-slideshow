@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Inter', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+            padding: 60px 80px;
+            position: relative;
+        }
+        .slide-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #e5e7eb;
+            position: relative;
+        }
+        .title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 50px;
+            margin-top: 30px;
+            align-items: start;
+        }
+        .text-content {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        .intro-text {
+            font-size: 18px;
+            color: #4b5563;
+            line-height: 1.7;
+        }
+        .feature-section {
+            padding-top: 20px;
+        }
+        .feature-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 12px;
+        }
+        .feature-desc {
+            font-size: 16px;
+            color: #4b5563;
+            line-height: 1.7;
+        }
+        .mockup-container {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 480px;
+        }
+        .mockup-window {
+            background: white;
+            min-height: 440px;
+            display: flex;
+            flex-direction: column;
+        }
+        .window-header {
+            background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+            padding: 12px 18px;
+            border-bottom: 2px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .window-dot {
+            width: 12px;
+            height: 12px;
+            display: inline-block;
+        }
+        .dot-red { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); }
+        .dot-yellow { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
+        .dot-green { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
+        .window-title {
+            font-weight: 600;
+            color: #111827;
+            font-size: 14px;
+            margin-left: 8px;
+        }
+        .mockup-content {
+            padding: 30px;
+            background: linear-gradient(135deg, white 0%, #f9fafb 100%);
+            flex-grow: 1;
+        }
+        .form-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+        .form-subtitle {
+            font-size: 14px;
+            color: #4b5563;
+            margin-bottom: 25px;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        .form-label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .form-input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 2px solid #e5e7eb;
+            background: white;
+            font-size: 14px;
+            color: #111827;
+            font-family: 'Inter', sans-serif;
+        }
+        .form-select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 2px solid #e5e7eb;
+            background: white;
+            font-size: 14px;
+            color: #111827;
+            font-family: 'Inter', sans-serif;
+        }
+        .form-textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 2px solid #e5e7eb;
+            background: white;
+            font-size: 14px;
+            color: #111827;
+            font-family: 'Inter', sans-serif;
+            resize: none;
+        }
+        .form-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 28px;
+            border: none;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h2 class="title">Módulo 2: Generador de Documentos Legales</h2>
+        
+        <div class="content-grid">
+            <div class="text-content">
+                <p class="intro-text">
+                    Agiliza la creación y modificación de documentos legales complejos con automatización inteligente.
+                </p>
+                
+                <div class="feature-section">
+                    <div class="feature-title">Redacción de Actas y Contratos</div>
+                    <div class="feature-desc">
+                        Automatización de la redacción de actas de juntas de accionistas y la modificación de modelos de contratos existentes, garantizando consistencia y reduciendo errores humanos en documentos críticos.
+                    </div>
+                </div>
+                
+                <div class="feature-section">
+                    <div class="feature-title">Plantillas Inteligentes</div>
+                    <div class="feature-desc">
+                        Sistema de plantillas que se adaptan automáticamente según el tipo de documento y los datos proporcionados, generando documentos profesionales en segundos.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mockup-container">
+                <div class="mockup-window">
+                    <div class="window-header">
+                        <span class="window-dot dot-red"></span>
+                        <span class="window-dot dot-yellow"></span>
+                        <span class="window-dot dot-green"></span>
+                        <span class="window-title">INTLAW AI - Generador de Documentos</span>
+                    </div>
+                    <div class="mockup-content">
+                        <div class="form-title">Generar Acta de Junta</div>
+                        <div class="form-subtitle">Selecciona la plantilla y proporciona los detalles clave</div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Tipo de Junta:</label>
+                            <select class="form-select">
+                                <option>Ordinaria</option>
+                                <option>Extraordinaria</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Fecha:</label>
+                            <input type="text" class="form-input" value="26 de Octubre de 2025">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Acuerdos Principales:</label>
+                            <textarea class="form-textarea" rows="3">Aprobación de cuentas anuales, Nombramiento de nuevo consejero, Modificación de estatutos sociales</textarea>
+                        </div>
+                        
+                        <button class="form-button">Generar Documento</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
