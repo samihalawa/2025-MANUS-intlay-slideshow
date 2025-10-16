@@ -2,153 +2,28 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>INTLAW AI - Presentación</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTLAW AI - Presentación Completa</title>
     <style>
-        * {
+        body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html, body {
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            background: #000000;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        }
-        
-        .slideshow-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             background: #000000;
         }
-        
-        .slide-wrapper {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
         .slide {
-            display: none;
             width: 1280px;
-            height: 720px;
-            background: white;
-            transform-origin: center center;
-        }
-        
-        .slide.active {
-            display: block;
-        }
-        
-        .nav-arrow {
-            position: fixed;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 32px;
-            width: 50px;
-            height: 50px;
-            cursor: pointer;
-            z-index: 1000;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            user-select: none;
-            border-radius: 12px;
-            font-weight: 300;
-        }
-        
-        .nav-arrow:hover {
-            background: rgba(255, 255, 255, 0.25);
-            color: rgba(255, 255, 255, 1);
-        }
-        
-        .nav-arrow:active {
-            background: rgba(255, 255, 255, 0.35);
-            transform: translateY(-50%) scale(0.95);
-        }
-        
-        .nav-arrow:disabled {
-            opacity: 0.2;
-            cursor: not-allowed;
-        }
-        
-        .nav-arrow.prev {
-            left: 15px;
-        }
-        
-        .nav-arrow.next {
-            right: 15px;
-        }
-        
-        @media (max-width: 768px) {
-            .nav-arrow {
-                width: 44px;
-                height: 44px;
-                font-size: 28px;
-            }
-            
-            .nav-arrow.prev {
-                left: 10px;
-            }
-            
-            .nav-arrow.next {
-                right: 10px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .nav-arrow {
-                width: 40px;
-                height: 40px;
-                font-size: 24px;
-            }
-            
-            .nav-arrow.prev {
-                left: 8px;
-            }
-            
-            .nav-arrow.next {
-                right: 8px;
-            }
-        }
-
-        /* Slide Styles */
-        .slide-container {
-            width: 1280px;
-            height: 720px;
+            min-height: 720px;
+            margin: 0 auto;
             background: #ffffff;
-            padding: 60px 90px;
-            overflow: hidden;
+        }
+        .slide-separator {
+            height: 2px;
+            background: #333333;
         }
         
-        .title {
-            font-size: 52px;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 40px;
-            border-bottom: 4px solid #667eea;
-            padding-bottom: 15px;
-        }
-        
-        /* Cover slide */
-        .cover-slide {
+        /* Slide 1: Cover */
+        .slide-1 {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             display: flex;
             flex-direction: column;
@@ -156,476 +31,660 @@
             justify-content: center;
             text-align: center;
             color: white;
+            padding: 80px;
         }
-        
-        .cover-title {
-            font-size: 72px;
+        .slide-1 .title {
+            font-size: 96px;
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            letter-spacing: -2px;
         }
-        
-        .cover-subtitle {
-            font-size: 32px;
+        .slide-1 .subtitle {
+            font-size: 36px;
             font-weight: 400;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             opacity: 0.95;
+            max-width: 900px;
+            line-height: 1.4;
         }
-        
-        .cover-tagline {
-            font-size: 24px;
+        .slide-1 .tagline {
+            font-size: 26px;
             font-weight: 300;
             opacity: 0.9;
+            max-width: 800px;
         }
         
-        /* Agenda */
-        .agenda-list {
-            margin-top: 40px;
+        /* Slide 2: Agenda */
+        .slide-2 {
+            padding: 80px 100px;
         }
-        
-        .agenda-item {
-            font-size: 28px;
+        .slide-2 .title {
+            font-size: 64px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 60px;
+            border-bottom: 5px solid #667eea;
+            padding-bottom: 20px;
+        }
+        .slide-2 .agenda-list {
+            margin-top: 50px;
+        }
+        .slide-2 .agenda-item {
+            font-size: 32px;
             color: #374151;
-            margin-bottom: 35px;
-            padding-left: 50px;
+            margin-bottom: 45px;
+            padding-left: 60px;
             position: relative;
+            line-height: 1.4;
         }
-        
-        .agenda-item::before {
+        .slide-2 .agenda-item::before {
             content: '▸';
             position: absolute;
             left: 0;
             color: #667eea;
-            font-size: 32px;
+            font-size: 40px;
             font-weight: 700;
         }
         
-        /* Pain points */
-        .pain-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
+        /* Slide 3: Desafíos */
+        .slide-3 {
+            padding: 50px 90px;
         }
-        
-        .pain-card {
-            background: #f8fafc;
-            border-left: 6px solid #667eea;
-            padding: 30px;
-            border-radius: 8px;
-        }
-        
-        .pain-number {
-            display: inline-block;
-            width: 45px;
-            height: 45px;
-            background: #667eea;
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 45px;
-            font-weight: 700;
-            font-size: 22px;
-            margin-bottom: 15px;
-        }
-        
-        .pain-title {
-            font-size: 22px;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 10px;
-        }
-        
-        .pain-desc {
-            font-size: 17px;
-            color: #4b5563;
-            line-height: 1.5;
-        }
-        
-        /* Dashboard */
-        .dashboard {
-            background: #f8fafc;
-            border: 3px solid #667eea;
-            border-radius: 12px;
-            padding: 50px;
-            margin-top: 30px;
-        }
-        
-        .dash-title {
-            font-size: 32px;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 40px;
-            text-align: center;
-        }
-        
-        .metrics {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-        }
-        
-        .metric {
-            text-align: center;
-        }
-        
-        .metric-value {
+        .slide-3 .title {
             font-size: 64px;
             font-weight: 700;
-            color: #667eea;
-        }
-        
-        .metric-label {
-            font-size: 20px;
-            color: #4b5563;
-            margin-top: 15px;
-            font-weight: 600;
-        }
-        
-        /* Module slides */
-        .module-layout {
-            display: flex;
-            gap: 50px;
-            height: 100%;
-        }
-        
-        .module-left {
-            flex: 1;
-        }
-        
-        .module-right {
-            flex: 1;
-        }
-        
-        .module-title {
-            font-size: 48px;
-            font-weight: 700;
             color: #111827;
             margin-bottom: 30px;
-            border-bottom: 4px solid #667eea;
+            border-bottom: 5px solid #667eea;
             padding-bottom: 15px;
         }
-        
-        .feature {
-            margin-bottom: 30px;
-        }
-        
-        .feature-title {
-            font-size: 24px;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 10px;
-        }
-        
-        .feature-desc {
-            font-size: 18px;
-            color: #4b5563;
-            line-height: 1.5;
-        }
-        
-        /* Mockups */
-        .chatbot, .generator, .analyzer, .acquisition {
-            background: #f8fafc;
-            border: 3px solid #667eea;
-            border-radius: 12px;
-            padding: 30px;
-        }
-        
-        .mock-title {
-            font-size: 22px;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 25px;
-            text-align: center;
-        }
-        
-        .message {
-            margin-bottom: 20px;
-        }
-        
-        .msg-bot {
-            background: #e0e7ff;
-            padding: 15px;
-            border-radius: 8px;
-            font-size: 16px;
-        }
-        
-        .msg-user {
-            background: #667eea;
-            color: white;
-            padding: 15px;
-            border-radius: 8px;
-            font-size: 16px;
-            margin-left: 40px;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .label {
-            font-size: 16px;
-            font-weight: 600;
-            color: #111827;
-            margin-bottom: 8px;
-            display: block;
-        }
-        
-        .input {
-            width: 100%;
-            padding: 12px;
-            font-size: 16px;
-            border: 2px solid #e5e7eb;
-            border-radius: 6px;
-        }
-        
-        .button {
-            background: #667eea;
-            color: white;
-            padding: 15px 30px;
-            font-size: 18px;
-            font-weight: 700;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 10px;
-        }
-        
-        .progress {
-            font-size: 18px;
-            color: #4b5563;
-            margin-bottom: 15px;
-        }
-        
-        .progress-bar {
-            width: 100%;
-            height: 20px;
-            background: #e5e7eb;
-            border-radius: 10px;
-            overflow: hidden;
-            margin-bottom: 25px;
-        }
-        
-        .progress-fill {
-            width: 75%;
-            height: 100%;
-            background: #667eea;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        
-        th {
-            background: #667eea;
-            color: white;
-            padding: 12px;
-            text-align: left;
-            font-size: 16px;
-        }
-        
-        td {
-            padding: 12px;
-            border-bottom: 1px solid #e5e7eb;
-            font-size: 16px;
-        }
-        
-        .badge {
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-        
-        .badge-complete {
-            background: #10b981;
-            color: white;
-        }
-        
-        .badge-active {
-            background: #10b981;
-            color: white;
-        }
-        
-        /* Benefits */
-        .benefits-grid {
+        .slide-3 .pain-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 35px;
+            gap: 25px;
         }
-        
-        .benefit-box {
-            background: #f0fdf4;
-            border: 4px solid #10b981;
-            padding: 40px;
+        .slide-3 .pain-card {
+            background: #f8fafc;
+            border-left: 6px solid #667eea;
+            padding: 25px;
             border-radius: 8px;
         }
-        
-        .benefit-number {
+        .slide-3 .pain-number {
             display: inline-block;
             width: 50px;
             height: 50px;
-            background: #10b981;
+            background: #667eea;
             color: white;
+            border-radius: 50%;
             text-align: center;
             line-height: 50px;
             font-weight: 700;
-            font-size: 26px;
-            margin-bottom: 20px;
-            border-radius: 50%;
+            font-size: 24px;
+            margin-bottom: 12px;
         }
-        
-        .benefit-title {
+        .slide-3 .pain-title {
             font-size: 26px;
             font-weight: 700;
             color: #111827;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
-        
-        .benefit-desc {
+        .slide-3 .pain-desc {
             font-size: 19px;
             color: #4b5563;
             line-height: 1.5;
         }
         
-        /* Pricing */
-        .price-box {
-            background: #667eea;
-            color: white;
-            padding: 30px;
-            text-align: center;
-            margin-bottom: 30px;
-            border-radius: 8px;
+        /* Slide 4: Vision */
+        .slide-4 {
+            padding: 70px 90px;
         }
-        
-        .price-amount {
+        .slide-4 .title {
             font-size: 64px;
-            font-weight: 800;
-            margin-bottom: 10px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 50px;
+            border-bottom: 5px solid #667eea;
+            padding-bottom: 20px;
         }
-        
-        .price-description {
-            font-size: 22px;
-            font-weight: 600;
+        .slide-4 .dashboard {
+            background: #f8fafc;
+            border: 4px solid #667eea;
+            padding: 60px;
+            margin-top: 40px;
         }
-        
-        .content-grid {
+        .slide-4 .dash-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        .slide-4 .metrics {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+        }
+        .slide-4 .metric {
+            text-align: center;
+        }
+        .slide-4 .metric-value {
+            font-size: 72px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        .slide-4 .metric-label {
+            font-size: 22px;
+            color: #4b5563;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
-        .section-title {
-            font-size: 24px;
+        /* Slide 5-8: Módulos (shared styles) */
+        .slide-modulo {
+            padding: 70px 90px;
+            display: flex;
+            gap: 60px;
+        }
+        .slide-modulo .left-column,
+        .slide-modulo .left {
+            flex: 1;
+        }
+        .slide-modulo .right-column,
+        .slide-modulo .right {
+            flex: 1;
+        }
+        .slide-modulo .module-title {
             font-weight: 700;
             color: #111827;
             margin-bottom: 20px;
+            border-bottom: 5px solid #667eea;
+            padding-bottom: 15px;
         }
-        
-        .module-item {
-            background: #f8fafc;
-            padding: 15px 20px;
-            margin-bottom: 12px;
-            border-left: 4px solid #667eea;
-            font-size: 18px;
-            color: #374151;
+        .slide-5 .module-title {
+            font-size: 48px;
         }
-        
-        .guarantee-item {
-            background: #f0fdf4;
-            border: 3px solid #10b981;
-            padding: 20px;
-            margin-bottom: 15px;
-            border-radius: 8px;
+        .slide-6 .module-title {
+            font-size: 44px;
         }
-        
-        .guarantee-title {
-            font-size: 18px;
+        .slide-7 .module-title {
+            font-size: 42px;
+        }
+        .slide-8 .module-title {
+            font-size: 40px;
+        }
+        .slide-modulo .module-price {
+            font-size: 32px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 35px;
+        }
+        .slide-modulo .feature {
+            margin-bottom: 30px;
+        }
+        .slide-modulo .feature-title {
+            font-size: 24px;
             font-weight: 700;
             color: #111827;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        .slide-modulo .feature-desc {
+            font-size: 18px;
+            color: #4b5563;
+            line-height: 1.6;
         }
         
-        .guarantee-desc {
+        /* Módulo 1 mockup */
+        .slide-5 .chatbot-mockup {
+            background: #f8fafc;
+            border: 4px solid #667eea;
+            padding: 35px;
+            min-height: 480px;
+        }
+        .slide-5 .mockup-header {
+            font-size: 24px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 30px;
+            text-align: center;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        .slide-5 .message {
+            margin-bottom: 22px;
+        }
+        .slide-5 .msg-bot {
+            background: #e0e7ff;
+            padding: 16px 20px;
+            font-size: 17px;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+        .slide-5 .msg-user {
+            background: #667eea;
+            color: white;
+            padding: 16px 20px;
+            font-size: 17px;
+            margin-left: 50px;
+            margin-bottom: 8px;
+        }
+        
+        /* Módulo 2 mockup */
+        .slide-6 .mockup {
+            background: #f8fafc;
+            border: 4px solid #667eea;
+            padding: 35px;
+            min-height: 480px;
+        }
+        .slide-6 .mockup-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 28px;
+            text-align: center;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        .slide-6 .client-card {
+            background: #ffffff;
+            border: 2px solid #e5e7eb;
+            padding: 20px;
+            margin-bottom: 18px;
+        }
+        .slide-6 .client-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+        .slide-6 .client-info {
             font-size: 16px;
             color: #4b5563;
+            margin-bottom: 6px;
         }
-        
-        .maintenance {
-            background: #fef3c7;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 8px;
-            text-align: center;
-            font-size: 18px;
-            color: #92400e;
-            font-weight: 600;
-        }
-        
-        /* Next steps */
-        .option-box {
-            background: #f8fafc;
-            border: 3px solid #667eea;
-            padding: 35px;
-            margin-bottom: 30px;
-            border-radius: 8px;
-        }
-        
-        .option-label {
-            font-size: 18px;
-            color: #667eea;
+        .slide-6 .status-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            font-size: 14px;
             font-weight: 700;
-            margin-bottom: 10px;
-            text-transform: uppercase;
+            margin-top: 8px;
+        }
+        .slide-6 .status-high {
+            background: #10b981;
+            color: white;
+        }
+        .slide-6 .status-medium {
+            background: #f59e0b;
+            color: white;
         }
         
-        .option-days {
-            font-size: 48px;
+        /* Módulo 3 mockup */
+        .slide-7 .analyzer {
+            background: #f8fafc;
+            border: 4px solid #667eea;
+            padding: 35px;
+            min-height: 480px;
+        }
+        .slide-7 .mock-title {
+            font-size: 24px;
             font-weight: 700;
             color: #111827;
-            margin-bottom: 10px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .slide-7 .accuracy-badge {
+            background: #10b981;
+            color: white;
+            padding: 12px 24px;
+            font-size: 20px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .slide-7 table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        .slide-7 th {
+            background: #667eea;
+            color: white;
+            padding: 14px;
+            text-align: left;
+            font-size: 17px;
+            font-weight: 600;
+        }
+        .slide-7 td {
+            padding: 14px;
+            border-bottom: 2px solid #e5e7eb;
+            font-size: 17px;
+            color: #374151;
+        }
+        .slide-7 .badge {
+            padding: 6px 12px;
+            font-size: 14px;
+            font-weight: 700;
+            background: #10b981;
+            color: white;
         }
         
-        .option-price {
-            font-size: 28px;
+        /* Módulo 4 mockup */
+        .slide-8 .templates {
+            background: #f8fafc;
+            border: 4px solid #667eea;
+            padding: 35px;
+            min-height: 480px;
+        }
+        .slide-8 .mock-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .slide-8 .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #e0e7ff;
+        }
+        .slide-8 .stat-item {
+            text-align: center;
+        }
+        .slide-8 .stat-value {
+            font-size: 36px;
             font-weight: 700;
             color: #667eea;
-            margin-bottom: 15px;
+            margin-bottom: 6px;
+        }
+        .slide-8 .stat-label {
+            font-size: 15px;
+            color: #4b5563;
+            font-weight: 600;
+        }
+        .slide-8 .template-item {
+            background: #ffffff;
+            border: 2px solid #e5e7eb;
+            padding: 14px 18px;
+            margin-bottom: 12px;
+            font-size: 17px;
+            color: #374151;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .slide-8 .template-name {
+            font-weight: 600;
+        }
+        .slide-8 .ai-badge {
+            background: #667eea;
+            color: white;
+            padding: 4px 10px;
+            font-size: 13px;
+            font-weight: 700;
         }
         
-        .option-desc {
-            font-size: 17px;
+        /* Slide 9: Beneficios */
+        .slide-9 {
+            padding: 60px 90px;
+        }
+        .slide-9 .title {
+            font-size: 64px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 45px;
+            border-bottom: 5px solid #667eea;
+            padding-bottom: 18px;
+        }
+        .slide-9 .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            justify-content: space-evenly;
+        }
+        .slide-9 .benefit-box {
+            background: #f0fdf4;
+            border: 5px solid #10b981;
+            padding: 40px;
+        }
+        .slide-9 .benefit-number {
+            display: inline-block;
+            width: 55px;
+            height: 55px;
+            background: #10b981;
+            color: white;
+            text-align: center;
+            line-height: 55px;
+            font-weight: 700;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .slide-9 .benefit-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 14px;
+        }
+        .slide-9 .benefit-desc {
+            font-size: 20px;
             color: #4b5563;
             line-height: 1.5;
         }
         
-        .contact-box {
+        /* Slide 10: Pricing */
+        .slide-10 {
+            padding: 32px 90px;
+        }
+        .slide-10 .title {
+            font-size: 64px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 14px;
+            border-bottom: 5px solid #667eea;
+            padding-bottom: 10px;
+        }
+        .slide-10 .price-box {
+            background: #667eea;
+            color: white;
+            padding: 14px;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        .slide-10 .price-old {
+            font-size: 42px;
+            font-weight: 700;
+            text-decoration: line-through;
+            opacity: 0.7;
+            margin-bottom: 4px;
+            line-height: 1;
+        }
+        .slide-10 .price-amount {
+            font-size: 72px;
+            font-weight: 800;
+            margin-bottom: 4px;
+            line-height: 1;
+        }
+        .slide-10 .price-description {
+            font-size: 22px;
+            font-weight: 600;
+        }
+        .slide-10 .price-savings {
+            font-size: 20px;
+            margin-top: 5px;
+            background: #10b981;
+            padding: 6px 14px;
+            display: inline-block;
+            font-weight: 700;
+        }
+        .slide-10 .refund-guarantee {
+            background: #fef2f2;
+            border: 4px solid #ef4444;
+            padding: 12px;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+        .slide-10 .refund-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: #ef4444;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+        .slide-10 .refund-text {
+            font-size: 18px;
+            color: #991b1b;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        .slide-10 .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-bottom: 10px;
+        }
+        .slide-10 .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+        .slide-10 .module-item {
             background: #f8fafc;
-            padding: 35px;
-            border-radius: 8px;
+            padding: 8px 14px;
+            margin-bottom: 6px;
+            border: 2px solid #667eea;
+            font-size: 17px;
+            color: #374151;
+            display: flex;
+            justify-content: space-between;
+        }
+        .slide-10 .module-price {
+            font-weight: 700;
+            color: #667eea;
+        }
+        .slide-10 .guarantee-item {
+            background: #f0fdf4;
+            border: 3px solid #10b981;
+            padding: 9px;
+            margin-bottom: 6px;
+        }
+        .slide-10 .guarantee-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 2px;
+        }
+        .slide-10 .guarantee-desc {
+            font-size: 15px;
+            color: #4b5563;
+        }
+        .slide-10 .payment-structure {
+            background: #fef3c7;
+            padding: 12px;
+            margin-top: 8px;
+        }
+        .slide-10 .payment-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .slide-10 .payment-item {
+            font-size: 17px;
+            color: #92400e;
+            margin-bottom: 4px;
+            font-weight: 600;
         }
         
-        .contact-title {
-            font-size: 28px;
+        /* Slide 11: Próximos Pasos */
+        .slide-11 {
+            padding: 70px 90px;
+            display: flex;
+            gap: 60px;
+        }
+        .slide-11 .left {
+            flex: 1.2;
+        }
+        .slide-11 .right {
+            flex: 0.8;
+        }
+        .slide-11 .title {
+            font-size: 64px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 45px;
+            border-bottom: 5px solid #667eea;
+            padding-bottom: 20px;
+        }
+        .slide-11 .option-box {
+            background: #f8fafc;
+            border: 4px solid #667eea;
+            padding: 40px;
+            margin-bottom: 35px;
+        }
+        .slide-11 .option-box.express {
+            border-color: #10b981;
+            background: #f0fdf4;
+        }
+        .slide-11 .option-label {
+            font-size: 20px;
+            color: #667eea;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .slide-11 .option-label.express-label {
+            color: #10b981;
+        }
+        .slide-11 .option-days {
+            font-size: 56px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 12px;
+        }
+        .slide-11 .option-price {
+            font-size: 32px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        .slide-11 .option-price.express-price {
+            color: #10b981;
+        }
+        .slide-11 .option-desc {
+            font-size: 19px;
+            color: #4b5563;
+            line-height: 1.5;
+        }
+        .slide-11 .contact-box {
+            background: #f8fafc;
+            padding: 40px;
+            border: 2px solid #e5e7eb;
+            margin-top: 80px;
+        }
+        .slide-11 .contact-title {
+            font-size: 24px;
             font-weight: 700;
             color: #111827;
             margin-bottom: 25px;
         }
-        
-        .contact-item {
-            font-size: 17px;
-            color: #374151;
-            margin-bottom: 12px;
+        .slide-11 .contact-item {
+            font-size: 16px;
+            color: #4b5563;
+            margin-bottom: 10px;
             line-height: 1.6;
         }
-        
-        .contact-label {
-            font-weight: 700;
-            color: #111827;
+        .slide-11 .contact-label {
+            font-weight: 600;
+            color: #374151;
         }
         
-        /* Thank you slide */
-        .thanks-slide {
+        /* Slide 12: Gracias */
+        .slide-12 {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             display: flex;
             flex-direction: column;
@@ -633,465 +692,472 @@
             justify-content: center;
             text-align: center;
             color: white;
+            padding: 80px;
         }
-        
-        .thanks-title {
+        .slide-12 .thanks-title {
             font-size: 96px;
             font-weight: 800;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
-        
-        .thanks-text {
+        .slide-12 .thanks-text {
             font-size: 28px;
             font-weight: 400;
-            margin-bottom: 60px;
+            margin-bottom: 70px;
             opacity: 0.95;
-            max-width: 800px;
+            max-width: 900px;
             line-height: 1.6;
         }
-        
-        .thanks-brand {
+        .slide-12 .brand {
             background: white;
             color: #667eea;
-            padding: 30px 60px;
-            border-radius: 12px;
+            padding: 35px 70px;
             font-size: 42px;
             font-weight: 800;
         }
     </style>
 </head>
 <body>
-    <div class="slideshow-container">
-        <div class="slide-wrapper" id="slideWrapper">
-            <!-- Slide 1: Cover -->
-            <div class="slide active cover-slide">
-                <div class="cover-title">INTLAW AI</div>
-                <div class="cover-subtitle">Propuesta de Sistema Integral de Automatización Legal</div>
-                <div class="cover-tagline">Transformando la Práctica Jurídica con Inteligencia Artificial</div>
+    <!-- Slide 1: Cover -->
+    <div class="slide slide-1">
+        <div class="title">INTLAW AI</div>
+        <div class="subtitle">Propuesta de Sistema Integral de Automatización Legal</div>
+        <div class="tagline">Transformando la Práctica Jurídica con Inteligencia Artificial</div>
+    </div>
+    <div class="slide-separator"></div>
+    
+    <!-- Slide 2: Agenda -->
+    <div class="slide slide-2">
+        <h2 class="title">Agenda</h2>
+        <div class="agenda-list">
+            <div class="agenda-item">Desafíos Actuales</div>
+            <div class="agenda-item">Visión INTLAW AI</div>
+            <div class="agenda-item">4 Módulos de Solución</div>
+            <div class="agenda-item">Beneficios Clave</div>
+            <div class="agenda-item">Inversión y Garantías</div>
+            <div class="agenda-item">Próximos Pasos</div>
+        </div>
+    </div>
+    <div class="slide-separator"></div>
+    
+    <!-- Slide 3: Desafíos -->
+    <div class="slide slide-3">
+        <h2 class="title">Desafíos Actuales</h2>
+        <div class="pain-grid">
+            <div class="pain-card">
+                <div class="pain-number">1</div>
+                <div class="pain-title">Optimización del Tiempo</div>
+                <div class="pain-desc">Necesidad de aumentar eficiencia en tareas diarias</div>
             </div>
-
-            <!-- Slide 2: Agenda -->
-            <div class="slide">
-                <div class="slide-container">
-                    <h2 class="title">Agenda</h2>
-                    <div class="agenda-list">
-                        <div class="agenda-item">Desafíos Actuales</div>
-                        <div class="agenda-item">Visión INTLAW AI</div>
-                        <div class="agenda-item">4 Módulos de Solución</div>
-                        <div class="agenda-item">Beneficios Clave</div>
-                        <div class="agenda-item">Inversión y Garantías</div>
-                        <div class="agenda-item">Próximos Pasos</div>
-                    </div>
-                </div>
+            <div class="pain-card">
+                <div class="pain-number">2</div>
+                <div class="pain-title">Potencial de IA Limitado</div>
+                <div class="pain-desc">Falta comprensión del valor que IA puede generar</div>
             </div>
-
-            <!-- Slide 3: Desafíos -->
-            <div class="slide">
-                <div class="slide-container">
-                    <h2 class="title">Desafíos Actuales</h2>
-                    <div class="pain-grid">
-                        <div class="pain-card">
-                            <div class="pain-number">1</div>
-                            <div class="pain-title">Optimización del Tiempo</div>
-                            <div class="pain-desc">Necesidad de aumentar eficiencia en tareas diarias</div>
-                        </div>
-                        <div class="pain-card">
-                            <div class="pain-number">2</div>
-                            <div class="pain-title">Potencial de IA Limitado</div>
-                            <div class="pain-desc">Falta comprensión del valor que IA puede generar</div>
-                        </div>
-                        <div class="pain-card">
-                            <div class="pain-number">3</div>
-                            <div class="pain-title">Tareas Repetitivas</div>
-                            <div class="pain-desc">Dificultad para identificar procesos automatizables</div>
-                        </div>
-                        <div class="pain-card">
-                            <div class="pain-number">4</div>
-                            <div class="pain-title">Comunicación con Clientes</div>
-                            <div class="pain-desc">Proceso manual lento en consultas iniciales</div>
-                        </div>
-                        <div class="pain-card">
-                            <div class="pain-number">5</div>
-                            <div class="pain-title">Documentos Legales</div>
-                            <div class="pain-desc">Redacción manual consume tiempo valioso</div>
-                        </div>
-                        <div class="pain-card">
-                            <div class="pain-number">6</div>
-                            <div class="pain-title">Grandes Volúmenes</div>
-                            <div class="pain-desc">Herramientas actuales fallan con muchos documentos</div>
-                        </div>
-                    </div>
-                </div>
+            <div class="pain-card">
+                <div class="pain-number">3</div>
+                <div class="pain-title">Tareas Repetitivas</div>
+                <div class="pain-desc">Dificultad para identificar procesos automatizables</div>
             </div>
-
-            <!-- Slide 4: Vision -->
-            <div class="slide">
-                <div class="slide-container">
-                    <h2 class="title">Visión: INTLAW AI</h2>
-                    <div class="dashboard">
-                        <div class="dash-title">Dashboard Principal</div>
-                        <div class="metrics">
-                            <div class="metric">
-                                <div class="metric-value">85%</div>
-                                <div class="metric-label">TAREAS AUTOMATIZADAS</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">+30%</div>
-                                <div class="metric-label">ADQUISICIÓN CLIENTES</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">24/7</div>
-                                <div class="metric-label">SOPORTE CHATBOT</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="pain-card">
+                <div class="pain-number">4</div>
+                <div class="pain-title">Comunicación con Clientes</div>
+                <div class="pain-desc">Proceso manual lento en consultas iniciales</div>
             </div>
-
-            <!-- Slide 5: Module 1 - Chatbot -->
-            <div class="slide">
-                <div class="slide-container">
-                    <div class="module-layout">
-                        <div class="module-left">
-                            <h2 class="module-title">Módulo 1: Chatbot</h2>
-                            <div class="feature">
-                                <div class="feature-title">Disponibilidad 24/7</div>
-                                <div class="feature-desc">Responde consultas automáticamente</div>
-                            </div>
-                            <div class="feature">
-                                <div class="feature-title">Cualificación Automática</div>
-                                <div class="feature-desc">Recopila información de clientes potenciales</div>
-                            </div>
-                        </div>
-                        <div class="module-right">
-                            <div class="chatbot">
-                                <div class="mock-title">INTLAW AI - Asistente</div>
-                                <div class="message">
-                                    <div class="msg-bot">¿En qué puedo ayudarte?</div>
-                                </div>
-                                <div class="message">
-                                    <div class="msg-user">Necesito información sobre herencias</div>
-                                </div>
-                                <div class="message">
-                                    <div class="msg-bot">Nuestro equipo especializado puede ayudarte. Proporciona tu email para contactarte.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="pain-card">
+                <div class="pain-number">5</div>
+                <div class="pain-title">Documentos Legales</div>
+                <div class="pain-desc">Redacción manual consume tiempo valioso</div>
             </div>
-
-            <!-- Slide 6: Module 2 - Documents -->
-            <div class="slide">
-                <div class="slide-container">
-                    <div class="module-layout">
-                        <div class="module-left">
-                            <h2 class="module-title">Módulo 2: Documentos</h2>
-                            <div class="feature">
-                                <div class="feature-title">Redacción Automática</div>
-                                <div class="feature-desc">Genera actas y contratos en segundos</div>
-                            </div>
-                            <div class="feature">
-                                <div class="feature-title">Plantillas Inteligentes</div>
-                                <div class="feature-desc">Se adaptan según tipo de documento</div>
-                            </div>
-                        </div>
-                        <div class="module-right">
-                            <div class="generator">
-                                <div class="mock-title">Generador de Documentos</div>
-                                <div class="form-group">
-                                    <label class="label">Tipo de Documento:</label>
-                                    <input class="input" value="Acta de Junta" readonly>
-                                </div>
-                                <div class="form-group">
-                                    <label class="label">Fecha:</label>
-                                    <input class="input" value="16/10/2025" readonly>
-                                </div>
-                                <button class="button">Generar Documento</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 7: Module 3 - Analyzer -->
-            <div class="slide">
-                <div class="slide-container">
-                    <div class="module-layout">
-                        <div class="module-left">
-                            <h2 class="module-title">Módulo 3: Analizador</h2>
-                            <div class="feature">
-                                <div class="feature-title">Procesamiento Masivo</div>
-                                <div class="feature-desc">Analiza miles de documentos rápidamente</div>
-                            </div>
-                            <div class="feature">
-                                <div class="feature-title">Extracción Inteligente</div>
-                                <div class="feature-desc">Identifica información específica automáticamente</div>
-                            </div>
-                        </div>
-                        <div class="module-right">
-                            <div class="analyzer">
-                                <div class="mock-title">Análisis en Progreso</div>
-                                <div class="progress">Documentos: 1875/2500 (75%)</div>
-                                <div class="progress-bar"><div class="progress-fill"></div></div>
-                                <table>
-                                    <tr>
-                                        <th>Tipo</th>
-                                        <th>Hallazgos</th>
-                                        <th>Estado</th>
-                                    </tr>
-                                    <tr>
-                                        <td>Cláusulas Fuerza Mayor</td>
-                                        <td>12</td>
-                                        <td><span class="badge badge-complete">COMPLETADO</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Fechas Vencimiento</td>
-                                        <td>35</td>
-                                        <td><span class="badge badge-complete">COMPLETADO</span></td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 8: Module 4 - Acquisition -->
-            <div class="slide">
-                <div class="slide-container">
-                    <div class="module-layout">
-                        <div class="module-left">
-                            <h2 class="module-title">Módulo 4: Adquisición</h2>
-                            <div class="feature">
-                                <div class="feature-title">Segmentación Inteligente</div>
-                                <div class="feature-desc">Identifica nichos de alto valor</div>
-                            </div>
-                            <div class="feature">
-                                <div class="feature-title">Análisis de Mercado</div>
-                                <div class="feature-desc">Campañas dirigidas efectivas</div>
-                            </div>
-                        </div>
-                        <div class="module-right">
-                            <div class="acquisition">
-                                <div class="mock-title">Oportunidades Identificadas</div>
-                                <table>
-                                    <tr>
-                                        <th>Nicho</th>
-                                        <th>Leads</th>
-                                        <th>Estado</th>
-                                    </tr>
-                                    <tr>
-                                        <td>Startups Tech</td>
-                                        <td>+250</td>
-                                        <td><span class="badge badge-active">ACTIVO</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Inmobiliarias</td>
-                                        <td>+180</td>
-                                        <td><span class="badge badge-active">ACTIVO</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>E-commerce</td>
-                                        <td>+320</td>
-                                        <td><span class="badge badge-active">ACTIVO</span></td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 9: Benefits -->
-            <div class="slide">
-                <div class="slide-container">
-                    <h2 class="title">Beneficios Clave</h2>
-                    <div class="benefits-grid">
-                        <div class="benefit-box">
-                            <div class="benefit-number">1</div>
-                            <div class="benefit-title">Eficiencia Operativa</div>
-                            <div class="benefit-desc">Reducción 60% tiempo en tareas repetitivas</div>
-                        </div>
-                        <div class="benefit-box">
-                            <div class="benefit-number">2</div>
-                            <div class="benefit-title">Escalabilidad</div>
-                            <div class="benefit-desc">Atiende más clientes sin aumentar personal</div>
-                        </div>
-                        <div class="benefit-box">
-                            <div class="benefit-number">3</div>
-                            <div class="benefit-title">Calidad Consistente</div>
-                            <div class="benefit-desc">Documentos sin errores humanos</div>
-                        </div>
-                        <div class="benefit-box">
-                            <div class="benefit-number">4</div>
-                            <div class="benefit-title">Ventaja Competitiva</div>
-                            <div class="benefit-desc">Tecnología de vanguardia en el sector</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 10: Pricing -->
-            <div class="slide">
-                <div class="slide-container" style="padding: 50px 90px;">
-                    <h2 class="title">Inversión</h2>
-                    <div class="price-box">
-                        <div class="price-amount">€45,000</div>
-                        <div class="price-description">Implementación Completa - 4 Módulos</div>
-                    </div>
-                    <div class="content-grid">
-                        <div>
-                            <div class="section-title">Módulos Incluidos:</div>
-                            <div class="module-item">✓ Asistente de Comunicación (Chatbot)</div>
-                            <div class="module-item">✓ Generador de Documentos</div>
-                            <div class="module-item">✓ Analizador de Documentos Masivos</div>
-                            <div class="module-item">✓ Estrategias de Adquisición</div>
-                        </div>
-                        <div>
-                            <div class="section-title">Garantías:</div>
-                            <div class="guarantee-item">
-                                <div class="guarantee-title">Reembolso Total</div>
-                                <div class="guarantee-desc">Si no funciona según lo acordado</div>
-                            </div>
-                            <div class="guarantee-item">
-                                <div class="guarantee-title">12 Meses Soporte</div>
-                                <div class="guarantee-desc">Corrección de errores sin costo</div>
-                            </div>
-                            <div class="guarantee-item">
-                                <div class="guarantee-title">Precio Prioritario</div>
-                                <div class="guarantee-desc">Tarifas preferenciales para nuevas funcionalidades</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="maintenance">Mantenimiento Post-Garantía: €6,750/año (15% anual)</div>
-                </div>
-            </div>
-
-            <!-- Slide 11: Next Steps -->
-            <div class="slide">
-                <div class="slide-container">
-                    <div class="module-layout">
-                        <div class="module-left">
-                            <h2 class="title" style="margin-bottom: 40px;">Próximos Pasos</h2>
-                            <div class="option-box">
-                                <div class="option-label">Implementación Estándar</div>
-                                <div class="option-days">80 Días</div>
-                                <div class="option-price">Incluido en €45,000</div>
-                                <div class="option-desc">Tiempo óptimo para personalización y capacitación</div>
-                            </div>
-                            <div class="option-box" style="border-color: #10b981; background: #f0fdf4;">
-                                <div class="option-label" style="color: #10b981;">Pack Express</div>
-                                <div class="option-days">40 Días</div>
-                                <div class="option-price" style="color: #10b981;">+€4,000</div>
-                                <div class="option-desc">Equipo dedicado con prioridad máxima</div>
-                            </div>
-                        </div>
-                        <div class="module-right">
-                            <div class="contact-box">
-                                <div class="contact-title">Información de Contacto</div>
-                                <div class="contact-item"><span class="contact-label">Email:</span> sami@agentsai.ltd</div>
-                                <div class="contact-item"><span class="contact-label">Empresa:</span> AGENTS AI Limited</div>
-                                <div class="contact-item">27 Old Gloucester Street<br>London WC1N 3AX<br>United Kingdom</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 12: Thank You -->
-            <div class="slide thanks-slide">
-                <div class="thanks-title">¡Gracias!</div>
-                <div class="thanks-text">Esperamos colaborar en la transformación digital de INTLAW y potenciar su práctica legal con inteligencia artificial.</div>
-                <div class="thanks-brand">INTLAW AI</div>
+            <div class="pain-card">
+                <div class="pain-number">6</div>
+                <div class="pain-title">Grandes Volúmenes</div>
+                <div class="pain-desc">Herramientas actuales fallan con muchos documentos</div>
             </div>
         </div>
     </div>
+    <div class="slide-separator"></div>
     
-    <button id="prevBtn" class="nav-arrow prev" aria-label="Previous slide">‹</button>
-    <button id="nextBtn" class="nav-arrow next" aria-label="Next slide">›</button>
-
-    <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const slideWrapper = document.getElementById('slideWrapper');
-        
-        function scaleSlides() {
-            const viewportWidth = window.innerWidth;
-            const viewportHeight = window.innerHeight;
-            const slideWidth = 1280;
-            const slideHeight = 720;
+    <!-- Slide 4: Vision -->
+    <div class="slide slide-4">
+        <h2 class="title">Visión: INTLAW AI</h2>
+        <div class="dashboard">
+            <div class="dash-title">Dashboard Principal</div>
+            <div class="metrics">
+                <div class="metric">
+                    <div class="metric-value">85%</div>
+                    <div class="metric-label">Tareas Automatizadas</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">+30%</div>
+                    <div class="metric-label">Adquisición Clientes</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">24/7</div>
+                    <div class="metric-label">Soporte Chatbot</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-separator"></div>
+    
+    <!-- Slide 5: Módulo 1 -->
+    <div class="slide slide-5 slide-modulo">
+        <div class="left-column">
+            <h2 class="module-title">Módulo 1: IA en Web</h2>
+            <div class="module-price">€15,000</div>
             
-            const scaleX = viewportWidth / slideWidth;
-            const scaleY = viewportHeight / slideHeight;
-            const scale = Math.min(scaleX, scaleY);
+            <div class="feature">
+                <div class="feature-title">Chatbot 24/7</div>
+                <div class="feature-desc">Atención automatizada en cualquier momento del día</div>
+            </div>
             
-            slides.forEach(slide => {
-                slide.style.transform = `scale(${scale})`;
-            });
-        }
-        
-        function updateSlide() {
-            slides.forEach((slide, index) => {
-                slide.classList.toggle('active', index === currentSlide);
-            });
-            prevBtn.disabled = currentSlide === 0;
-            nextBtn.disabled = currentSlide === slides.length - 1;
-        }
-        
-        prevBtn.addEventListener('click', () => {
-            if (currentSlide > 0) {
-                currentSlide--;
-                updateSlide();
-            }
-        });
-        
-        nextBtn.addEventListener('click', () => {
-            if (currentSlide < slides.length - 1) {
-                currentSlide++;
-                updateSlide();
-            }
-        });
-        
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft' && currentSlide > 0) {
-                currentSlide--;
-                updateSlide();
-            } else if (e.key === 'ArrowRight' && currentSlide < slides.length - 1) {
-                currentSlide++;
-                updateSlide();
-            }
-        });
-        
-        let touchStartX = 0;
-        let touchEndX = 0;
-        
-        document.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
-        
-        document.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            const swipeThreshold = 50;
-            const diff = touchStartX - touchEndX;
+            <div class="feature">
+                <div class="feature-title">Lead Gathering Automático</div>
+                <div class="feature-desc">Captura y cualifica clientes potenciales automáticamente</div>
+            </div>
             
-            if (Math.abs(diff) > swipeThreshold) {
-                if (diff > 0 && currentSlide < slides.length - 1) {
-                    currentSlide++;
-                    updateSlide();
-                } else if (diff < 0 && currentSlide > 0) {
-                    currentSlide--;
-                    updateSlide();
-                }
-            }
-        }, { passive: true });
+            <div class="feature">
+                <div class="feature-title">Implementaciones IA Adicionales</div>
+                <div class="feature-desc">Otras funcionalidades inteligentes integradas en la web</div>
+            </div>
+        </div>
+        <div class="right-column">
+            <div class="chatbot-mockup">
+                <div class="mockup-header">INTLAW AI - Asistente Web</div>
+                <div class="message">
+                    <div class="msg-bot">¡Hola! ¿En qué área legal necesitas ayuda?</div>
+                </div>
+                <div class="message">
+                    <div class="msg-user">Derecho mercantil</div>
+                </div>
+                <div class="message">
+                    <div class="msg-bot">Perfecto. ¿Podrías indicarme tu email y teléfono para que un especialista te contacte?</div>
+                </div>
+                <div class="message">
+                    <div class="msg-user">cliente@empresa.com / 600123456</div>
+                </div>
+                <div class="message">
+                    <div class="msg-bot">Gracias. Un abogado especializado te contactará en menos de 24 horas.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-separator"></div>
+    
+    <!-- Slide 6: Módulo 2 -->
+    <div class="slide slide-6 slide-modulo">
+        <div class="left-column">
+            <h2 class="module-title">Módulo 2: Filtrado y Auto-Chatting</h2>
+            <div class="module-price">€15,000</div>
+            
+            <div class="feature">
+                <div class="feature-title">Filtrado Inicial Automático</div>
+                <div class="feature-desc">Clasifica clientes potenciales según criterios predefinidos</div>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-title">Conversación Automatizada</div>
+                <div class="feature-desc">Interacción inteligente para recopilar información clave</div>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-title">Cualificación de Leads</div>
+                <div class="feature-desc">Prioriza contactos según potencial de negocio</div>
+            </div>
+        </div>
         
-        scaleSlides();
-        updateSlide();
-        window.addEventListener('resize', scaleSlides);
-    </script>
+        <div class="right-column">
+            <div class="mockup">
+                <div class="mockup-title">Sistema de Cualificación</div>
+                
+                <div class="client-card">
+                    <div class="client-name">Empresa Tech SL</div>
+                    <div class="client-info">Área: Derecho Mercantil</div>
+                    <div class="client-info">Presupuesto: €10,000+</div>
+                    <div class="client-info">Urgencia: Alta</div>
+                    <span class="status-badge status-high">PRIORIDAD ALTA</span>
+                </div>
+                
+                <div class="client-card">
+                    <div class="client-name">Juan Pérez</div>
+                    <div class="client-info">Área: Derecho Laboral</div>
+                    <div class="client-info">Presupuesto: €2,000-5,000</div>
+                    <div class="client-info">Urgencia: Media</div>
+                    <span class="status-badge status-medium">PRIORIDAD MEDIA</span>
+                </div>
+                
+                <div class="client-card">
+                    <div class="client-name">Startup Innovación</div>
+                    <div class="client-info">Área: Propiedad Intelectual</div>
+                    <div class="client-info">Presupuesto: €15,000+</div>
+                    <div class="client-info">Urgencia: Alta</div>
+                    <span class="status-badge status-high">PRIORIDAD ALTA</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-separator"></div>
+    
+    <!-- Slide 7: Módulo 3 -->
+    <div class="slide slide-7 slide-modulo">
+        <div class="left">
+            <h2 class="module-title">Módulo 3: Agente Interno Documentos</h2>
+            <div class="module-price">€15,000</div>
+            
+            <div class="feature">
+                <div class="feature-title">0% Alucinaciones</div>
+                <div class="feature-desc">Precisión absoluta en análisis y respuestas</div>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-title">Gestión Masiva Local</div>
+                <div class="feature-desc">Procesa miles de documentos legales localmente</div>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-title">Cálculos y Tratamiento</div>
+                <div class="feature-desc">Analiza, calcula y gestiona información compleja</div>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-title">Sin Imprecisiones</div>
+                <div class="feature-desc">Resultados verificables y exactos</div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="analyzer">
+                <div class="mock-title">Agente Interno INTLAW</div>
+                <div class="accuracy-badge">PRECISIÓN: 100% - 0% ALUCINACIONES</div>
+                
+                <table>
+                    <tr>
+                        <th>Operación</th>
+                        <th>Documentos</th>
+                        <th>Estado</th>
+                    </tr>
+                    <tr>
+                        <td>Análisis Contratos</td>
+                        <td>2,450</td>
+                        <td><span class="badge">VERIFICADO</span></td>
+                    </tr>
+                    <tr>
+                        <td>Cálculo Plazos</td>
+                        <td>1,820</td>
+                        <td><span class="badge">VERIFICADO</span></td>
+                    </tr>
+                    <tr>
+                        <td>Extracción Cláusulas</td>
+                        <td>3,100</td>
+                        <td><span class="badge">VERIFICADO</span></td>
+                    </tr>
+                    <tr>
+                        <td>Gestión Expedientes</td>
+                        <td>890</td>
+                        <td><span class="badge">VERIFICADO</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="slide-separator"></div>
+    
+    <!-- Slide 8: Módulo 4 -->
+    <div class="slide slide-8 slide-modulo">
+        <div class="left">
+            <h2 class="module-title">Módulo 4: Generación Documentos Legales</h2>
+            <div class="module-price">€15,000</div>
+            
+            <div class="feature">
+                <div class="feature-title">20 Plantillas Iniciales</div>
+                <div class="feature-desc">Configuración de plantillas para casos más comunes</div>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-title">Plantillas Ilimitadas</div>
+                <div class="feature-desc">Añade todas las plantillas que necesites</div>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-title">Personalización IA</div>
+                <div class="feature-desc">Adapta cada documento a las particularidades del caso</div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="templates">
+                <div class="mock-title">Biblioteca de Plantillas</div>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-value">20</div>
+                        <div class="stat-label">INICIALES</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">∞</div>
+                        <div class="stat-label">ILIMITADAS</div>
+                    </div>
+                </div>
+                
+                <div class="template-item">
+                    <span class="template-name">Contrato Mercantil</span>
+                    <span class="ai-badge">IA PERSONALIZABLE</span>
+                </div>
+                <div class="template-item">
+                    <span class="template-name">Acta Junta Directiva</span>
+                    <span class="ai-badge">IA PERSONALIZABLE</span>
+                </div>
+                <div class="template-item">
+                    <span class="template-name">Contrato Laboral</span>
+                    <span class="ai-badge">IA PERSONALIZABLE</span>
+                </div>
+                <div class="template-item">
+                    <span class="template-name">Escritura Constitución</span>
+                    <span class="ai-badge">IA PERSONALIZABLE</span>
+                </div>
+                <div class="template-item">
+                    <span class="template-name">Poder Notarial</span>
+                    <span class="ai-badge">IA PERSONALIZABLE</span>
+                </div>
+                <div class="template-item">
+                    <span class="template-name">+ 15 plantillas más...</span>
+                    <span class="ai-badge">IA PERSONALIZABLE</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-separator"></div>
+    
+    <!-- Slide 9: Beneficios -->
+    <div class="slide slide-9">
+        <h2 class="title">Beneficios Clave</h2>
+        <div class="benefits-grid">
+            <div class="benefit-box">
+                <div class="benefit-number">1</div>
+                <div class="benefit-title">Eficiencia Operativa</div>
+                <div class="benefit-desc">Reducción del 60% del tiempo en tareas repetitivas</div>
+            </div>
+            <div class="benefit-box">
+                <div class="benefit-number">2</div>
+                <div class="benefit-title">Escalabilidad</div>
+                <div class="benefit-desc">Atiende más clientes sin necesidad de aumentar personal</div>
+            </div>
+            <div class="benefit-box">
+                <div class="benefit-number">3</div>
+                <div class="benefit-title">Calidad Consistente</div>
+                <div class="benefit-desc">Documentos sin errores humanos y cumplimiento normativo</div>
+            </div>
+            <div class="benefit-box">
+                <div class="benefit-number">4</div>
+                <div class="benefit-title">Ventaja Competitiva</div>
+                <div class="benefit-desc">Tecnología de vanguardia en el sector legal</div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-separator"></div>
+    
+    <!-- Slide 10: Pricing -->
+    <div class="slide slide-10">
+        <h2 class="title">Inversión</h2>
+        
+        <div class="price-box">
+            <div class="price-old">€60,000</div>
+            <div class="price-amount">€45,000</div>
+            <div class="price-description">Paquete Completo - 4 Módulos</div>
+            <div class="price-savings">AHORRO DE €15,000</div>
+        </div>
+        
+        <div class="refund-guarantee">
+            <div class="refund-title">⚠️ Garantía de Reembolso Total ⚠️</div>
+            <div class="refund-text">Cualquier alucinación, error o funcionalidad que no trabaje como debe será corregida inmediatamente o REEMBOLSO COMPLETO garantizado</div>
+        </div>
+        
+        <div class="content-grid">
+            <div>
+                <div class="section-title">Módulos Incluidos:</div>
+                <div class="module-item">
+                    <span>✓ Implementación IA en Web</span>
+                    <span class="module-price">€15,000</span>
+                </div>
+                <div class="module-item">
+                    <span>✓ Filtrado y Auto-Chatting</span>
+                    <span class="module-price">€15,000</span>
+                </div>
+                <div class="module-item">
+                    <span>✓ Agente Interno Documentos</span>
+                    <span class="module-price">€15,000</span>
+                </div>
+                <div class="module-item">
+                    <span>✓ Generación Documentos Legales</span>
+                    <span class="module-price">€15,000</span>
+                </div>
+            </div>
+            
+            <div>
+                <div class="section-title">Garantías Adicionales:</div>
+                <div class="guarantee-item">
+                    <div class="guarantee-title">12 Meses Soporte</div>
+                    <div class="guarantee-desc">Corrección de errores sin costo</div>
+                </div>
+                <div class="guarantee-item">
+                    <div class="guarantee-title">Precio Prioritario</div>
+                    <div class="guarantee-desc">Tarifas preferenciales para nuevas funcionalidades</div>
+                </div>
+                <div class="guarantee-item">
+                    <div class="guarantee-title">0% Alucinaciones</div>
+                    <div class="guarantee-desc">Precisión absoluta garantizada</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="payment-structure">
+            <div class="payment-title">Estructura de Pago</div>
+            <div class="payment-item">• 40% inicial (€18,000) - Al firmar contrato</div>
+            <div class="payment-item">• 30% al despliegue (€13,500) - Cuando todo funcione correctamente</div>
+            <div class="payment-item">• 30% final (€13,500) - Tres meses después del despliegue</div>
+        </div>
+    </div>
+    <div class="slide-separator"></div>
+    
+    <!-- Slide 11: Próximos Pasos -->
+    <div class="slide slide-11">
+        <div class="left">
+            <h2 class="title">Próximos Pasos</h2>
+            
+            <div class="option-box">
+                <div class="option-label">Implementación Estándar</div>
+                <div class="option-days">80 Días</div>
+                <div class="option-price">Incluido en €45,000</div>
+                <div class="option-desc">Tiempo óptimo para personalización y capacitación</div>
+            </div>
+            
+            <div class="option-box express">
+                <div class="option-label express-label">Pack Express</div>
+                <div class="option-days">40 Días</div>
+                <div class="option-price express-price">+€4,000</div>
+                <div class="option-desc">Equipo dedicado con prioridad máxima</div>
+            </div>
+        </div>
+        
+        <div class="right">
+            <div class="contact-box">
+                <div class="contact-title">Información de Contacto</div>
+                <div class="contact-item"><span class="contact-label">Email:</span> sami@agentsai.ltd</div>
+                <div class="contact-item"><span class="contact-label">Empresa:</span> AGENTS AI Limited</div>
+                <div class="contact-item" style="margin-top: 15px;">
+                    27 Old Gloucester Street<br>
+                    London WC1N 3AX<br>
+                    United Kingdom
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-separator"></div>
+    
+    <!-- Slide 12: Gracias -->
+    <div class="slide slide-12">
+        <div class="thanks-title">¡Gracias!</div>
+        <div class="thanks-text">Esperamos colaborar en la transformación digital de INTLAW y potenciar su práctica legal con inteligencia artificial.</div>
+        <div class="brand">INTLAW AI</div>
+    </div>
 </body>
 </html>
 
