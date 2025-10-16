@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>INTLAW AI - Presentación</title>
     <style>
         * {
@@ -11,9 +11,11 @@
             box-sizing: border-box;
         }
         
-        body {
-            background: #000000;
+        html, body {
+            width: 100%;
+            height: 100%;
             overflow: hidden;
+            background: #000000;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
         
@@ -39,13 +41,19 @@
         }
         
         .slide-frame {
-            width: 100%;
-            height: 100%;
-            max-width: 177.78vh; /* 16:9 ratio: height * 16/9 */
-            max-height: 56.25vw; /* 16:9 ratio: width * 9/16 */
             border: none;
             display: block;
             background: white;
+            /* Fixed 16:9 aspect ratio */
+            width: 177.78vh; /* 16:9 ratio based on height */
+            height: 100vh;
+            max-width: 100vw;
+            max-height: 56.25vw; /* 16:9 ratio based on width */
+        }
+        
+        /* Scale the iframe content to fit */
+        .slide-frame {
+            transform-origin: center center;
         }
         
         .nav-arrow {
@@ -65,11 +73,16 @@
             align-items: center;
             justify-content: center;
             user-select: none;
+            border-radius: 8px;
         }
         
         .nav-arrow:hover {
             background: rgba(255, 255, 255, 0.2);
             color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .nav-arrow:active {
+            background: rgba(255, 255, 255, 0.3);
         }
         
         .nav-arrow:disabled {
@@ -87,17 +100,33 @@
         
         @media (max-width: 768px) {
             .nav-arrow {
-                width: 50px;
-                height: 50px;
-                font-size: 36px;
+                width: 44px;
+                height: 44px;
+                font-size: 32px;
             }
             
             .nav-arrow.prev {
-                left: 10px;
+                left: 8px;
             }
             
             .nav-arrow.next {
-                right: 10px;
+                right: 8px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .nav-arrow {
+                width: 40px;
+                height: 40px;
+                font-size: 28px;
+            }
+            
+            .nav-arrow.prev {
+                left: 5px;
+            }
+            
+            .nav-arrow.next {
+                right: 5px;
             }
         }
     </style>
@@ -105,7 +134,7 @@
 <body>
     <div class="slideshow-container">
         <div class="slide-wrapper">
-            <iframe id="slideFrame" class="slide-frame" src="cover.html"></iframe>
+            <iframe id="slideFrame" class="slide-frame" src="cover.html" scrolling="no"></iframe>
         </div>
     </div>
     
@@ -132,6 +161,31 @@
         const slideFrame = document.getElementById('slideFrame');
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
+        
+        // Scale iframe content to fit
+        function scaleSlide() {
+            const slideWidth = 1280;
+            const slideHeight = 720;
+            const aspectRatio = slideWidth / slideHeight;
+            
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+            const viewportAspectRatio = viewportWidth / viewportHeight;
+            
+            let scale;
+            if (viewportAspectRatio > aspectRatio) {
+                // Viewport is wider, scale based on height
+                scale = viewportHeight / slideHeight;
+            } else {
+                // Viewport is taller, scale based on width
+                scale = viewportWidth / slideWidth;
+            }
+            
+            // Apply scaling via CSS transform
+            slideFrame.style.width = slideWidth + 'px';
+            slideFrame.style.height = slideHeight + 'px';
+            slideFrame.style.transform = `scale(${scale})`;
+        }
         
         function updateSlide() {
             slideFrame.src = slides[currentSlide];
@@ -178,16 +232,21 @@
         });
         
         function handleSwipe() {
-            if (touchEndX < touchStartX - 50 && currentSlide < slides.length - 1) {
+            const swipeThreshold = 50;
+            if (touchEndX < touchStartX - swipeThreshold && currentSlide < slides.length - 1) {
                 currentSlide++;
                 updateSlide();
             }
-            if (touchEndX > touchStartX + 50 && currentSlide > 0) {
+            if (touchEndX > touchStartX + swipeThreshold && currentSlide > 0) {
                 currentSlide--;
                 updateSlide();
             }
         }
         
+        // Initialize
+        window.addEventListener('resize', scaleSlide);
+        window.addEventListener('load', scaleSlide);
+        scaleSlide();
         updateSlide();
     </script>
 </body>
