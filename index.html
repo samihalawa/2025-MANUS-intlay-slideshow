@@ -3,37 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INTLAW AI - Propuesta Completa</title>
+    <title>INTLAW AI - Presentación Completa</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: #E8E8E8;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
-        }
+        body { margin: 0; padding: 0; background: #000; }
         .slide-wrapper {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 40px 0;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 40px;
+            isolation: isolate;
+            z-index: 1;
         }
-        .slide-content {
-            width: 1280px;
-            min-height: 720px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        .slide-wrapper:last-child { margin-bottom: 0; }
+
+        /* Ensure all slide containers are positioned and isolated */
+        .slide-container {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
         }
-        .slide-separator {
-            height: 60px;
-            background: #E8E8E8;
+
+        /* Ensure browser mockups and website content are properly contained */
+        .browser-mockup, .website-content {
+            position: relative;
+            overflow: hidden;
         }
     </style>
 </head>
 <body>
-<div class="slide-wrapper" id="slide-1">
-<div class="slide-content">
-<div class="slide-container">
+
+<div class="slide-wrapper slide-1" id="slide-1">
+    
+    <style>
+        .slide-1 { 
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #FAFAFA;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px;
+            position: relative;
+        }
+        
+        /* Subtle decorative line */
+        .accent-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #FF8A65;
+        }
+        
+        .content {
+            text-align: center;
+            max-width: 900px;
+        }
+        
+        .logo-icon {
+            font-size: 72px;
+            margin-bottom: 40px;
+        }
+        
+        .main-title {
+            font-size: 88px;
+            font-weight: 900;
+            color: #2D2D2D;
+            margin-bottom: 30px;
+            letter-spacing: -2px;
+            line-height: 1;
+        }
+        .title-accent {
+            color: #FF8A65;
+        }
+        
+        .subtitle {
+            font-size: 32px;
+            font-weight: 600;
+            color: #666666;
+            margin-bottom: 50px;
+            line-height: 1.5;
+        }
+        
+        .tagline {
+            font-size: 18px;
+            color: #999999;
+            margin-bottom: 60px;
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        .cta-box {
+            background: #FFFFFF;
+            border: 2px solid #FF8A65;
+            border-radius: 8px;
+            padding: 24px 50px;
+            display: inline-block;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .cta-text {
+            font-size: 16px;
+            color: #FF8A65;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        
+        .footer-info {
+            position: absolute;
+            bottom: 40px;
+            font-size: 12px;
+            color: #999999;
+            font-style: italic;
+        }
+     }
+    </style>
+    
+    <div class="slide-container">
         <div class="accent-line"></div>
         
         <div class="content">
@@ -51,12 +144,74 @@
         
         <div class="footer-info">AGENTS AI Limited · 2025</div>
     </div>
+
 </div>
-</div>
-<div class="slide-separator"></div>
-<div class="slide-wrapper" id="slide-2">
-<div class="slide-content">
-<div class="slide-container">
+
+<div class="slide-wrapper slide-2" id="slide-2">
+    
+    <style>
+        .slide-2 { 
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #FAFAFA;
+            padding: 45px 100px;
+        }
+        .title {
+            font-size: 68px;
+            font-weight: 800;
+            background: #FF8A65;
+            
+            
+            
+            margin-bottom: 35px;
+        }
+        .agenda-list {
+            display: grid;
+            gap: 20px;
+        }
+        .agenda-item {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            background: white;
+            padding: 18px 35px;
+            border-radius: 18px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        .agenda-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 15px 40px rgba(102,126,234,0.2);
+        }
+        .item-number {
+            width: 45px;
+            height: 45px;
+            background: #FF8A65;
+            color: #2D2D2D;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 800;
+            flex-shrink: 0;
+            box-shadow: 0 6px 20px rgba(102,126,234,0.4);
+        }
+        .item-text {
+            font-size: 34px;
+            font-weight: 700;
+            color: #111827;
+        }
+     }
+    </style>
+    
+    <div class="slide-container">
         <h2 class="title">Agenda</h2>
         <div class="agenda-list">
             <div class="agenda-item">
@@ -85,12 +240,79 @@
             </div>
         </div>
     </div>
+
 </div>
-</div>
-<div class="slide-separator"></div>
-<div class="slide-wrapper" id="slide-3">
-<div class="slide-content">
-<div class="slide-container">
+
+<div class="slide-wrapper slide-3" id="slide-3">
+    
+    <style>
+        .slide-3 { 
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #FAFAFA;
+            padding: 45px 80px;
+        }
+        .title {
+            font-size: 64px;
+            font-weight: 800;
+            background: #FF8A65;
+            
+            
+            
+            margin-bottom: 35px;
+        }
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+        .pain-card {
+            background: white;
+            border-left: 5px solid #FF8A65;
+            padding: 22px 28px;
+            border-radius: 14px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        .pain-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(102,126,234,0.15);
+        }
+        .pain-number {
+            display: inline-block;
+            width: 42px;
+            height: 42px;
+            background: #FF8A65;
+            color: #2D2D2D;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 42px;
+            font-weight: 800;
+            font-size: 22px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(102,126,234,0.3);
+        }
+        .pain-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+        .pain-desc {
+            font-size: 19px;
+            color: #666666;
+            line-height: 1.4;
+        }
+     }
+    </style>
+    
+    <div class="slide-container">
         <h2 class="title">Desafíos Actuales</h2>
         <div class="pain-grid">
             <div class="pain-card">
@@ -125,12 +347,70 @@
             </div>
         </div>
     </div>
+
 </div>
-</div>
-<div class="slide-separator"></div>
-<div class="slide-wrapper" id="slide-4">
-<div class="slide-content">
-<div class="slide-container">
+
+<div class="slide-wrapper slide-4" id="slide-4">
+    
+    <style>
+        .slide-4 { 
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #ffffff;
+            padding: 70px 90px;
+        }
+        .title {
+            font-size: 64px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 50px;
+            border-bottom: 5px solid #FF8A65;
+            padding-bottom: 20px;
+        }
+        .dashboard {
+            background: #f8fafc;
+            border: 4px solid #FF8A65;
+            padding: 60px;
+            margin-top: 40px;
+        }
+        .dash-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+        }
+        .metric {
+            text-align: center;
+        }
+        .metric-value {
+            font-size: 72px;
+            font-weight: 700;
+            color: #FF8A65;
+            margin-bottom: 15px;
+        }
+        .metric-label {
+            font-size: 22px;
+            color: #4b5563;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+     }
+    </style>
+    
+    <div class="slide-container">
         <h2 class="title">Visión: INTLAW AI</h2>
         <div class="dashboard">
             <div class="dash-title">Dashboard Principal</div>
@@ -150,12 +430,203 @@
             </div>
         </div>
     </div>
+
 </div>
-</div>
-<div class="slide-separator"></div>
-<div class="slide-wrapper" id="slide-5">
-<div class="slide-content">
-<div class="slide-container">
+
+<div class="slide-wrapper slide-5" id="slide-5">
+    
+    <style>
+        .slide-5 { 
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #FAFAFA;
+            padding: 45px 70px;
+            display: flex;
+            gap: 50px;
+        }
+        .left-column {
+            flex: 0.8;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .right-column {
+            flex: 1.2;
+            display: flex;
+            align-items: center;
+        }
+        .module-badge {
+            display: inline-block;
+            background: rgba(102,126,234,0.2);
+            color: #666666;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        .module-title {
+            font-size: 48px;
+            font-weight: 800;
+            color: #2D2D2D;
+            margin-bottom: 15px;
+            line-height: 1.1;
+        }
+        .module-price {
+            font-size: 42px;
+            font-weight: 800;
+            background: #FF8A65;
+            
+            
+            
+            margin-bottom: 40px;
+        }
+        
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .feature-icon {
+            width: 36px;
+            height: 36px;
+            background: #FF8A65;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(16,185,129,0.4);
+        }
+        .feature-text {
+            font-size: 22px;
+            font-weight: 700;
+            color: #2D2D2D;
+        }
+        
+        /* Enhanced Chatbot Mockup */
+        .chatbot-mockup {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            width: 100%;
+        }
+        .chat-header {
+            background: #FF8A65;
+            padding: 24px 28px;
+            color: #2D2D2D;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .chat-avatar {
+            width: 48px;
+            height: 48px;
+            background: rgba(255,255,255,0.25);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        .chat-info {
+            flex: 1;
+        }
+        .chat-name {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+        .chat-status {
+            font-size: 13px;
+            opacity: 0.9;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #FF8A65;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .chat-messages {
+            padding: 28px;
+            background: #FF8A65;
+            min-height: 420px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .message {
+            max-width: 80%;
+            padding: 16px 20px;
+            border-radius: 16px;
+            font-size: 16px;
+            line-height: 1.5;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .message-bot {
+            background: white;
+            align-self: flex-start;
+            border: 2px solid #e5e7eb;
+        }
+        .message-user {
+            background: #FF8A65;
+            color: #2D2D2D;
+            align-self: flex-end;
+        }
+        .message-bot::before {
+            content: '🤖';
+            margin-right: 8px;
+        }
+        .typing {
+            display: flex;
+            gap: 6px;
+            padding: 12px 16px;
+            background: white;
+            border-radius: 16px;
+            align-self: flex-start;
+            border: 2px solid #e5e7eb;
+        }
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background: #666666;
+            border-radius: 50%;
+            animation: typing 1.4s infinite;
+        }
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-10px); }
+        }
+     }
+    </style>
+    
+    <div class="slide-container">
         <div class="left-column">
             <div class="module-badge">Módulo 1</div>
             <h2 class="module-title">IA en Web</h2>
@@ -215,12 +686,507 @@
             </div>
         </div>
     </div>
+
 </div>
-</div>
-<div class="slide-separator"></div>
-<div class="slide-wrapper" id="slide-6">
-<div class="slide-content">
-<div class="slide-container">
+
+<div class="slide-wrapper slide-6" id="slide-6">
+    
+    <style>
+        .slide-6 { 
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #f0f0f0;
+            padding: 40px 50px;
+        }
+        .slide-title {
+            font-size: 52px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 30px;
+            text-align: center;
+            background: #FF8A65;
+            
+            
+            
+        }
+        .browser-mockup {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            overflow: hidden;
+            position: relative;
+        }
+        .browser-bar {
+            background: #e8e8e8;
+            padding: 10px 14px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            border-bottom: 1px solid #d0d0d0;
+        }
+        .browser-dot {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+        }
+        .dot-red { background: #ff5f56; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #27c93f; }
+        .browser-url {
+            flex: 1;
+            background: white;
+            padding: 5px 14px;
+            border-radius: 5px;
+            margin-left: 10px;
+            font-size: 13px;
+            color: #666;
+            border: 1px solid #ddd;
+        }
+        
+        /* INTLAW Website - Exact Recreation */
+        .website-content {
+            position: relative;
+            overflow: hidden;
+            min-height: 600px;
+        }
+        .top-bar {
+            background: #2d5016;
+            padding: 8px 30px;
+            font-size: 12px;
+            color: #2D2D2D;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            font-size: 14px;
+        }
+        .contact-info {
+            display: flex;
+            gap: 25px;
+            font-size: 13px;
+        }
+        .main-header {
+            background: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .logo-box {
+            width: 70px;
+            height: 70px;
+            background: #FF8A65;
+            border: 3px solid #4b5563;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: serif;
+            font-weight: 700;
+        }
+        .logo-top {
+            font-size: 22px;
+            color: #2D2D2D;
+            line-height: 1;
+        }
+        .logo-bottom {
+            font-size: 22px;
+            color: #e5e7eb;
+            line-height: 1;
+        }
+        .nav-menu {
+            display: flex;
+            gap: 35px;
+            font-size: 13px;
+            font-weight: 400;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .cta-btn {
+            background: #2d5016;
+            color: #2D2D2D;
+            padding: 12px 22px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .hero-section {
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400"><rect fill="%23475569" width="1200" height="400"/></svg>');
+            background-size: cover;
+            padding: 100px 40px;
+            text-align: center;
+            position: relative;
+            min-height: 350px;
+            background-color: #666666;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(71, 85, 105, 0.7);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .hero-title {
+            font-size: 48px;
+            font-weight: 400;
+            color: #2D2D2D;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-family: serif;
+        }
+        .hero-subtitle {
+            font-size: 16px;
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 35px;
+            font-weight: 300;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 18px;
+            justify-content: center;
+        }
+        .btn-contact {
+            background: #2d5016;
+            color: #2D2D2D;
+            padding: 12px 28px;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .btn-team {
+            background: transparent;
+            color: #2D2D2D;
+            padding: 12px 28px;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 2px solid white;
+        }
+        
+        .carousel-arrows {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 15px;
+            z-index: 2;
+        }
+        .arrow {
+            background: rgba(0,0,0,0.3);
+            color: #2D2D2D;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        
+        /* WhatsApp Widget (old style) */
+        .whatsapp-widget {
+            position: absolute;
+            bottom: 20px;
+            right: 420px;
+            background: #25d366;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            font-size: 30px;
+        }
+        
+        /* Modern AI Chatbot Widget - SUPER POLISHED */
+        .chatbot-widget {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 400px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 30px 80px rgba(102,126,234,0.5), 
+                        0 0 0 1px rgba(102,126,234,0.1),
+                        0 0 40px rgba(102,126,234,0.3);
+            overflow: hidden;
+            animation: slideUp 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 100;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(30px) scale(0.9); opacity: 0; }
+            to { transform: translateY(0) scale(1); opacity: 1; }
+        }
+        .chatbot-header {
+            background: #FF8A65;
+            padding: 22px 24px;
+            color: #2D2D2D;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .chatbot-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+        .chatbot-title-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+            z-index: 1;
+        }
+        .bot-avatar {
+            width: 42px;
+            height: 42px;
+            background: #FF8A65;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .chatbot-title-text {
+            display: flex;
+            flex-direction: column;
+        }
+        .chatbot-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+        .chatbot-subtitle {
+            font-size: 12px;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+        .status-section {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            z-index: 1;
+        }
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            background: #FF8A65;
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px rgba(16,185,129,0.3);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 0 0 3px rgba(16,185,129,0.3);
+            }
+            50% { 
+                transform: scale(1.1);
+                box-shadow: 0 0 0 6px rgba(16,185,129,0.1);
+            }
+        }
+        .status-text {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .chatbot-body {
+            padding: 24px;
+            background: #FF8A65;
+            max-height: 340px;
+            overflow-y: auto;
+        }
+        .chat-message {
+            margin-bottom: 18px;
+            animation: fadeInUp 0.4s ease-out;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .msg-bot {
+            background: white;
+            padding: 14px 18px;
+            border-radius: 18px 18px 18px 4px;
+            font-size: 15px;
+            color: #2D2D2D;
+            max-width: 85%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08),
+                        0 0 0 1px rgba(0,0,0,0.03);
+            line-height: 1.5;
+            position: relative;
+        }
+        .msg-bot::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            bottom: 8px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 8px 8px 0;
+            border-color: transparent white transparent transparent;
+        }
+        .msg-user {
+            background: #FF8A65;
+            color: #2D2D2D;
+            padding: 14px 18px;
+            border-radius: 18px 18px 4px 18px;
+            font-size: 15px;
+            margin-left: auto;
+            max-width: 75%;
+            box-shadow: 0 4px 16px rgba(102,126,234,0.35);
+            text-align: right;
+            line-height: 1.5;
+            position: relative;
+        }
+        .msg-user::after {
+            content: '';
+            position: absolute;
+            right: -6px;
+            bottom: 8px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 8px 0 0 8px;
+            border-color: transparent transparent transparent #5B9BD5;
+        }
+        .typing-indicator {
+            display: flex;
+            gap: 5px;
+            padding: 14px 18px;
+            background: white;
+            border-radius: 18px;
+            max-width: 70px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background: #cbd5e1;
+            border-radius: 50%;
+            animation: typing 1.4s infinite;
+        }
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); opacity: 0.7; }
+            30% { transform: translateY(-10px); opacity: 1; }
+        }
+        
+        .chatbot-input {
+            padding: 20px 24px;
+            background: white;
+            border-top: 1px solid #e5e7eb;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        .input-field {
+            flex: 1;
+            padding: 12px 18px;
+            border: 2px solid #e5e7eb;
+            border-radius: 24px;
+            font-size: 14px;
+            background: #f8fafc;
+            transition: all 0.3s ease;
+            color: #666666;
+        }
+        .input-field:focus {
+            border-color: #FF8A65;
+            background: white;
+            outline: none;
+        }
+        .send-button {
+            background: #FF8A65;
+            color: #2D2D2D;
+            padding: 12px 24px;
+            border-radius: 24px;
+            font-weight: 700;
+            font-size: 14px;
+            box-shadow: 0 6px 20px rgba(102,126,234,0.4);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .send-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102,126,234,0.5);
+        }
+        
+        .ai-badge {
+            position: absolute;
+            top: -14px;
+            right: 24px;
+            background: #FF8A65;
+            color: #2D2D2D;
+            padding: 8px 20px;
+            border-radius: 24px;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 6px 20px rgba(16,185,129,0.5);
+            animation: glow 2s infinite;
+        }
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 6px 20px rgba(16,185,129,0.5); }
+            50% { box-shadow: 0 6px 30px rgba(16,185,129,0.8); }
+        }
+        
+        .powered-by {
+            text-align: center;
+            font-size: 11px;
+            color: #666666;
+            padding: 12px;
+            background: #f8fafc;
+            font-weight: 500;
+        }
+        .powered-by strong {
+            background: #FF8A65;
+            
+            
+            
+            font-weight: 700;
+        }
+     }
+    </style>
+    
+    <div class="slide-container">
         <h2 class="slide-title">Integración en intlaw.eu</h2>
         
         <div class="browser-mockup">
@@ -328,99 +1294,711 @@
             </div>
         </div>
     </div>
+
 </div>
-</div>
-<div class="slide-separator"></div>
-<div class="slide-wrapper" id="slide-7">
-<div class="slide-content">
-<div class="slide-container">
-        <h2 class="demo-title">Módulo 1 en Acción: Chatbot Capturando Lead</h2>
+
+<div class="slide-wrapper slide-7" id="slide-7">
+    
+    <style>
+        .slide-7 { 
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #FAFAFA;
+            padding: 30px 60px;
+            display: flex;
+            flex-direction: column;
+        }
+        .demo-title {
+            font-size: 48px;
+            font-weight: 800;
+            color: #2D2D2D;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        /* Browser Window */
+        .browser-window {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            border: 1px solid #E0E0E0;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Browser Chrome */
+        .browser-chrome {
+            background: #F5F5F5;
+            padding: 12px 16px;
+            border-bottom: 1px solid #E0E0E0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .browser-buttons {
+            display: flex;
+            gap: 8px;
+        }
+        .browser-button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .btn-close { background: #FF5F57; }
+        .btn-minimize { background: #FFBD2E; }
+        .btn-maximize { background: #28CA42; }
+        .browser-nav {
+            display: flex;
+            gap: 8px;
+            margin-left: 8px;
+        }
+        .nav-btn {
+            color: #999;
+            font-size: 16px;
+        }
+        .address-bar {
+            flex: 1;
+            background: white;
+            border: 1px solid #E0E0E0;
+            border-radius: 6px;
+            padding: 6px 14px;
+            font-size: 13px;
+            color: #2D2D2D;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .lock-icon {
+            color: #666;
+            font-size: 12px;
+        }
+        
+        /* Website Content */
+        .website-content {
+            flex: 1;
+            background: white;
+            position: relative;
+            padding: 30px;
+            overflow: hidden;
+            min-height: 600px;
+        }
+        .website-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #F5F5F5;
+        }
+        .website-logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #2D2D2D;
+        }
+        .website-nav {
+            display: flex;
+            gap: 28px;
+            font-size: 14px;
+            color: #666;
+        }
+        .website-hero {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .website-hero h1 {
+            font-size: 42px;
+            font-weight: 800;
+            color: #2D2D2D;
+            margin-bottom: 16px;
+        }
+        .website-hero p {
+            font-size: 18px;
+            color: #666;
+        }
+        
+        /* Chat Widget */
+        .chat-widget {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            width: 380px;
+            background: white;
+            border-radius: 14px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+            border: 1px solid #E0E0E0;
+            overflow: hidden;
+        }
+        .chat-header {
+            background: linear-gradient(135deg, #FF8A65 0%, #FF6F4A 100%);
+            color: white;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .chat-header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .chat-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+        .chat-header-text {
+            display: flex;
+            flex-direction: column;
+        }
+        .chat-title {
+            font-size: 15px;
+            font-weight: 700;
+        }
+        .chat-status {
+            font-size: 11px;
+            opacity: 0.9;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            background: #28CA42;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .chat-controls {
+            display: flex;
+            gap: 12px;
+        }
+        .chat-control-btn {
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            opacity: 0.9;
+        }
+        .chat-control-btn:hover {
+            opacity: 1;
+        }
+        
+        .chat-messages {
+            padding: 18px;
+            max-height: 320px;
+            overflow-y: auto;
+            background: #FAFAFA;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .chat-message {
+            display: flex;
+            gap: 10px;
+            animation: fadeIn 0.3s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .message-avatar {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #FF8A65;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+        .message-content {
+            flex: 1;
+        }
+        .message-sender {
+            font-size: 11px;
+            font-weight: 700;
+            color: #666;
+            margin-bottom: 4px;
+        }
+        .message-bubble {
+            background: white;
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 13px;
+            line-height: 1.5;
+            color: #2D2D2D;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .message-time {
+            font-size: 10px;
+            color: #999;
+            margin-top: 4px;
+        }
+        .message-user {
+            flex-direction: row-reverse;
+        }
+        .message-user .message-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        .message-user .message-bubble {
+            background: #FF8A65;
+            color: white;
+        }
+        .message-user .message-avatar {
+            background: #5B9BD5;
+        }
+        
+        .typing-indicator {
+            display: flex;
+            gap: 4px;
+            padding: 10px 14px;
+            background: white;
+            border-radius: 10px;
+            width: fit-content;
+        }
+        .typing-dot {
+            width: 6px;
+            height: 6px;
+            background: #999;
+            border-radius: 50%;
+            animation: typing 1.4s infinite;
+        }
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-8px); }
+        }
+        
+        .chat-input {
+            padding: 14px 18px;
+            border-top: 1px solid #E0E0E0;
+            background: white;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .chat-input input {
+            flex: 1;
+            border: 1px solid #E0E0E0;
+            border-radius: 20px;
+            padding: 8px 16px;
+            font-size: 13px;
+            outline: none;
+        }
+        .chat-send-btn {
+            background: #FF8A65;
+            color: white;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        
+        /* Lead Captured Notification */
+        .notification {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            background: white;
+            border-radius: 10px;
+            padding: 16px 20px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            border-left: 4px solid #28CA42;
+            animation: slideIn 0.5s;
+            min-width: 300px;
+        }
+        @keyframes slideIn {
+            from { transform: translateX(400px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        .notification-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+        .notification-icon {
+            font-size: 20px;
+        }
+        .notification-title {
+            font-size: 14px;
+            font-weight: 800;
+            color: #2D2D2D;
+        }
+        .notification-body {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.5;
+        }
+        .notification-data {
+            background: #F5F5F5;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-top: 8px;
+            font-size: 11px;
+        }
+        .notification-data div {
+            margin-bottom: 3px;
+        }
+        .notification-data strong {
+            color: #2D2D2D;
+            font-weight: 700;
+        }
+     }
+    </style>
+    
+    <div class="slide-container">
+        <h2 class="demo-title">Módulo 1: Chatbot IA Capturando Lead</h2>
         
         <div class="browser-window">
-            <div class="browser-header">
-                <div class="browser-dots">
-                    <div class="dot dot-red"></div>
-                    <div class="dot dot-yellow"></div>
-                    <div class="dot dot-green"></div>
+            <!-- Browser Chrome -->
+            <div class="browser-chrome">
+                <div class="browser-buttons">
+                    <div class="browser-button btn-close"></div>
+                    <div class="browser-button btn-minimize"></div>
+                    <div class="browser-button btn-maximize"></div>
                 </div>
-                <div class="browser-url">🔒 intlaw.eu</div>
+                <div class="browser-nav">
+                    <span class="nav-btn">←</span>
+                    <span class="nav-btn">→</span>
+                    <span class="nav-btn">⟳</span>
+                </div>
+                <div class="address-bar">
+                    <span class="lock-icon">🔒</span>
+                    <span>https://intlaw.eu</span>
+                </div>
             </div>
             
-            <div class="browser-content">
-                <div class="website-content">
-                    <div class="website-header">
-                        <div class="website-title">INTLAW</div>
-                        <div class="website-subtitle">Asesoría Legal Empresarial</div>
+            <!-- Website Content -->
+            <div class="website-content">
+                <!-- Website Header -->
+                <div class="website-header">
+                    <div class="website-logo">INTLAW</div>
+                    <div class="website-nav">
+                        <span>Servicios</span>
+                        <span>Equipo</span>
+                        <span>Contacto</span>
                     </div>
-                    <div class="website-section">
-                        <div class="section-title">Servicios Legales</div>
-                        <div class="section-text">Ofrecemos asesoría especializada en derecho mercantil, contratos, constitución de sociedades...</div>
-                    </div>
-                    <div class="website-section">
-                        <div class="section-title">Nuestro Equipo</div>
-                        <div class="section-text">Abogados especializados con amplia experiencia en el sector empresarial...</div>
-                    </div>
+                </div>
+                
+                <!-- Website Hero -->
+                <div class="website-hero">
+                    <h1>Abogados Especializados</h1>
+                    <p>Asesoramiento legal de confianza para empresas</p>
                 </div>
                 
                 <!-- Lead Captured Notification -->
-                <div class="lead-captured">
-                    <div class="notif-icon">✓</div>
-                    <div class="notif-content">
-                        <div class="notif-title">Lead Capturado</div>
-                        <div class="notif-text">Carlos Martínez · Compraventa €250K · Prioridad ALTA</div>
+                <div class="notification">
+                    <div class="notification-header">
+                        <span class="notification-icon">✅</span>
+                        <span class="notification-title">Nuevo Lead Capturado</span>
+                    </div>
+                    <div class="notification-body">
+                        Lead cualificado automáticamente y asignado
+                    </div>
+                    <div class="notification-data">
+                        <div><strong>Nombre:</strong> María González</div>
+                        <div><strong>Email:</strong> m.gonzalez@empresa.com</div>
+                        <div><strong>Tipo:</strong> Derecho Mercantil</div>
+                        <div><strong>Prioridad:</strong> ALTA (Score: 95)</div>
                     </div>
                 </div>
                 
-                <!-- Chatbot Widget -->
-                <div class="chatbot-widget">
+                <!-- Chat Widget -->
+                <div class="chat-widget">
                     <div class="chat-header">
-                        <div class="chat-avatar">🤖</div>
-                        <div class="chat-info">
-                            <div class="chat-name">INTLAW AI</div>
-                            <div class="chat-status">
-                                <span class="status-dot"></span>
-                                Online · Respondiendo
+                        <div class="chat-header-left">
+                            <div class="chat-avatar">🤖</div>
+                            <div class="chat-header-text">
+                                <div class="chat-title">Asistente INTLAW</div>
+                                <div class="chat-status">
+                                    <span class="status-dot"></span>
+                                    <span>Online ahora</span>
+                                </div>
                             </div>
+                        </div>
+                        <div class="chat-controls">
+                            <span class="chat-control-btn">−</span>
+                            <span class="chat-control-btn">×</span>
                         </div>
                     </div>
                     
                     <div class="chat-messages">
-                        <div class="message msg-bot">
-                            ¡Hola! Soy el asistente de INTLAW. ¿En qué puedo ayudarte hoy?
-                        </div>
-                        <div class="message msg-user">
-                            Hola, necesito asesoría para un contrato de compraventa
-                        </div>
-                        <div class="message msg-bot">
-                            Perfecto, puedo ayudarte con eso. ¿Podrías darme más detalles sobre el tipo de compraventa?
-                        </div>
-                        <div class="message msg-user">
-                            Es una compraventa de software entre dos empresas por 250.000€
-                        </div>
-                        <div class="message msg-bot">
-                            Entiendo. Se trata de una operación importante. Nuestro equipo de derecho mercantil puede asesorarte. ¿Cuál es tu nombre y email para enviarte información detallada?
-                        </div>
-                        <div class="message msg-user">
-                            Carlos Martínez, carlos.martinez@techcorp.es
-                        </div>
-                        <div class="message msg-bot">
-                            Gracias Carlos. He registrado tu consulta con prioridad ALTA. Un abogado especializado te contactará en las próximas 2 horas.
-                            <div class="ai-processing">
-                                <span class="ai-icon">⚡</span>
-                                IA guardando lead y notificando equipo...
+                        <div class="chat-message">
+                            <div class="message-avatar">🤖</div>
+                            <div class="message-content">
+                                <div class="message-sender">Asistente INTLAW</div>
+                                <div class="message-bubble">
+                                    ¡Hola! Soy el asistente virtual de INTLAW. ¿En qué puedo ayudarte hoy?
+                                </div>
+                                <div class="message-time">14:32</div>
                             </div>
                         </div>
+                        
+                        <div class="chat-message message-user">
+                            <div class="message-avatar">👤</div>
+                            <div class="message-content">
+                                <div class="message-sender">Tú</div>
+                                <div class="message-bubble">
+                                    Necesito asesoramiento sobre un contrato mercantil
+                                </div>
+                                <div class="message-time">14:33</div>
+                            </div>
+                        </div>
+                        
+                        <div class="chat-message">
+                            <div class="message-avatar">🤖</div>
+                            <div class="message-content">
+                                <div class="message-sender">Asistente INTLAW</div>
+                                <div class="message-bubble">
+                                    Perfecto, podemos ayudarte. ¿Podrías compartir tu nombre y email para que un abogado especializado te contacte?
+                                </div>
+                                <div class="message-time">14:33</div>
+                            </div>
+                        </div>
+                        
+                        <div class="chat-message message-user">
+                            <div class="message-avatar">👤</div>
+                            <div class="message-content">
+                                <div class="message-sender">Tú</div>
+                                <div class="message-bubble">
+                                    María González, m.gonzalez@empresa.com
+                                </div>
+                                <div class="message-time">14:34</div>
+                            </div>
+                        </div>
+                        
+                        <div class="chat-message">
+                            <div class="message-avatar">🤖</div>
+                            <div class="message-content">
+                                <div class="typing-indicator">
+                                    <div class="typing-dot"></div>
+                                    <div class="typing-dot"></div>
+                                    <div class="typing-dot"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-input">
+                        <input type="text" placeholder="Escribe tu mensaje...">
+                        <div class="chat-send-btn">➤</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 </div>
-</div>
-<div class="slide-separator"></div>
-<div class="slide-wrapper" id="slide-8">
-<div class="slide-content">
-<div class="slide-container">
+
+<div class="slide-wrapper slide-8" id="slide-8">
+    
+    <style>
+        .slide-8 { 
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #FAFAFA;
+            padding: 45px 70px;
+            display: flex;
+            gap: 50px;
+        }
+        .left-column {
+            flex: 0.8;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .right-column {
+            flex: 1.2;
+        }
+        .module-badge {
+            display: inline-block;
+            background: rgba(102,126,234,0.2);
+            color: #666666;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        .module-title {
+            font-size: 44px;
+            font-weight: 800;
+            color: #2D2D2D;
+            margin-bottom: 15px;
+            line-height: 1.1;
+        }
+        .module-price {
+            font-size: 42px;
+            font-weight: 800;
+            background: #FF8A65;
+            
+            
+            
+            margin-bottom: 40px;
+        }
+        
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .feature-icon {
+            width: 36px;
+            height: 36px;
+            background: #FF8A65;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(16,185,129,0.4);
+        }
+        .feature-text {
+            font-size: 22px;
+            font-weight: 700;
+            color: #2D2D2D;
+        }
+        
+        /* CRM Dashboard */
+        .crm-dashboard {
+            background: rgba(255,255,255,0.05);
+            border-radius: 24px;
+            padding: 32px;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .dashboard-header {
+            margin-bottom: 28px;
+        }
+        .dashboard-title {
+            font-size: 26px;
+            font-weight: 800;
+            color: #2D2D2D;
+            margin-bottom: 8px;
+        }
+        .dashboard-subtitle {
+            font-size: 14px;
+            color: #666666;
+        }
+        
+        .leads-grid {
+            display: grid;
+            gap: 18px;
+        }
+        .lead-card {
+            background: rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 20px 24px;
+            border: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: all 0.3s ease;
+        }
+        .lead-card:hover {
+            background: rgba(255,255,255,0.12);
+            transform: translateX(6px);
+        }
+        .lead-avatar {
+            width: 52px;
+            height: 52px;
+            background: #FF8A65;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+            box-shadow: 0 6px 20px rgba(102,126,234,0.4);
+        }
+        .lead-info {
+            flex: 1;
+        }
+        .lead-name {
+            font-size: 19px;
+            font-weight: 800;
+            color: #2D2D2D;
+            margin-bottom: 6px;
+        }
+        .lead-type {
+            font-size: 14px;
+            color: #666666;
+        }
+        .lead-score {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 6px;
+        }
+        .score-value {
+            font-size: 28px;
+            font-weight: 800;
+            background: #FF8A65;
+            
+            
+            
+        }
+        .priority-badge {
+            padding: 6px 14px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .priority-high {
+            background: #FF8A65;
+            color: #2D2D2D;
+            box-shadow: 0 4px 12px rgba(16,185,129,0.3);
+        }
+        .priority-medium {
+            background: #FF8A65;
+            color: #2D2D2D;
+            box-shadow: 0 4px 12px rgba(245,158,11,0.3);
+        }
+     }
+    </style>
+    
+    <div class="slide-container">
         <div class="left-column">
             <div class="module-badge">Módulo 2</div>
             <h2 class="module-title">Filtrado Auto-Chatting</h2>
@@ -501,369 +2079,1455 @@
             </div>
         </div>
     </div>
+
 </div>
-</div>
-<div class="slide-separator"></div>
-<div class="slide-wrapper" id="slide-9">
-<div class="slide-content">
-<div class="slide-container">
-        <h2 class="demo-title">Módulo 2 en Acción: Cualificación Automática de Leads</h2>
+
+<div class="slide-wrapper slide-9" id="slide-9">
+    
+    <style>
+        .slide-9 { 
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #FAFAFA;
+            padding: 30px 60px;
+            display: flex;
+            flex-direction: column;
+        }
+        .demo-title {
+            font-size: 48px;
+            font-weight: 800;
+            color: #2D2D2D;
+            margin-bottom: 25px;
+            text-align: center;
+        }
         
-        <div class="dashboard">
-            <div class="dash-header">
-                <div class="dash-title">🎯 CRM INTLAW AI</div>
-                <div class="ai-badge">
-                    <span class="ai-icon">⚡</span>
-                    IA Cualificando en Tiempo Real
+        /* CRM Application */
+        .crm-app {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            border: 1px solid #E0E0E0;
+            flex: 1;
+            display: flex;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            width: 220px;
+            background: #2D2D2D;
+            color: white;
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar-header {
+            padding: 20px;
+            border-bottom: 1px solid #444;
+        }
+        .sidebar-logo {
+            font-size: 20px;
+            font-weight: 800;
+        }
+        .sidebar-menu {
+            flex: 1;
+            padding: 20px 0;
+        }
+        .menu-item {
+            padding: 12px 20px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .menu-item:hover {
+            background: #444;
+        }
+        .menu-item.active {
+            background: #FF8A65;
+        }
+        .menu-icon {
+            font-size: 16px;
+        }
+        
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: #FAFAFA;
+        }
+        
+        /* Top Bar */
+        .top-bar {
+            background: white;
+            border-bottom: 1px solid #E0E0E0;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .search-bar {
+            flex: 1;
+            max-width: 400px;
+            position: relative;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 8px 16px 8px 40px;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+        }
+        .search-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+        .top-bar-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .notification-icon {
+            font-size: 18px;
+            color: #666;
+            position: relative;
+            cursor: pointer;
+        }
+        .notification-badge {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            background: #FF8A65;
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 5px;
+            border-radius: 10px;
+        }
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+        .user-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #FF8A65;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: white;
+        }
+        .user-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2D2D2D;
+        }
+        
+        /* Content Area */
+        .content-area {
+            flex: 1;
+            padding: 24px;
+            overflow-y: auto;
+        }
+        
+        /* Page Header */
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .page-title {
+            font-size: 28px;
+            font-weight: 800;
+            color: #2D2D2D;
+        }
+        .page-actions {
+            display: flex;
+            gap: 12px;
+        }
+        .btn {
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+        }
+        .btn-primary {
+            background: #FF8A65;
+            color: white;
+        }
+        .btn-secondary {
+            background: white;
+            color: #2D2D2D;
+            border: 1px solid #E0E0E0;
+        }
+        
+        /* Stats Cards */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        .stat-card {
+            background: white;
+            border-radius: 10px;
+            padding: 18px;
+            border: 1px solid #E0E0E0;
+        }
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        .stat-value {
+            font-size: 28px;
+            font-weight: 800;
+            color: #2D2D2D;
+        }
+        .stat-change {
+            font-size: 12px;
+            color: #28CA42;
+            margin-top: 4px;
+            font-weight: 600;
+        }
+        
+        /* Filters */
+        .filters-bar {
+            background: white;
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            border: 1px solid #E0E0E0;
+        }
+        .filter-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #666;
+        }
+        .filter-select {
+            padding: 6px 12px;
+            border: 1px solid #E0E0E0;
+            border-radius: 6px;
+            font-size: 13px;
+            outline: none;
+        }
+        
+        /* Leads Table */
+        .leads-table {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #E0E0E0;
+        }
+        .table-header {
+            background: #F5F5F5;
+            padding: 14px 20px;
+            display: grid;
+            grid-template-columns: 2fr 1.5fr 1fr 1fr 1fr 1.2fr;
+            gap: 16px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #666;
+            text-transform: uppercase;
+            border-bottom: 1px solid #E0E0E0;
+        }
+        .table-row {
+            padding: 16px 20px;
+            display: grid;
+            grid-template-columns: 2fr 1.5fr 1fr 1fr 1fr 1.2fr;
+            gap: 16px;
+            align-items: center;
+            border-bottom: 1px solid #F5F5F5;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .table-row:hover {
+            background: #FAFAFA;
+        }
+        .lead-name {
+            font-weight: 600;
+            color: #2D2D2D;
+        }
+        .lead-email {
+            font-size: 12px;
+            color: #666;
+        }
+        .lead-company {
+            color: #666;
+        }
+        .lead-score {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .score-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 800;
+            color: white;
+        }
+        .score-high { background: #28CA42; }
+        .score-medium { background: #F4A261; }
+        .priority-badge {
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .priority-alta {
+            background: #FFE5E0;
+            color: #FF5F57;
+        }
+        .priority-media {
+            background: #FFF4E5;
+            color: #F4A261;
+        }
+        .row-actions {
+            display: flex;
+            gap: 8px;
+        }
+        .action-btn {
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid #E0E0E0;
+            background: white;
+        }
+        .action-btn:hover {
+            background: #F5F5F5;
+        }
+        
+        /* AI Processing Panel */
+        .ai-panel {
+            position: fixed;
+            bottom: 24px;
+            right: 84px;
+            width: 320px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+            border: 1px solid #E0E0E0;
+            overflow: hidden;
+        }
+        .ai-panel-header {
+            background: linear-gradient(135deg, #FF8A65 0%, #FF6F4A 100%);
+            color: white;
+            padding: 14px 18px;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .ai-panel-body {
+            padding: 16px;
+            max-height: 280px;
+            overflow-y: auto;
+        }
+        .ai-process {
+            margin-bottom: 14px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid #F5F5F5;
+        }
+        .ai-process:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .ai-process-name {
+            font-size: 12px;
+            font-weight: 700;
+            color: #2D2D2D;
+            margin-bottom: 6px;
+        }
+        .ai-progress-bar {
+            height: 6px;
+            background: #F5F5F5;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 4px;
+        }
+        .ai-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #FF8A65 0%, #FF6F4A 100%);
+            transition: width 0.3s;
+        }
+        .ai-process-status {
+            font-size: 11px;
+            color: #666;
+        }
+     }
+    </style>
+    
+    <div class="slide-container">
+        <h2 class="demo-title">Módulo 2: CRM con Cualificación IA</h2>
+        
+        <div class="crm-app">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="sidebar-header">
+                    <div class="sidebar-logo">INTLAW CRM</div>
+                </div>
+                <div class="sidebar-menu">
+                    <div class="menu-item">
+                        <span class="menu-icon">📊</span>
+                        <span>Dashboard</span>
+                    </div>
+                    <div class="menu-item active">
+                        <span class="menu-icon">👥</span>
+                        <span>Leads</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-icon">📞</span>
+                        <span>Clientes</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-icon">📄</span>
+                        <span>Casos</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-icon">⚙️</span>
+                        <span>Configuración</span>
+                    </div>
                 </div>
             </div>
             
-            <div class="stats-bar">
-                <div class="stat-card">
-                    <div class="stat-label">Total Leads</div>
-                    <div class="stat-value">47</div>
+            <!-- Main Content -->
+            <div class="main-content">
+                <!-- Top Bar -->
+                <div class="top-bar">
+                    <div class="search-bar">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" placeholder="Buscar leads, clientes, casos...">
+                    </div>
+                    <div class="top-bar-right">
+                        <div class="notification-icon">
+                            🔔
+                            <span class="notification-badge">3</span>
+                        </div>
+                        <div class="user-profile">
+                            <div class="user-avatar">IG</div>
+                            <div class="user-name">Ignacio Jové</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-label">Alta Prioridad</div>
-                    <div class="stat-value">12</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">Tasa Conversión</div>
-                    <div class="stat-value">68%</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">Valor Potencial</div>
-                    <div class="stat-value">€2.4M</div>
-                </div>
-            </div>
-            
-            <div class="dash-content">
-                <div class="leads-section">
-                    <div class="section-header">
-                        <div class="section-title">Leads Cualificados</div>
-                        <div class="filter-pills">
-                            <div class="pill pill-active">Todos</div>
-                            <div class="pill pill-inactive">Alta</div>
-                            <div class="pill pill-inactive">Media</div>
+                
+                <!-- Content Area -->
+                <div class="content-area">
+                    <!-- Page Header -->
+                    <div class="page-header">
+                        <div class="page-title">Leads Cualificados</div>
+                        <div class="page-actions">
+                            <button class="btn btn-secondary">Exportar</button>
+                            <button class="btn btn-primary">+ Nuevo Lead</button>
                         </div>
                     </div>
                     
-                    <div class="leads-list">
-                        <div class="lead-item">
-                            <div class="lead-avatar">👤</div>
-                            <div class="lead-info">
-                                <div class="lead-name">TechCorp SL</div>
-                                <div class="lead-details">Compraventa Software · €250K · Urgente</div>
+                    <!-- Stats Row -->
+                    <div class="stats-row">
+                        <div class="stat-card">
+                            <div class="stat-label">Total Leads</div>
+                            <div class="stat-value">47</div>
+                            <div class="stat-change">↑ +12 esta semana</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Alta Prioridad</div>
+                            <div class="stat-value">12</div>
+                            <div class="stat-change">↑ +5 hoy</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Tasa Conversión</div>
+                            <div class="stat-value">68%</div>
+                            <div class="stat-change">↑ +8% vs mes anterior</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Valor Pipeline</div>
+                            <div class="stat-value">€2.4M</div>
+                            <div class="stat-change">↑ +€420K</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Filters -->
+                    <div class="filters-bar">
+                        <span class="filter-label">Filtrar:</span>
+                        <select class="filter-select">
+                            <option>Todas las prioridades</option>
+                            <option>Alta</option>
+                            <option>Media</option>
+                        </select>
+                        <select class="filter-select">
+                            <option>Todos los tipos</option>
+                            <option>Mercantil</option>
+                            <option>Laboral</option>
+                        </select>
+                        <select class="filter-select">
+                            <option>Últimos 7 días</option>
+                            <option>Últimos 30 días</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Leads Table -->
+                    <div class="leads-table">
+                        <div class="table-header">
+                            <div>Lead</div>
+                            <div>Empresa</div>
+                            <div>Score IA</div>
+                            <div>Tipo</div>
+                            <div>Prioridad</div>
+                            <div>Acciones</div>
+                        </div>
+                        
+                        <div class="table-row">
+                            <div>
+                                <div class="lead-name">María González</div>
+                                <div class="lead-email">m.gonzalez@empresa.com</div>
                             </div>
-                            <div class="lead-score-container">
+                            <div class="lead-company">TechCorp SL</div>
+                            <div class="lead-score">
                                 <div class="score-circle score-high">95</div>
-                                <div class="priority-label priority-high">ALTA</div>
+                            </div>
+                            <div>Mercantil</div>
+                            <div><span class="priority-badge priority-alta">ALTA</span></div>
+                            <div class="row-actions">
+                                <button class="action-btn">Ver</button>
+                                <button class="action-btn">Contactar</button>
                             </div>
                         </div>
                         
-                        <div class="lead-item">
-                            <div class="lead-avatar">👤</div>
-                            <div class="lead-info">
-                                <div class="lead-name">InnoSolutions SA</div>
-                                <div class="lead-details">Contratos Mercantiles · €180K · 2 semanas</div>
+                        <div class="table-row">
+                            <div>
+                                <div class="lead-name">Carlos Ruiz</div>
+                                <div class="lead-email">c.ruiz@startup.es</div>
                             </div>
-                            <div class="lead-score-container">
+                            <div class="lead-company">Innovatech</div>
+                            <div class="lead-score">
                                 <div class="score-circle score-high">92</div>
-                                <div class="priority-label priority-high">ALTA</div>
+                            </div>
+                            <div>Mercantil</div>
+                            <div><span class="priority-badge priority-alta">ALTA</span></div>
+                            <div class="row-actions">
+                                <button class="action-btn">Ver</button>
+                                <button class="action-btn">Contactar</button>
                             </div>
                         </div>
                         
-                        <div class="lead-item">
-                            <div class="lead-avatar">👤</div>
-                            <div class="lead-info">
-                                <div class="lead-name">GlobalTrade Inc</div>
-                                <div class="lead-details">Derecho Internacional · €320K · 1 mes</div>
+                        <div class="table-row">
+                            <div>
+                                <div class="lead-name">Ana Martínez</div>
+                                <div class="lead-email">ana.m@consulting.com</div>
                             </div>
-                            <div class="lead-score-container">
+                            <div class="lead-company">BCG España</div>
+                            <div class="lead-score">
                                 <div class="score-circle score-high">88</div>
-                                <div class="priority-label priority-high">ALTA</div>
+                            </div>
+                            <div>Laboral</div>
+                            <div><span class="priority-badge priority-alta">ALTA</span></div>
+                            <div class="row-actions">
+                                <button class="action-btn">Ver</button>
+                                <button class="action-btn">Contactar</button>
                             </div>
                         </div>
                         
-                        <div class="lead-item">
-                            <div class="lead-avatar">👤</div>
-                            <div class="lead-info">
-                                <div class="lead-name">StartupXYZ Ltd</div>
-                                <div class="lead-details">Constitución Sociedad · €45K · Consulta</div>
+                        <div class="table-row">
+                            <div>
+                                <div class="lead-name">Pedro López</div>
+                                <div class="lead-email">pedro@pyme.es</div>
                             </div>
-                            <div class="lead-score-container">
+                            <div class="lead-company">PYME Local</div>
+                            <div class="lead-score">
                                 <div class="score-circle score-medium">76</div>
-                                <div class="priority-label priority-medium">MEDIA</div>
+                            </div>
+                            <div>Mercantil</div>
+                            <div><span class="priority-badge priority-media">MEDIA</span></div>
+                            <div class="row-actions">
+                                <button class="action-btn">Ver</button>
+                                <button class="action-btn">Contactar</button>
                             </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="ai-panel">
-                    <div class="panel-title">
-                        <span>🤖</span>
-                        Procesamiento IA
-                    </div>
-                    
-                    <div class="processing-item">
-                        <div class="process-header">
-                            <div class="process-name">Análisis Conversación</div>
-                            <div class="process-status">✓ 100%</div>
-                        </div>
-                        <div class="process-bar">
-                            <div class="process-fill" style="--fill-width: 100%;"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="processing-item">
-                        <div class="process-header">
-                            <div class="process-name">Extracción Datos</div>
-                            <div class="process-status">✓ 100%</div>
-                        </div>
-                        <div class="process-bar">
-                            <div class="process-fill" style="--fill-width: 100%;"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="processing-item">
-                        <div class="process-header">
-                            <div class="process-name">Cálculo Score</div>
-                            <div class="process-status">✓ 100%</div>
-                        </div>
-                        <div class="process-bar">
-                            <div class="process-fill" style="--fill-width: 100%;"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="processing-item">
-                        <div class="process-header">
-                            <div class="process-name">Priorización</div>
-                            <div class="process-status">⚡ 85%</div>
-                        </div>
-                        <div class="process-bar">
-                            <div class="process-fill" style="--fill-width: 85%;"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="processing-item">
-                        <div class="process-header">
-                            <div class="process-name">Asignación Equipo</div>
-                            <div class="process-status">⏳ 40%</div>
-                        </div>
-                        <div class="process-bar">
-                            <div class="process-fill" style="--fill-width: 40%;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-<div class="slide-separator"></div>
-<div class="slide-wrapper" id="slide-10">
-<div class="slide-content">
-<div class="slide-container">
-        <div class="left-column">
-            <div class="module-badge">Módulo 3</div>
-            <h2 class="module-title">Agente Documentos</h2>
-            <div class="module-price">€15,000</div>
-            
-            <div class="features-list">
-                <div class="feature-item">
-                    <div class="feature-icon">✓</div>
-                    <div class="feature-text">0% Alucinaciones</div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">✓</div>
-                    <div class="feature-text">Miles de Páginas</div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">✓</div>
-                    <div class="feature-text">100% Precisión</div>
                 </div>
             </div>
         </div>
         
-        <div class="right-column">
-            <div class="copilot-interface">
-                <div class="copilot-header">
-                    <div class="header-left">
-                        <div class="copilot-icon">🤖</div>
-                        <div class="copilot-title">INTLAW AI Copilot</div>
+        <!-- AI Processing Panel -->
+        <div class="ai-panel">
+            <div class="ai-panel-header">
+                <span>🤖</span>
+                <span>IA Procesando en Tiempo Real</span>
+            </div>
+            <div class="ai-panel-body">
+                <div class="ai-process">
+                    <div class="ai-process-name">Análisis de Perfil</div>
+                    <div class="ai-progress-bar">
+                        <div class="ai-progress-fill" style="width: 100%"></div>
                     </div>
-                    <div class="accuracy-badge">0% Alucinaciones</div>
+                    <div class="ai-process-status">✓ Completado - Score: 95</div>
                 </div>
                 
-                <div class="chat-area">
-                    <div class="msg-user">
-                        Analiza expediente "Mercantil XYZ vs ABC" (3,000+ páginas). Extrae cláusulas de incumplimiento y calcula plazos.
+                <div class="ai-process">
+                    <div class="ai-process-name">Extracción de Datos</div>
+                    <div class="ai-progress-bar">
+                        <div class="ai-progress-fill" style="width: 100%"></div>
                     </div>
-                    
-                    <div class="tool-call">
-                        <div class="tool-header">
-                            <div class="tool-icon">📄</div>
-                            <div class="tool-name">analyze_massive_documents</div>
-                            <div class="tool-status">✓ Completado</div>
-                        </div>
-                        <span class="tool-metric tool-metric-big">3,247 páginas</span>
-                        <span class="tool-metric">127 archivos</span>
-                        <span class="tool-metric">4 min</span>
+                    <div class="ai-process-status">✓ 8 campos extraídos</div>
+                </div>
+                
+                <div class="ai-process">
+                    <div class="ai-process-name">Cálculo de Score</div>
+                    <div class="ai-progress-bar">
+                        <div class="ai-progress-fill" style="width: 100%"></div>
                     </div>
-                    
-                    <div class="tool-call">
-                        <div class="tool-header">
-                            <div class="tool-icon">🔍</div>
-                            <div class="tool-name">extract_clauses</div>
-                            <div class="tool-status">✓ Completado</div>
-                        </div>
-                        <span class="tool-metric">18 cláusulas</span>
-                        <span class="tool-metric">100% precisión</span>
+                    <div class="ai-process-status">✓ Score: 95/100</div>
+                </div>
+                
+                <div class="ai-process">
+                    <div class="ai-process-name">Priorización</div>
+                    <div class="ai-progress-bar">
+                        <div class="ai-progress-fill" style="width: 100%"></div>
                     </div>
-                    
-                    <div class="tool-call">
-                        <div class="tool-header">
-                            <div class="tool-icon">📅</div>
-                            <div class="tool-name">calculate_deadlines</div>
-                            <div class="tool-status">✓ Completado</div>
-                        </div>
-                        <span class="tool-metric">12 plazos</span>
-                        <span class="tool-metric">5 activos</span>
+                    <div class="ai-process-status">✓ Prioridad: ALTA</div>
+                </div>
+                
+                <div class="ai-process">
+                    <div class="ai-process-name">Asignación Automática</div>
+                    <div class="ai-progress-bar">
+                        <div class="ai-progress-fill" style="width: 85%"></div>
                     </div>
-                    
-                    <div class="result-summary">
-                        <div class="summary-title">✓ Análisis Completado</div>
-                        <div class="summary-stats">
-                            <div>
-                                <div class="summary-value">3,247</div>
-                                <div class="summary-label">Páginas</div>
-                            </div>
-                            <div>
-                                <div class="summary-value">100%</div>
-                                <div class="summary-label">Precisión</div>
-                            </div>
-                            <div>
-                                <div class="summary-value">0</div>
-                                <div class="summary-label">Errores</div>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="ai-process-status">Asignando a abogado...</div>
                 </div>
             </div>
         </div>
     </div>
+
 </div>
-</div>
-<div class="slide-separator"></div>
-<div class="slide-wrapper" id="slide-11">
-<div class="slide-content">
-<div class="slide-container">
-        <div class="left-column">
-            <div class="module-badge">Módulo 3</div>
-            <h2 class="module-title">Agente Documentos</h2>
-            <div class="module-price">€15,000</div>
-            
-            <div class="features-list">
-                <div class="feature-item">
-                    <div class="feature-icon">✓</div>
-                    <div class="feature-text">0% Alucinaciones</div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">✓</div>
-                    <div class="feature-text">Miles de Páginas</div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">✓</div>
-                    <div class="feature-text">100% Precisión</div>
-                </div>
-            </div>
-        </div>
+
+<div class="slide-wrapper slide-10" id="slide-10">
+    
+    <style>
+        .slide-10 { 
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #FAFAFA;
+            padding: 40px 60px;
+            display: flex;
+            flex-direction: column;
+        }
+        .module-title {
+            font-size: 48px;
+            font-weight: 800;
+            color: #2D2D2D;
+            margin-bottom: 15px;
+        }
+        .module-subtitle {
+            font-size: 20px;
+            color: #666666;
+            margin-bottom: 30px;
+        }
+        .module-price {
+            font-size: 18px;
+            color: #FF8A65;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
         
-        <div class="right-column">
-            <div class="copilot-interface">
-                <div class="copilot-header">
-                    <div class="header-left">
-                        <div class="copilot-icon">🤖</div>
-                        <div class="copilot-title">INTLAW AI Copilot</div>
-                    </div>
-                    <div class="accuracy-badge">0% Alucinaciones</div>
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            flex: 1;
+        }
+        
+        .features-section {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        
+        .feature-item {
+            background: white;
+            padding: 18px 22px;
+            border-radius: 10px;
+            border: 1px solid #E0E0E0;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .feature-icon {
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+        .feature-text {
+            font-size: 16px;
+            color: #2D2D2D;
+            font-weight: 600;
+        }
+        
+        .highlight-box {
+            background: white;
+            border: 2px solid #FF8A65;
+            border-radius: 12px;
+            padding: 24px;
+        }
+        .highlight-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: #FF8A65;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .validation-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .validation-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14px;
+            color: #2D2D2D;
+            line-height: 1.5;
+        }
+        .validation-item::before {
+            content: "✓";
+            color: #FF8A65;
+            font-weight: 800;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+        .benefit-card {
+            background: white;
+            border: 1px solid #E0E0E0;
+            border-radius: 10px;
+            padding: 16px;
+            text-align: center;
+        }
+        .benefit-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+        .benefit-label {
+            font-size: 14px;
+            color: #666666;
+            margin-bottom: 4px;
+        }
+        .benefit-value {
+            font-size: 18px;
+            font-weight: 800;
+            color: #2D2D2D;
+        }
+     }
+    </style>
+    
+    <div class="slide-container">
+        <h2 class="module-title">Módulo 3: Agente Interno Documentos</h2>
+        <p class="module-subtitle">Procesamiento masivo con precisión absoluta</p>
+        <p class="module-price">€15,000</p>
+        
+        <div class="content-grid">
+            <div class="features-section">
+                <div class="feature-item">
+                    <div class="feature-icon">📚</div>
+                    <div class="feature-text">Procesamiento masivo de documentos locales</div>
                 </div>
                 
-                <div class="chat-area">
-                    <div class="msg-user">
-                        Analiza expediente "Mercantil XYZ vs ABC" completo. Extrae todas las cláusulas de incumplimiento, calcula plazos legales y genera resumen ejecutivo.
+                <div class="feature-item">
+                    <div class="feature-icon">🔍</div>
+                    <div class="feature-text">Búsqueda, análisis y extracción inteligente</div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">🧮</div>
+                    <div class="feature-text">Cálculos y tratamiento de datos complejos</div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">📊</div>
+                    <div class="feature-text">Resúmenes ejecutivos automáticos</div>
+                </div>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">⚡</div>
+                        <div class="benefit-label">Velocidad</div>
+                        <div class="benefit-value">100x más rápido</div>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">💰</div>
+                        <div class="benefit-label">Ahorro</div>
+                        <div class="benefit-value">80% costes</div>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">📄</div>
+                        <div class="benefit-label">Capacidad</div>
+                        <div class="benefit-value">Miles de páginas</div>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🔒</div>
+                        <div class="benefit-label">Seguridad</div>
+                        <div class="benefit-value">GDPR compliant</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <div class="highlight-title">
+                    <span>⚠️</span>
+                    <span>0% Alucinaciones Garantizado</span>
+                </div>
+                <div class="validation-list">
+                    <div class="validation-item">
+                        <strong>Referenciación de fuentes:</strong> Cada respuesta vinculada a documentos específicos
+                    </div>
+                    <div class="validation-item">
+                        <strong>Validación cruzada:</strong> Verificación automática entre múltiples fuentes
+                    </div>
+                    <div class="validation-item">
+                        <strong>Grounding estricto:</strong> Solo información extraída directamente de documentos
+                    </div>
+                    <div class="validation-item">
+                        <strong>Trazabilidad completa:</strong> Auditoría de cada dato procesado
+                    </div>
+                    <div class="validation-item">
+                        <strong>Verificación humana:</strong> Alertas para revisión cuando se detecta incertidumbre
+                    </div>
+                    <div class="validation-item">
+                        <strong>Reembolso total:</strong> Si se detecta cualquier alucinación o error
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="slide-wrapper slide-11" id="slide-11">
+    
+    <style>
+        .slide-11 { 
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #FAFAFA;
+            padding: 30px 60px;
+            display: flex;
+            flex-direction: column;
+        }
+        .demo-title {
+            font-size: 48px;
+            font-weight: 800;
+            color: #2D2D2D;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .demo-subtitle {
+            font-size: 18px;
+            color: #666666;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        /* Main Interface */
+        .interface {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            flex: 1;
+            border: 1px solid #E0E0E0;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Header */
+        .interface-header {
+            background: #F5F5F5;
+            padding: 16px 28px;
+            border-bottom: 1px solid #E0E0E0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .interface-title {
+            font-size: 22px;
+            font-weight: 800;
+            color: #2D2D2D;
+        }
+        .zero-hallucination-badge {
+            background: #FF8A65;
+            color: white;
+            padding: 7px 14px;
+            border-radius: 7px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+        
+        /* Content Area - Split View */
+        .interface-content {
+            display: flex;
+            flex: 1;
+        }
+        
+        /* Document Viewer (Left) */
+        .document-viewer {
+            width: 480px;
+            background: #F5F5F5;
+            border-right: 1px solid #E0E0E0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .viewer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+        .viewer-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #2D2D2D;
+        }
+        .page-count {
+            font-size: 12px;
+            color: #666666;
+            background: white;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        .document-preview {
+            background: white;
+            border-radius: 10px;
+            padding: 16px;
+            border: 1px solid #E0E0E0;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .doc-file {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            background: #FAFAFA;
+            border-radius: 6px;
+            border: 1px solid #E0E0E0;
+        }
+        .doc-icon {
+            font-size: 18px;
+        }
+        .doc-info {
+            flex: 1;
+        }
+        .doc-name {
+            font-size: 12px;
+            font-weight: 600;
+            color: #2D2D2D;
+            margin-bottom: 2px;
+        }
+        .doc-pages {
+            font-size: 10px;
+            color: #666666;
+        }
+        .doc-status {
+            font-size: 10px;
+            color: #FF8A65;
+            font-weight: 700;
+        }
+        .total-stats {
+            background: #FF8A65;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .total-number {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 2px;
+        }
+        .total-label {
+            font-size: 11px;
+            font-weight: 600;
+        }
+        
+        /* Copilot Chat (Right) */
+        .copilot-chat {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background: #FAFAFA;
+        }
+        .message {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .message-user {
+            align-items: flex-end;
+        }
+        .message-ai {
+            align-items: flex-start;
+        }
+        .message-bubble {
+            padding: 11px 16px;
+            border-radius: 11px;
+            max-width: 75%;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        .message-user .message-bubble {
+            background: #FF8A65;
+            color: white;
+        }
+        .message-ai .message-bubble {
+            background: white;
+            color: #2D2D2D;
+            border: 1px solid #E0E0E0;
+        }
+        
+        /* Tool Call */
+        .tool-call {
+            background: white;
+            border: 1px solid #E0E0E0;
+            border-radius: 9px;
+            padding: 10px 14px;
+            margin: 5px 0;
+            max-width: 75%;
+        }
+        .tool-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 5px;
+        }
+        .tool-icon {
+            font-size: 14px;
+        }
+        .tool-name {
+            font-size: 12px;
+            font-weight: 700;
+            color: #2D2D2D;
+            font-family: 'Courier New', monospace;
+        }
+        .tool-status {
+            margin-left: auto;
+            font-size: 10px;
+            color: #FF8A65;
+            font-weight: 700;
+        }
+        .tool-details {
+            font-size: 11px;
+            color: #666666;
+            line-height: 1.4;
+        }
+        .tool-metric {
+            display: inline-block;
+            background: #F5F5F5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin: 2px;
+            font-weight: 700;
+            color: #FF8A65;
+            font-size: 11px;
+        }
+     }
+    </style>
+    
+    <div class="slide-container">
+        <h2 class="demo-title">Módulo 3 en Acción</h2>
+        <p class="demo-subtitle">Procesamiento masivo de documentos con precisión absoluta</p>
+        
+        <div class="interface">
+            <div class="interface-header">
+                <div class="interface-title">Agente Interno de Documentos</div>
+                <div class="zero-hallucination-badge">0% Alucinaciones</div>
+            </div>
+            
+            <div class="interface-content">
+                <!-- Document Viewer -->
+                <div class="document-viewer">
+                    <div class="viewer-header">
+                        <div class="viewer-title">📁 Expediente Activo</div>
+                        <div class="page-count">127 archivos</div>
                     </div>
                     
-                    <div class="tool-call">
-                        <div class="tool-header">
-                            <div class="tool-icon">📄</div>
-                            <div class="tool-name">scan_massive_documents()</div>
-                            <div class="tool-status">✓ Completado</div>
-                        </div>
-                        <span class="tool-metric tool-metric-big">3,247 páginas</span>
-                        <span class="tool-metric">127 archivos</span>
-                        <span class="tool-metric">4 min 12 seg</span>
-                    </div>
-                    
-                    <div class="tool-call">
-                        <div class="tool-header">
-                            <div class="tool-icon">🔍</div>
-                            <div class="tool-name">extract_breach_clauses()</div>
-                            <div class="tool-status">✓ Completado</div>
-                        </div>
-                        <span class="tool-metric tool-metric-success">18 cláusulas</span>
-                        <span class="tool-metric tool-metric-success">100% precisión</span>
-                        <span class="tool-metric">0 errores</span>
-                    </div>
-                    
-                    <div class="tool-call">
-                        <div class="tool-header">
-                            <div class="tool-icon">📅</div>
-                            <div class="tool-name">calculate_legal_deadlines()</div>
-                            <div class="tool-status">✓ Completado</div>
-                        </div>
-                        <span class="tool-metric">12 plazos totales</span>
-                        <span class="tool-metric tool-metric-success">5 activos</span>
-                        <span class="tool-metric">7 vencidos</span>
-                    </div>
-                    
-                    <div class="tool-call">
-                        <div class="tool-header">
-                            <div class="tool-icon">💰</div>
-                            <div class="tool-name">calculate_amounts()</div>
-                            <div class="tool-status">✓ Completado</div>
-                        </div>
-                        <span class="tool-metric tool-metric-big">€847,000</span>
-                        <span class="tool-metric tool-metric-success">Verificado</span>
-                    </div>
-                    
-                    <div class="result-summary">
-                        <div class="summary-title">✓ Análisis Completado</div>
-                        <div class="summary-stats">
-                            <div>
-                                <div class="summary-value">3,247</div>
-                                <div class="summary-label">Páginas</div>
+                    <div class="document-preview">
+                        <div class="doc-file">
+                            <div class="doc-icon">📄</div>
+                            <div class="doc-info">
+                                <div class="doc-name">Contrato_Principal.pdf</div>
+                                <div class="doc-pages">487 páginas</div>
                             </div>
-                            <div>
-                                <div class="summary-value">100%</div>
-                                <div class="summary-label">Precisión</div>
+                            <div class="doc-status">Procesando...</div>
+                        </div>
+                        
+                        <div class="doc-file">
+                            <div class="doc-icon">📄</div>
+                            <div class="doc-info">
+                                <div class="doc-name">Anexos_Tecnicos.pdf</div>
+                                <div class="doc-pages">892 páginas</div>
                             </div>
-                            <div>
-                                <div class="summary-value">0</div>
-                                <div class="summary-label">Errores</div>
+                            <div class="doc-status">Procesando...</div>
+                        </div>
+                        
+                        <div class="doc-file">
+                            <div class="doc-icon">📄</div>
+                            <div class="doc-info">
+                                <div class="doc-name">Clausulas_Adicionales.pdf</div>
+                                <div class="doc-pages">234 páginas</div>
                             </div>
+                            <div class="doc-status">Completado</div>
+                        </div>
+                        
+                        <div class="doc-file">
+                            <div class="doc-icon">📄</div>
+                            <div class="doc-info">
+                                <div class="doc-name">Normativa_Aplicable.pdf</div>
+                                <div class="doc-pages">1,166 páginas</div>
+                            </div>
+                            <div class="doc-status">Completado</div>
+                        </div>
+                        
+                        <div class="doc-file">
+                            <div class="doc-icon">📄</div>
+                            <div class="doc-info">
+                                <div class="doc-name">Jurisprudencia.pdf</div>
+                                <div class="doc-pages">468 páginas</div>
+                            </div>
+                            <div class="doc-status">En cola</div>
+                        </div>
+                        
+                        <div style="font-size: 11px; color: #666666; text-align: center; margin-top: 8px;">
+                            + 122 archivos más...
+                        </div>
+                    </div>
+                    
+                    <div class="total-stats">
+                        <div class="total-number">3,247</div>
+                        <div class="total-label">PÁGINAS TOTALES</div>
+                    </div>
+                </div>
+                
+                <!-- Copilot Chat -->
+                <div class="copilot-chat">
+                    <div class="message message-user">
+                        <div class="message-bubble">Analiza el expediente completo e identifica cláusulas incumplidas</div>
+                    </div>
+                    
+                    <div class="message message-ai">
+                        <div class="message-bubble">Analizando 3,247 páginas...</div>
+                        
+                        <div class="tool-call">
+                            <div class="tool-header">
+                                <span class="tool-icon">📚</span>
+                                <span class="tool-name">analyze_massive_documents</span>
+                                <span class="tool-status">✓ Completado</span>
+                            </div>
+                            <div class="tool-details">
+                                <span class="tool-metric">3,247 páginas</span> procesadas en 
+                                <span class="tool-metric">4 min 12 seg</span>
+                            </div>
+                        </div>
+                        
+                        <div class="tool-call">
+                            <div class="tool-header">
+                                <span class="tool-icon">🔍</span>
+                                <span class="tool-name">extract_breach_clauses</span>
+                                <span class="tool-status">✓ Completado</span>
+                            </div>
+                            <div class="tool-details">
+                                <span class="tool-metric">18 cláusulas</span> identificadas · 
+                                <span class="tool-metric">100% precisión</span> · 
+                                <span class="tool-metric">0 errores</span>
+                            </div>
+                        </div>
+                        
+                        <div class="tool-call">
+                            <div class="tool-header">
+                                <span class="tool-icon">🧮</span>
+                                <span class="tool-name">calculate_legal_deadlines</span>
+                                <span class="tool-status">✓ Completado</span>
+                            </div>
+                            <div class="tool-details">
+                                <span class="tool-metric">12 plazos</span> calculados · 
+                                <span class="tool-metric">5 activos</span> · 
+                                <span class="tool-metric">3 vencidos</span>
+                            </div>
+                        </div>
+                        
+                        <div class="tool-call">
+                            <div class="tool-header">
+                                <span class="tool-icon">📊</span>
+                                <span class="tool-name">generate_executive_summary</span>
+                                <span class="tool-status">✓ Completado</span>
+                            </div>
+                            <div class="tool-details">
+                                Resumen ejecutivo de <span class="tool-metric">8 páginas</span> generado
+                            </div>
+                        </div>
+                        
+                        <div class="message-bubble">
+                            ✅ Análisis completado: 18 cláusulas incumplidas identificadas con referencias exactas a páginas y documentos fuente.
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 </div>
-</div>
-<div class="slide-separator"></div>
-<div class="slide-wrapper" id="slide-12">
-<div class="slide-content">
-<div class="slide-container">
+
+<div class="slide-wrapper slide-12" id="slide-12">
+    
+    <style>
+        .slide-12 { 
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #FAFAFA;
+            padding: 45px 70px;
+            display: flex;
+            gap: 50px;
+        }
+        .left-column {
+            flex: 0.8;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .right-column {
+            flex: 1.2;
+        }
+        .module-badge {
+            display: inline-block;
+            background: rgba(102,126,234,0.2);
+            color: #666666;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        .module-title {
+            font-size: 42px;
+            font-weight: 800;
+            color: #2D2D2D;
+            margin-bottom: 15px;
+            line-height: 1.1;
+        }
+        .module-price {
+            font-size: 42px;
+            font-weight: 800;
+            background: #FF8A65;
+            
+            
+            
+            margin-bottom: 40px;
+        }
+        
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .feature-icon {
+            width: 36px;
+            height: 36px;
+            background: #FF8A65;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(16,185,129,0.4);
+        }
+        .feature-text {
+            font-size: 22px;
+            font-weight: 700;
+            color: #2D2D2D;
+        }
+        
+        /* Copilot Interface */
+        .copilot-interface {
+            background: rgba(255,255,255,0.05);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border: 1px solid rgba(102,126,234,0.3);
+        }
+        .copilot-header {
+            background: #FF8A65;
+            padding: 18px 24px;
+            color: #2D2D2D;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .copilot-icon {
+            font-size: 28px;
+        }
+        .copilot-title {
+            font-size: 19px;
+            font-weight: 800;
+        }
+        .templates-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 800;
+        }
+        
+        .chat-area {
+            padding: 24px;
+            min-height: 500px;
+        }
+        .msg-user {
+            background: rgba(102,126,234,0.15);
+            border-left: 4px solid #FF8A65;
+            padding: 14px 18px;
+            border-radius: 10px;
+            color: #2D2D2D;
+            font-size: 15px;
+            margin-bottom: 16px;
+        }
+        
+        .tool-call {
+            background: rgba(102,126,234,0.1);
+            border: 1px solid rgba(102,126,234,0.3);
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin: 12px 0;
+        }
+        .tool-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+        .tool-icon {
+            font-size: 20px;
+        }
+        .tool-name {
+            font-size: 13px;
+            font-weight: 800;
+            color: #666666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            flex: 1;
+        }
+        .tool-status {
+            font-size: 11px;
+            color: #FF8A65;
+            font-weight: 800;
+        }
+        .tool-metric {
+            display: inline-block;
+            background: rgba(16,185,129,0.2);
+            color: #FF8A65;
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-weight: 800;
+            margin: 4px;
+            font-size: 14px;
+        }
+        
+        .result-summary {
+            background: #FF8A65;
+            border-radius: 12px;
+            padding: 18px 22px;
+            margin-top: 14px;
+            color: #2D2D2D;
+        }
+        .summary-title {
+            font-size: 17px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        .summary-content {
+            font-size: 14px;
+            line-height: 1.5;
+            opacity: 0.95;
+        }
+     }
+    </style>
+    
+    <div class="slide-container">
         <div class="left-column">
             <div class="module-badge">Módulo 4</div>
             <h2 class="module-title">Generación Documentos</h2>
@@ -950,168 +3614,567 @@
             </div>
         </div>
     </div>
+
 </div>
-</div>
-<div class="slide-separator"></div>
-<div class="slide-wrapper" id="slide-13">
-<div class="slide-content">
-<div class="slide-container">
-        <h2 class="demo-title">Módulo 4 en Acción: Generando Contrato Personalizado</h2>
+
+<div class="slide-wrapper slide-13" id="slide-13">
+    
+    <style>
+        .slide-13 { 
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #FAFAFA;
+            padding: 20px 60px;
+            display: flex;
+            flex-direction: column;
+        }
+        .demo-title {
+            font-size: 48px;
+            font-weight: 800;
+            color: #2D2D2D;
+            margin-bottom: 15px;
+            text-align: center;
+        }
         
-        <div class="interface">
-            <div class="interface-header">
-                <div class="header-left">
-                    <div class="interface-icon">📝</div>
-                    <div class="interface-title">Generador Documentos INTLAW AI</div>
+        /* Document Generator App */
+        .docgen-app {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            border: 1px solid #E0E0E0;
+            flex: 1;
+            display: flex;
+            max-height: 625px;
+        }
+        
+        /* Left Panel - Form */
+        .left-panel {
+            width: 420px;
+            background: #FAFAFA;
+            border-right: 1px solid #E0E0E0;
+            display: flex;
+            flex-direction: column;
+        }
+        .panel-header {
+            background: white;
+            border-bottom: 1px solid #E0E0E0;
+            padding: 14px 16px;
+        }
+        .panel-title {
+            font-size: 18px;
+            font-weight: 800;
+            color: #2D2D2D;
+            margin-bottom: 4px;
+        }
+        .panel-subtitle {
+            font-size: 12px;
+            color: #666;
+        }
+        .panel-body {
+            flex: 1;
+            padding: 14px 16px;
+            overflow-y: auto;
+        }
+        
+        /* Form */
+        .form-section {
+            margin-bottom: 12px;
+        }
+        .form-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: #2D2D2D;
+            margin-bottom: 6px;
+            display: block;
+        }
+        .form-input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #E0E0E0;
+            border-radius: 6px;
+            font-size: 13px;
+            outline: none;
+            box-sizing: border-box;
+        }
+        .form-input:focus {
+            border-color: #FF8A65;
+        }
+        .form-select {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #E0E0E0;
+            border-radius: 6px;
+            font-size: 13px;
+            outline: none;
+            box-sizing: border-box;
+        }
+        .generate-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #FF8A65 0%, #FF6F4A 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 14px;
+        }
+        
+        /* AI Customization Panel */
+        .ai-customization {
+            background: white;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 14px;
+            border: 1px solid #E0E0E0;
+        }
+        .ai-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        .ai-title {
+            font-size: 13px;
+            font-weight: 800;
+            color: #2D2D2D;
+        }
+        .ai-badge {
+            background: #FF8A65;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 700;
+        }
+        .ai-item {
+            font-size: 11px;
+            color: #666;
+            padding: 6px 0;
+            border-bottom: 1px solid #F5F5F5;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .ai-item:last-child {
+            border-bottom: none;
+        }
+        .ai-check {
+            color: #28CA42;
+            font-size: 12px;
+        }
+        
+        /* Right Panel - Document Preview */
+        .right-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: #F5F5F5;
+        }
+        .preview-header {
+            background: white;
+            border-bottom: 1px solid #E0E0E0;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .preview-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #2D2D2D;
+        }
+        .preview-actions {
+            display: flex;
+            gap: 8px;
+        }
+        .action-btn {
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid #E0E0E0;
+            background: white;
+        }
+        .action-btn-primary {
+            background: #FF8A65;
+            color: white;
+            border: none;
+        }
+        
+        /* Document Preview */
+        .document-preview {
+            flex: 1;
+            padding: 16px;
+            overflow-y: auto;
+        }
+        .document-page {
+            background: white;
+            border-radius: 8px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            max-width: 650px;
+            margin: 0 auto;
+            border: 1px solid #E0E0E0;
+        }
+        .doc-header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 14px;
+            border-bottom: 2px solid #2D2D2D;
+        }
+        .doc-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: #2D2D2D;
+            margin-bottom: 6px;
+        }
+        .doc-subtitle {
+            font-size: 13px;
+            color: #666;
+        }
+        .doc-section {
+            margin-bottom: 18px;
+        }
+        .doc-section-title {
+            font-size: 15px;
+            font-weight: 800;
+            color: #2D2D2D;
+            margin-bottom: 10px;
+            padding-bottom: 4px;
+            border-bottom: 1px solid #E0E0E0;
+        }
+        .doc-paragraph {
+            font-size: 12px;
+            line-height: 1.6;
+            color: #2D2D2D;
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+        .doc-highlight {
+            background: #FFF5F2;
+            padding: 2px 4px;
+            border-radius: 3px;
+            color: #FF8A65;
+            font-weight: 600;
+        }
+        .doc-clause {
+            background: #FAFAFA;
+            padding: 10px;
+            border-radius: 6px;
+            border-left: 3px solid #FF8A65;
+            margin-bottom: 10px;
+        }
+        .clause-number {
+            font-size: 11px;
+            font-weight: 800;
+            color: #FF8A65;
+            margin-bottom: 4px;
+        }
+        .clause-text {
+            font-size: 12px;
+            line-height: 1.6;
+            color: #2D2D2D;
+        }
+        .doc-footer {
+            text-align: center;
+            font-size: 10px;
+            color: #999;
+            margin-top: 20px;
+        }
+        
+        /* Generation Status */
+        .generation-status {
+            position: absolute;
+            bottom: 20px;
+            left: 480px;
+            background: white;
+            border-radius: 8px;
+            padding: 12px 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            border: 1px solid #E0E0E0;
+            min-width: 260px;
+        }
+        .status-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        .status-icon {
+            font-size: 18px;
+        }
+        .status-text {
+            font-size: 13px;
+            font-weight: 700;
+            color: #2D2D2D;
+        }
+        .status-progress {
+            height: 5px;
+            background: #F5F5F5;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 6px;
+        }
+        .status-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #FF8A65 0%, #FF6F4A 100%);
+            width: 92%;
+            transition: width 0.3s;
+        }
+        .status-details {
+            font-size: 10px;
+            color: #666;
+        }
+     }
+    </style>
+    
+    <div class="slide-container">
+        <h2 class="demo-title">Módulo 4: Generación de Documentos Legales</h2>
+        
+        <div class="docgen-app">
+            <!-- Left Panel - Form -->
+            <div class="left-panel">
+                <div class="panel-header">
+                    <div class="panel-title">Nuevo Documento</div>
+                    <div class="panel-subtitle">Contrato de Compraventa Mercantil</div>
                 </div>
-                <div class="template-badge">Plantilla: Compraventa Mercantil</div>
-                <div class="ai-status">
-                    <span>⚡</span>
-                    IA Personalizando...
+                
+                <div class="panel-body">
+                    <div class="form-section">
+                        <label class="form-label">Tipo de Contrato</label>
+                        <select class="form-select">
+                            <option>Compraventa Mercantil</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-section">
+                        <label class="form-label">Parte Compradora</label>
+                        <input class="form-input" value="TechCorp Solutions SL" />
+                    </div>
+                    
+                    <div class="form-section">
+                        <label class="form-label">Parte Vendedora</label>
+                        <input class="form-input" value="Innovatech Industries SA" />
+                    </div>
+                    
+                    <div class="form-section">
+                        <label class="form-label">Objeto del Contrato</label>
+                        <input class="form-input" value="Adquisición de activos tecnológicos" />
+                    </div>
+                    
+                    <div class="form-section">
+                        <label class="form-label">Importe</label>
+                        <input class="form-input" value="€850,000" />
+                    </div>
+                    
+                    <div class="form-section">
+                        <label class="form-label">Jurisdicción</label>
+                        <select class="form-select">
+                            <option>Barcelona, España</option>
+                        </select>
+                    </div>
+                    
+                    <button class="generate-btn">✓ Generar Documento</button>
+                    
+                    <!-- AI Customization Panel -->
+                    <div class="ai-customization">
+                        <div class="ai-header">
+                            <span>🤖</span>
+                            <span class="ai-title">Personalizaciones IA</span>
+                            <span class="ai-badge">18 ADAPTADAS</span>
+                        </div>
+                        <div class="ai-item">
+                            <span class="ai-check">✓</span>
+                            <span>Cláusula de garantía adaptada</span>
+                        </div>
+                        <div class="ai-item">
+                            <span class="ai-check">✓</span>
+                            <span>Normativa Barcelona aplicada</span>
+                        </div>
+                        <div class="ai-item">
+                            <span class="ai-check">✓</span>
+                            <span>6 cláusulas específicas añadidas</span>
+                        </div>
+                        <div class="ai-item">
+                            <span class="ai-check">✓</span>
+                            <span>Plazos calculados automáticamente</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             
-            <div class="interface-content">
-                <div class="document-preview">
-                    <div class="doc-header">
-                        <div class="doc-title">CONTRATO DE COMPRAVENTA MERCANTIL</div>
-                        <div class="doc-subtitle">TechCorp SL → InnoSolutions SA · Software €250,000</div>
-                    </div>
-                    
-                    <div class="doc-section">
-                        <div class="section-title">
-                            <span>1.</span> PARTES CONTRATANTES
-                        </div>
-                        <div class="section-content">
-                            <div class="clause clause-ai">
-                                <div class="ai-badge">IA Adaptado</div>
-                                De una parte, <strong>TechCorp SL</strong>, con CIF B-12345678, domicilio en Barcelona, representada por su administrador único, actúa como VENDEDOR de solución software empresarial.
-                            </div>
-                            <div class="clause clause-ai">
-                                <div class="ai-badge">IA Adaptado</div>
-                                De otra parte, <strong>InnoSolutions SA</strong>, con CIF A-87654321, domicilio en Madrid, representada por su consejo de administración, actúa como COMPRADOR.
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="doc-section">
-                        <div class="section-title">
-                            <span>2.</span> OBJETO DEL CONTRATO
-                        </div>
-                        <div class="section-content">
-                            <div class="clause clause-ai">
-                                <div class="ai-badge">IA Personalizado</div>
-                                El VENDEDOR se compromete a transferir la propiedad y derechos de explotación del software empresarial denominado "TechSuite Pro" al COMPRADOR por el precio de <strong>DOSCIENTOS CINCUENTA MIL EUROS (€250,000)</strong>, incluyendo garantía extendida de 24 meses y soporte técnico 24/7.
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="doc-section">
-                        <div class="section-title">
-                            <span>3.</span> GARANTÍAS Y SOPORTE
-                        </div>
-                        <div class="section-content">
-                            <div class="clause clause-ai">
-                                <div class="ai-badge">IA Añadido</div>
-                                El VENDEDOR garantiza el funcionamiento óptimo del software durante 24 meses desde la entrega, incluyendo actualizaciones de seguridad y corrección de errores sin coste adicional.
-                            </div>
-                            <div class="clause clause-ai">
-                                <div class="ai-badge">IA Añadido</div>
-                                Se proporciona soporte técnico 24/7 mediante canal prioritario con tiempo de respuesta máximo de 2 horas para incidencias críticas y 8 horas para incidencias no críticas.
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="doc-section">
-                        <div class="section-title">
-                            <span>4.</span> PENALIZACIONES POR RETRASO
-                        </div>
-                        <div class="section-content">
-                            <div class="clause clause-ai">
-                                <div class="ai-badge">IA Personalizado</div>
-                                En caso de retraso en la entrega superior a 15 días naturales, el VENDEDOR abonará al COMPRADOR una penalización de 0.5% del precio total por cada día de retraso, con un máximo del 15% del valor del contrato.
-                            </div>
-                        </div>
+            <!-- Right Panel - Document Preview -->
+            <div class="right-panel">
+                <div class="preview-header">
+                    <div class="preview-title">📄 Vista Previa del Documento</div>
+                    <div class="preview-actions">
+                        <button class="action-btn">Editar</button>
+                        <button class="action-btn">Versiones</button>
+                        <button class="action-btn-primary">⬇ Descargar PDF</button>
                     </div>
                 </div>
                 
-                <div class="ai-panel">
-                    <div class="panel-card">
-                        <div class="panel-title">
-                            <span>🤖</span>
-                            Personalizaciones IA
+                <div class="document-preview">
+                    <div class="document-page">
+                        <div class="doc-header">
+                            <div class="doc-title">CONTRATO DE COMPRAVENTA MERCANTIL</div>
+                            <div class="doc-subtitle">Entre TechCorp Solutions SL e Innovatech Industries SA</div>
                         </div>
-                        <div class="ai-action">
-                            <div class="action-header">
-                                <div class="action-name">Partes Contratantes</div>
-                                <div class="action-status">✓ Completado</div>
+                        
+                        <div class="doc-section">
+                            <div class="doc-section-title">I. PARTES CONTRATANTES</div>
+                            <div class="doc-paragraph">
+                                De una parte, <span class="doc-highlight">TechCorp Solutions SL</span>, con CIF B-12345678, domiciliada en Barcelona, España, representada por su administrador único, en adelante "EL COMPRADOR".
                             </div>
-                            <div class="action-detail">Datos empresas insertados</div>
+                            <div class="doc-paragraph">
+                                De otra parte, <span class="doc-highlight">Innovatech Industries SA</span>, con CIF A-87654321, domiciliada en Barcelona, España, representada por su consejero delegado, en adelante "EL VENDEDOR".
+                            </div>
                         </div>
-                        <div class="ai-action">
-                            <div class="action-header">
-                                <div class="action-name">Objeto + Precio</div>
-                                <div class="action-status">✓ Completado</div>
+                        
+                        <div class="doc-section">
+                            <div class="doc-section-title">II. OBJETO DEL CONTRATO</div>
+                            <div class="doc-clause">
+                                <div class="clause-number">CLÁUSULA 1 - Objeto</div>
+                                <div class="clause-text">
+                                    El presente contrato tiene por objeto la <span class="doc-highlight">adquisición de activos tecnológicos</span> por parte del COMPRADOR al VENDEDOR, por un importe total de <span class="doc-highlight">€850,000</span>.
+                                </div>
                             </div>
-                            <div class="action-detail">€250K + Software especificado</div>
+                            <div class="doc-clause">
+                                <div class="clause-number">CLÁUSULA 2 - Precio y Forma de Pago</div>
+                                <div class="clause-text">
+                                    El precio total se abonará mediante transferencia bancaria en dos plazos: 40% a la firma del contrato y 60% a los 30 días de la entrega efectiva.
+                                </div>
+                            </div>
                         </div>
-                        <div class="ai-action">
-                            <div class="action-header">
-                                <div class="action-name">Garantía Extendida</div>
-                                <div class="action-status">✓ Añadido</div>
+                        
+                        <div class="doc-section">
+                            <div class="doc-section-title">III. GARANTÍAS Y RESPONSABILIDADES</div>
+                            <div class="doc-clause">
+                                <div class="clause-number">CLÁUSULA 3 - Garantías del Vendedor</div>
+                                <div class="clause-text">
+                                    El VENDEDOR garantiza que los activos objeto de este contrato están libres de cargas y gravámenes, y que cuenta con plena capacidad legal para su transmisión...
+                                </div>
                             </div>
-                            <div class="action-detail">Cláusula 24 meses generada</div>
                         </div>
-                        <div class="ai-action">
-                            <div class="action-header">
-                                <div class="action-name">Soporte 24/7</div>
-                                <div class="action-status">✓ Añadido</div>
-                            </div>
-                            <div class="action-detail">SLA tiempos respuesta</div>
-                        </div>
-                        <div class="ai-action">
-                            <div class="action-header">
-                                <div class="action-name">Penalizaciones</div>
-                                <div class="action-status">⚡ Generando</div>
-                            </div>
-                            <div class="action-detail">Cálculo 0.5% por día retraso</div>
-                        </div>
-                    </div>
-                    
-                    <div class="panel-card">
-                        <div class="panel-title">
-                            <span>📊</span>
-                            Estadísticas
-                        </div>
-                        <div class="stats-grid">
-                            <div class="stat-box">
-                                <div class="stat-value">28</div>
-                                <div class="stat-label">Páginas</div>
-                            </div>
-                            <div class="stat-box">
-                                <div class="stat-value">18</div>
-                                <div class="stat-label">Cláusulas</div>
-                            </div>
-                            <div class="stat-box">
-                                <div class="stat-value">47</div>
-                                <div class="stat-label">Modificaciones</div>
-                            </div>
-                            <div class="stat-box">
-                                <div class="stat-value">6</div>
-                                <div class="stat-label">Añadidas</div>
-                            </div>
+                        
+                        <div class="doc-footer">
+                            Página 1 de 28 · Generado con INTLAW AI · Personalizado para este caso
                         </div>
                     </div>
+                </div>
+            </div>
+            
+            <!-- Generation Status -->
+            <div class="generation-status">
+                <div class="status-header">
+                    <span class="status-icon">⚡</span>
+                    <span class="status-text">Generando Documento</span>
+                </div>
+                <div class="status-progress">
+                    <div class="status-progress-fill"></div>
+                </div>
+                <div class="status-details">
+                    28 páginas · 18 cláusulas · 47 modificaciones · 12 referencias actualizadas
                 </div>
             </div>
         </div>
     </div>
+
 </div>
-</div>
-<div class="slide-separator"></div>
-<div class="slide-wrapper" id="slide-14">
-<div class="slide-content">
-<div class="slide-container">
+
+<div class="slide-wrapper slide-14" id="slide-14">
+    
+    <style>
+        .slide-14 { 
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #FAFAFA;
+            padding: 50px 80px;
+        }
+        .title {
+            font-size: 64px;
+            font-weight: 800;
+            background: #FF8A65;
+            
+            
+            
+            margin-bottom: 45px;
+            text-align: center;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 35px;
+        }
+        .benefit-box {
+            background: white;
+            border-radius: 20px;
+            padding: 35px 40px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .benefit-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: #FF8A65;
+        }
+        .benefit-box:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 60px rgba(16,185,129,0.2);
+            border-color: #FF8A65;
+        }
+        .benefit-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: #FF8A65;
+            color: #2D2D2D;
+            text-align: center;
+            line-height: 50px;
+            font-weight: 800;
+            font-size: 26px;
+            margin-bottom: 18px;
+            border-radius: 50%;
+            box-shadow: 0 6px 20px rgba(16,185,129,0.3);
+        }
+        .benefit-title {
+            font-size: 30px;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 12px;
+        }
+        .benefit-desc {
+            font-size: 20px;
+            color: #666666;
+            line-height: 1.5;
+        }
+     }
+    </style>
+    
+    <div class="slide-container">
         <h2 class="title">Beneficios Clave</h2>
         <div class="benefits-grid">
             <div class="benefit-box">
@@ -1136,142 +4199,534 @@
             </div>
         </div>
     </div>
+
 </div>
-</div>
-<div class="slide-separator"></div>
-<div class="slide-wrapper" id="slide-15">
-<div class="slide-content">
-<div class="slide-container">
-        <h2 class="slide-title">Modelo de Inversión</h2>
+
+<div class="slide-wrapper slide-15" id="slide-15">
+    
+    <style>
+        .slide-15 { 
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #FAFAFA;
+            padding: 35px 60px;
+            display: flex;
+            flex-direction: column;
+        }
+        .title {
+            font-size: 48px;
+            font-weight: 800;
+            color: #2D2D2D;
+            margin-bottom: 30px;
+            text-align: center;
+        }
         
-        <div class="pricing-container">
-            <!-- Plan 1 -->
+        .plans-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .plan-card {
+            background: white;
+            border: 2px solid #E0E0E0;
+            border-radius: 14px;
+            padding: 26px;
+            position: relative;
+        }
+        .plan-card.recommended {
+            border-color: #FF8A65;
+            box-shadow: 0 4px 16px rgba(255,138,101,0.15);
+        }
+        .plan-badge {
+            position: absolute;
+            top: -12px;
+            right: 24px;
+            background: #FF8A65;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 800;
+        }
+        .plan-name {
+            font-size: 22px;
+            font-weight: 800;
+            color: #2D2D2D;
+            margin-bottom: 12px;
+        }
+        .plan-total {
+            font-size: 42px;
+            font-weight: 800;
+            color: #2D2D2D;
+            margin-bottom: 6px;
+        }
+        .plan-total-old {
+            text-decoration: line-through;
+            color: #999999;
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        .plan-savings {
+            background: #10B981;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+        .plan-payments {
+            background: #F5F5F5;
+            border-radius: 8px;
+            padding: 14px;
+            margin-bottom: 14px;
+        }
+        .payment-item {
+            font-size: 14px;
+            color: #2D2D2D;
+            margin-bottom: 6px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .payment-item:last-child {
+            margin-bottom: 0;
+        }
+        .payment-label {
+            color: #666666;
+        }
+        .payment-amount {
+            font-weight: 700;
+            color: #2D2D2D;
+        }
+        .plan-includes {
+            font-size: 13px;
+            color: #666666;
+            line-height: 1.6;
+        }
+        
+        .benefits-section {
+            background: white;
+            border: 2px solid #E0E0E0;
+            border-radius: 12px;
+            padding: 20px 26px;
+            margin-bottom: 16px;
+        }
+        .benefits-title {
+            font-size: 18px;
+            font-weight: 800;
+            color: #2D2D2D;
+            margin-bottom: 14px;
+            text-align: center;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+        .benefit-item {
+            text-align: center;
+            padding: 12px;
+            background: #F5F5F5;
+            border-radius: 8px;
+        }
+        .benefit-icon {
+            font-size: 24px;
+            margin-bottom: 6px;
+        }
+        .benefit-text {
+            font-size: 12px;
+            color: #2D2D2D;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        
+        .guarantee-section {
+            background: #FFF5F2;
+            border: 2px solid #FF8A65;
+            border-radius: 10px;
+            padding: 16px 22px;
+            text-align: center;
+        }
+        .guarantee-title {
+            font-size: 16px;
+            font-weight: 800;
+            color: #FF8A65;
+            margin-bottom: 8px;
+        }
+        .guarantee-text {
+            font-size: 13px;
+            color: #2D2D2D;
+            line-height: 1.5;
+        }
+     }
+    </style>
+    
+    <div class="slide-container">
+        <h2 class="title">Modelo de Inversión</h2>
+        
+        <div class="plans-grid">
             <div class="plan-card">
-                <div class="plan-header">
-                    <div class="plan-name">Plan 1: Financiado</div>
-                    <div class="plan-total">€57,000</div>
-                </div>
-                <div class="plan-breakdown">
-                    <div class="breakdown-item">
-                        <div class="breakdown-label">Pago Inicial</div>
-                        <div class="breakdown-value">€9,000</div>
+                <div class="plan-name">Plan 1: Financiado</div>
+                <div class="plan-total">€57,000</div>
+                <div class="plan-payments">
+                    <div class="payment-item">
+                        <span class="payment-label">Pago Inicial:</span>
+                        <span class="payment-amount">€9,000</span>
                     </div>
-                    <div class="breakdown-item">
-                        <div class="breakdown-label">Mensualidad</div>
-                        <div class="breakdown-value">€4,000</div>
+                    <div class="payment-item">
+                        <span class="payment-label">Mensualidad:</span>
+                        <span class="payment-amount">€4,000/mes</span>
                     </div>
-                    <div class="breakdown-item">
-                        <div class="breakdown-label">Duración</div>
-                        <div class="breakdown-value">12 meses</div>
+                    <div class="payment-item">
+                        <span class="payment-label">Duración:</span>
+                        <span class="payment-amount">12 meses</span>
                     </div>
                 </div>
-                <div class="plan-features">
-                    <div class="feature-item">4 Módulos completos incluidos</div>
-                    <div class="feature-item">Implementación en 80 días</div>
-                    <div class="feature-item">Soporte durante financiación</div>
+                <div class="plan-includes">
+                    Incluye: 4 módulos completos + implementación 80 días + soporte 12 meses
                 </div>
             </div>
             
-            <!-- Plan 2 -->
             <div class="plan-card recommended">
-                <div class="plan-header">
-                    <div class="plan-name">Plan 2: Pago por Hitos</div>
-                    <div class="plan-original">€60,000</div>
-                    <div class="plan-total">€45,000</div>
-                    <div class="plan-savings">Ahorro €15,000</div>
+                <div class="plan-badge">RECOMENDADO</div>
+                <div class="plan-name">Plan 2: Pago por Hitos</div>
+                <div>
+                    <span class="plan-total-old">€60,000</span>
+                    <span class="plan-total">€45,000</span>
                 </div>
-                <div class="plan-breakdown">
-                    <div class="breakdown-item">
-                        <div class="breakdown-label">Pago 1 (Inicio)</div>
-                        <div class="breakdown-value">€15,000</div>
+                <div class="plan-savings">Ahorro de €15,000</div>
+                <div class="plan-payments">
+                    <div class="payment-item">
+                        <span class="payment-label">Pago 1 (Inicio):</span>
+                        <span class="payment-amount">€15,000</span>
                     </div>
-                    <div class="breakdown-item">
-                        <div class="breakdown-label">Pago 2 (Despliegue)</div>
-                        <div class="breakdown-value">€15,000</div>
+                    <div class="payment-item">
+                        <span class="payment-label">Pago 2 (Despliegue):</span>
+                        <span class="payment-amount">€15,000</span>
                     </div>
-                    <div class="breakdown-item">
-                        <div class="breakdown-label">Pago 3 (3 meses)</div>
-                        <div class="breakdown-value">€15,000</div>
+                    <div class="payment-item">
+                        <span class="payment-label">Pago 3 (3 meses después):</span>
+                        <span class="payment-amount">€15,000</span>
                     </div>
                 </div>
-                <div class="plan-features">
-                    <div class="feature-item">4 Módulos completos incluidos</div>
-                    <div class="feature-item">Implementación en 80 días</div>
-                    <div class="feature-item">Ahorro máximo garantizado</div>
+                <div class="plan-includes">
+                    Incluye: 4 módulos completos + implementación 80 días + máximo ahorro
                 </div>
             </div>
         </div>
         
-        <div class="guarantees-section">
-            <div class="guarantees-title">⚠️ Garantías Incluidas en Ambos Planes ⚠️</div>
-            <div class="guarantees-grid">
-                <div class="guarantee-item">
-                    <div class="guarantee-icon">💯</div>
-                    <div class="guarantee-text">Reembolso Total si hay alucinaciones o errores</div>
+        <div class="benefits-section">
+            <div class="benefits-title">Incluido en Ambos Planes</div>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🔗</div>
+                    <div class="benefit-text">Integración perfecta entre módulos</div>
                 </div>
-                <div class="guarantee-item">
-                    <div class="guarantee-icon">🛠️</div>
-                    <div class="guarantee-text">12 Meses Soporte Continuo</div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">📈</div>
+                    <div class="benefit-text">Escalable sin límites</div>
                 </div>
-                <div class="guarantee-item">
-                    <div class="guarantee-icon">⚡</div>
-                    <div class="guarantee-text">Precio Prioritario Nuevas Funcionalidades</div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🛠️</div>
+                    <div class="benefit-text">12 meses soporte continuo</div>
                 </div>
-                <div class="guarantee-item">
-                    <div class="guarantee-icon">🎓</div>
-                    <div class="guarantee-text">Capacitación Completa Incluida</div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">⚡</div>
+                    <div class="benefit-text">Precio prioritario nuevas features</div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-<div class="slide-separator"></div>
-<div class="slide-wrapper" id="slide-16">
-<div class="slide-content">
-<div class="slide-container">
-        <div class="left">
-            <h2 class="title">Próximos Pasos</h2>
-            
-            <div class="option-box">
-                <div class="option-label">Implementación Estándar</div>
-                <div class="option-days">80 Días</div>
-                <div class="option-price">Incluido</div>
-                <div class="option-desc">Personalización completa y capacitación</div>
-            </div>
-            
-            <div class="option-box express">
-                <div class="option-label express-label">Pack Express</div>
-                <div class="option-days">40 Días</div>
-                <div class="option-price express-price">+€4,000</div>
-                <div class="option-desc">Equipo dedicado, prioridad máxima</div>
             </div>
         </div>
         
-        <div class="right">
-            <div class="contact-box">
-                <div class="contact-title">Contacto</div>
-                <div class="contact-item"><span class="contact-label">Email:</span> sami@agentsai.ltd</div>
-                <div class="contact-item"><span class="contact-label">Empresa:</span> AGENTS AI Limited</div>
-                <div class="contact-item" style="margin-top: 12px;">
-                    27 Old Gloucester Street<br>
-                    London WC1N 3AX<br>
-                    United Kingdom
-                </div>
+        <div class="guarantee-section">
+            <div class="guarantee-title">⚠️ GARANTÍA DE REEMBOLSO TOTAL ⚠️</div>
+            <div class="guarantee-text">
+                Cualquier alucinación, error o funcionalidad que no trabaje como debe será corregida inmediatamente o <strong>REEMBOLSO COMPLETO garantizado</strong>. Soporte continuo durante 12 meses post-implementación incluido.
             </div>
         </div>
     </div>
+
 </div>
+
+<div class="slide-wrapper slide-16" id="slide-16">
+    
+    <style>
+        .slide-16 { 
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #FAFAFA;
+            padding: 35px 60px;
+            display: flex;
+            flex-direction: column;
+        }
+        .title {
+            font-size: 48px;
+            font-weight: 800;
+            color: #2D2D2D;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .timeline-section {
+            background: white;
+            border-radius: 12px;
+            padding: 24px 30px;
+            border: 1px solid #E0E0E0;
+            margin-bottom: 20px;
+        }
+        .timeline-title {
+            font-size: 22px;
+            font-weight: 800;
+            color: #2D2D2D;
+            margin-bottom: 16px;
+        }
+        .timeline-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .timeline-option {
+            background: #F5F5F5;
+            padding: 16px 20px;
+            border-radius: 10px;
+            border: 2px solid transparent;
+        }
+        .timeline-option.recommended {
+            border-color: #FF8A65;
+            background: #FFF5F2;
+        }
+        .option-badge {
+            background: #FF8A65;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+        .option-days {
+            font-size: 32px;
+            font-weight: 800;
+            color: #2D2D2D;
+            margin-bottom: 4px;
+        }
+        .option-price {
+            font-size: 16px;
+            color: #666666;
+            margin-bottom: 8px;
+        }
+        .option-desc {
+            font-size: 13px;
+            color: #666666;
+            line-height: 1.5;
+        }
+        
+        .included-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        .included-card {
+            background: white;
+            border: 1px solid #E0E0E0;
+            border-radius: 10px;
+            padding: 18px;
+        }
+        .included-title {
+            font-size: 16px;
+            font-weight: 800;
+            color: #2D2D2D;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .included-list {
+            font-size: 13px;
+            color: #666666;
+            line-height: 1.7;
+            padding-left: 18px;
+        }
+        .included-list li {
+            margin-bottom: 4px;
+        }
+        
+        .contact-section {
+            background: #F5F5F5;
+            border-radius: 10px;
+            padding: 18px 24px;
+            text-align: center;
+        }
+        .contact-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #2D2D2D;
+            margin-bottom: 10px;
+        }
+        .contact-info {
+            font-size: 14px;
+            color: #666666;
+            line-height: 1.6;
+        }
+        .contact-email {
+            color: #FF8A65;
+            font-weight: 600;
+        }
+     }
+    </style>
+    
+    <div class="slide-container">
+        <h2 class="title">Próximos Pasos</h2>
+        
+        <div class="timeline-section">
+            <div class="timeline-title">Opciones de Implementación</div>
+            <div class="timeline-options">
+                <div class="timeline-option recommended">
+                    <div class="option-badge">RECOMENDADO</div>
+                    <div class="option-days">80 días</div>
+                    <div class="option-price">Incluido en €45,000</div>
+                    <div class="option-desc">Personalización completa, pruebas exhaustivas y capacitación del equipo</div>
+                </div>
+                <div class="timeline-option">
+                    <div class="option-days">40 días</div>
+                    <div class="option-price">+€4,000</div>
+                    <div class="option-desc">Pack Express: Equipo dedicado con prioridad máxima</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="included-section">
+            <div class="included-card">
+                <div class="included-title">
+                    <span>🎓</span>
+                    <span>Capacitación & Adopción</span>
+                </div>
+                <ul class="included-list">
+                    <li>Formación completa del equipo</li>
+                    <li>Documentación detallada</li>
+                    <li>Soporte durante adopción</li>
+                    <li>Sesiones de seguimiento</li>
+                </ul>
+            </div>
+            
+            <div class="included-card">
+                <div class="included-title">
+                    <span>🔗</span>
+                    <span>Integración Completa</span>
+                </div>
+                <ul class="included-list">
+                    <li>Conexión con sistemas actuales</li>
+                    <li>APIs y conectores personalizados</li>
+                    <li>Migración de datos segura</li>
+                    <li>Pruebas de integración</li>
+                </ul>
+            </div>
+            
+            <div class="included-card">
+                <div class="included-title">
+                    <span>🔒</span>
+                    <span>Seguridad & Cumplimiento</span>
+                </div>
+                <ul class="included-list">
+                    <li>Cumplimiento GDPR total</li>
+                    <li>Encriptación end-to-end</li>
+                    <li>Datos residentes en EU</li>
+                    <li>Auditorías de seguridad</li>
+                </ul>
+            </div>
+            
+            <div class="included-card">
+                <div class="included-title">
+                    <span>✅</span>
+                    <span>Criterios de Aceptación</span>
+                </div>
+                <ul class="included-list">
+                    <li>Pruebas funcionales completas</li>
+                    <li>Validación de precisión (0% errores)</li>
+                    <li>Rendimiento verificado</li>
+                    <li>Aprobación formal del cliente</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="contact-section">
+            <div class="contact-title">¿Listo para transformar su práctica legal?</div>
+            <div class="contact-info">
+                <span class="contact-email">sami@agentsai.ltd</span><br>
+                AGENTS AI Limited · 27 Old Gloucester Street, London WC1N 3AX, United Kingdom
+            </div>
+        </div>
+    </div>
+
 </div>
-<div class="slide-separator"></div>
-<div class="slide-wrapper" id="slide-17">
-<div class="slide-content">
-<div class="slide-container">
+
+<div class="slide-wrapper slide-17" id="slide-17">
+    
+    <style>
+        .slide-17 { 
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #FAFAFA;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #2D2D2D;
+            padding: 80px;
+        }
+        .thanks-title {
+            font-size: 96px;
+            font-weight: 800;
+            margin-bottom: 50px;
+        }
+        .thanks-text {
+            font-size: 28px;
+            font-weight: 400;
+            margin-bottom: 70px;
+            opacity: 0.95;
+            max-width: 900px;
+            line-height: 1.6;
+        }
+        .brand {
+            background: white;
+            color: #FF8A65;
+            padding: 35px 70px;
+            font-size: 42px;
+            font-weight: 800;
+        }
+     }
+    </style>
+    
+    <div class="slide-container">
         <div class="thanks-title">¡Gracias!</div>
         <div class="thanks-text">Esperamos colaborar en la transformación digital de INTLAW y potenciar su práctica legal con inteligencia artificial.</div>
         <div class="brand">INTLAW AI</div>
     </div>
+
 </div>
-</div>
+
 </body>
 </html>
