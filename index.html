@@ -476,26 +476,57 @@
         .slide-container {
             width: 1280px;
             min-height: 720px;
-            background: #FAFAFA;
+            background: #1a1a1a;
             padding: 45px 70px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        /* Pain Point Section */
+        .pain-point-section {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            padding: 25px 35px;
+            border-radius: 16px;
+            border-left: 5px solid #ef4444;
+            position: relative;
+        }
+        .pain-label {
+            font-size: 14px;
+            font-weight: 800;
+            color: #ef4444;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+        }
+        .pain-headline {
+            font-size: 28px;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.3;
+        }
+
+        /* Solution Section */
+        .solution-section {
             display: flex;
             gap: 50px;
         }
         .left-column {
-            flex: 0.8;
+            flex: 0.65;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
         .right-column {
-            flex: 1.2;
+            flex: 1.35;
             display: flex;
             align-items: center;
+            position: relative;
         }
         .module-badge {
             display: inline-block;
-            background: rgba(102,126,234,0.2);
-            color: #666666;
+            background: rgba(239,68,68,0.15);
+            color: #ef4444;
             padding: 10px 20px;
             border-radius: 20px;
             font-size: 14px;
@@ -507,7 +538,7 @@
         .module-title {
             font-size: 52px;
             font-weight: 800;
-            color: #2D2D2D;
+            color: #ffffff;
             margin-bottom: 20px;
             line-height: 1.1;
         }
@@ -543,7 +574,7 @@
         .feature-text {
             font-size: 26px;
             font-weight: 700;
-            color: #2D2D2D;
+            color: #e5e7eb;
         }
         
         /* Enhanced Chatbot Mockup */
@@ -651,64 +682,179 @@
             0%, 60%, 100% { transform: translateY(0); }
             30% { transform: translateY(-10px); }
         }
+
+        /* Visual Callouts & Annotations */
+        .callout {
+            position: absolute;
+            background: rgba(239,68,68,0.95);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            box-shadow: 0 4px 12px rgba(239,68,68,0.4);
+            z-index: 10;
+            white-space: nowrap;
+        }
+        .callout::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+        .callout-top::after {
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 8px 8px 0 8px;
+            border-color: rgba(239,68,68,0.95) transparent transparent transparent;
+        }
+        .callout-right::after {
+            left: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-width: 8px 8px 8px 0;
+            border-color: transparent rgba(239,68,68,0.95) transparent transparent;
+        }
+
+        .glow-effect {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 0 15px rgba(239,68,68,0.5), 0 0 30px rgba(239,68,68,0.3);
+            }
+            50% {
+                box-shadow: 0 0 25px rgba(239,68,68,0.8), 0 0 50px rgba(239,68,68,0.5);
+            }
+        }
+
+        /* Benefit Metrics */
+        .benefit-metrics {
+            display: flex;
+            gap: 30px;
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 2px solid rgba(239,68,68,0.2);
+        }
+        .metric {
+            flex: 1;
+            text-align: center;
+        }
+        .metric-value {
+            font-size: 36px;
+            font-weight: 800;
+            color: #ef4444;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .metric-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
      }
     </style>
     
     <div class="slide-container">
-        <div class="left-column">
-            <div class="module-badge">Módulo 1</div>
-            <h2 class="module-title">IA en Web</h2>
-            <div class="module-price">€15,000</div>
-            
-            <div class="features-list">
-                <div class="feature-item">
-                    <div class="feature-icon">✓</div>
-                    <div class="feature-text">Chatbot 24/7</div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">✓</div>
-                    <div class="feature-text">Lead Gathering</div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">✓</div>
-                    <div class="feature-text">Respuestas Instantáneas</div>
+        <!-- Pain Point Section -->
+        <div class="pain-point-section">
+            <div class="pain-label">⚠️ PROBLEMA</div>
+            <div class="pain-headline">Los clientes esperan horas para respuestas básicas, perdiendo interés y oportunidades de negocio</div>
+        </div>
+
+        <!-- Solution Section -->
+        <div class="solution-section">
+            <div class="left-column">
+                <div class="module-badge">Módulo 1 · SOLUCIÓN</div>
+                <h2 class="module-title">IA en Web</h2>
+                <div class="module-price">€15,000</div>
+
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <div class="feature-text">Chatbot 24/7</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <div class="feature-text">Lead Gathering</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <div class="feature-text">Respuestas Instantáneas</div>
+                    </div>
                 </div>
             </div>
-        </div>
-        
-        <div class="right-column">
-            <div class="chatbot-mockup">
-                <div class="chat-header">
-                    <div class="chat-avatar">🤖</div>
-                    <div class="chat-info">
-                        <div class="chat-name">INTLAW AI Assistant</div>
-                        <div class="chat-status">
-                            <span class="status-dot"></span>
-                            Online ahora
+
+            <div class="right-column">
+                <div class="chatbot-mockup glow-effect">
+                    <!-- Callout: 24/7 Availability -->
+                    <div class="callout callout-top" style="top: -45px; left: 20%;">
+                        ⚡ DISPONIBLE 24/7
+                    </div>
+
+                    <div class="chat-header">
+                        <div class="chat-avatar">🤖</div>
+                        <div class="chat-info">
+                            <div class="chat-name">INTLAW AI Assistant</div>
+                            <div class="chat-status">
+                                <span class="status-dot"></span>
+                                Online ahora
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chat-messages">
+                        <div class="message message-bot">
+                            ¡Hola! Soy el asistente de INTLAW. ¿En qué puedo ayudarte?
+                        </div>
+                        <div class="message message-user">
+                            Necesito consultar sobre un contrato mercantil
+                        </div>
+                        <div class="message message-bot">
+                            Perfecto. Para ofrecerte la mejor asesoría, ¿podrías indicarme el tipo de contrato y las partes involucradas?
+                        </div>
+                        <!-- Callout: Instant Response -->
+                        <div class="callout callout-right" style="top: 35%; right: -200px;">
+                            🎯 RESPUESTA INSTANTÁNEA
+                        </div>
+
+                        <div class="message message-user">
+                            Es una compraventa entre dos empresas españolas
+                        </div>
+                        <div class="message message-bot">
+                            Entendido. Nuestro equipo especializado en derecho mercantil puede ayudarte. ¿Cuál es tu email para enviarte información detallada?
+                        </div>
+                        <!-- Callout: Lead Capture -->
+                        <div class="callout callout-right" style="top: 68%; right: -180px;">
+                            📧 CAPTURA DE LEADS
+                        </div>
+
+                        <div class="typing">
+                            <div class="typing-dot"></div>
+                            <div class="typing-dot"></div>
+                            <div class="typing-dot"></div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="chat-messages">
-                    <div class="message message-bot">
-                        ¡Hola! Soy el asistente de INTLAW. ¿En qué puedo ayudarte?
+
+                <!-- Benefit Metrics -->
+                <div class="benefit-metrics">
+                    <div class="metric">
+                        <span class="metric-value">+30%</span>
+                        <span class="metric-label">Leads capturados</span>
                     </div>
-                    <div class="message message-user">
-                        Necesito consultar sobre un contrato mercantil
+                    <div class="metric">
+                        <span class="metric-value">0s</span>
+                        <span class="metric-label">Tiempo de espera</span>
                     </div>
-                    <div class="message message-bot">
-                        Perfecto. Para ofrecerte la mejor asesoría, ¿podrías indicarme el tipo de contrato y las partes involucradas?
-                    </div>
-                    <div class="message message-user">
-                        Es una compraventa entre dos empresas españolas
-                    </div>
-                    <div class="message message-bot">
-                        Entendido. Nuestro equipo especializado en derecho mercantil puede ayudarte. ¿Cuál es tu email para enviarte información detallada?
-                    </div>
-                    <div class="typing">
-                        <div class="typing-dot"></div>
-                        <div class="typing-dot"></div>
-                        <div class="typing-dot"></div>
+                    <div class="metric">
+                        <span class="metric-value">24/7</span>
+                        <span class="metric-label">Disponibilidad</span>
                     </div>
                 </div>
             </div>
@@ -729,16 +875,87 @@
         .slide-container {
             width: 1280px;
             min-height: 720px;
-            background: #f0f0f0;
-            padding: 40px 50px;
+            background: #1a1a1a;
+            padding: 35px 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
         }
         .slide-title {
-            font-size: 56px;
+            font-size: 48px;
             font-weight: 700;
-            color: #111827;
-            margin-bottom: 35px;
+            color: #ffffff;
+            margin-bottom: 0px;
             text-align: center;
         }
+
+        /* Pain Point Section */
+        .pain-point-section {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            padding: 20px 30px;
+            border-radius: 12px;
+            border-left: 4px solid #ef4444;
+            margin-bottom: 15px;
+        }
+        .pain-label {
+            font-size: 12px;
+            font-weight: 800;
+            color: #ef4444;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-bottom: 8px;
+        }
+        .pain-headline {
+            font-size: 22px;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.3;
+        }
+
+        /* Visual Callouts */
+        .integration-callout {
+            position: absolute;
+            background: rgba(239,68,68,0.95);
+            color: white;
+            padding: 10px 18px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(239,68,68,0.5);
+            z-index: 150;
+            white-space: nowrap;
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        /* Benefit Metrics */
+        .integration-metrics {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .int-metric {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            padding: 15px 25px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(239,68,68,0.2);
+        }
+        .int-metric-value {
+            font-size: 28px;
+            font-weight: 800;
+            color: #ef4444;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .int-metric-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
         .browser-mockup {
             background: #ffffff;
             border-radius: 10px;
@@ -1207,9 +1424,16 @@
     </style>
     
     <div class="slide-container">
-        <h2 class="slide-title">Integración en intlaw.eu</h2>
-        
-        <div class="browser-mockup">
+        <!-- Pain Point Section -->
+        <div class="pain-point-section">
+            <div class="pain-label">⚠️ PROBLEMA</div>
+            <div class="pain-headline">Consultas por email tardan horas en responderse, perdiendo clientes potenciales</div>
+        </div>
+
+        <h2 class="slide-title">Módulo 2: Integración IA en intlaw.eu</h2>
+
+        <div style="position: relative;">
+            <div class="browser-mockup">
             <div class="browser-bar">
                 <div class="browser-dot dot-red"></div>
                 <div class="browser-dot dot-yellow"></div>
@@ -1310,6 +1534,33 @@
                         <div class="send-button">Enviar ✈</div>
                     </div>
                     <div class="powered-by">Powered by <strong>INTLAW AI</strong></div>
+                </div>
+
+                <!-- Integration Callouts -->
+                <div class="integration-callout" style="top: 25%; right: -220px;">
+                    ⚡ INTEGRACIÓN PERFECTA
+                </div>
+                <div class="integration-callout" style="top: 50%; right: -200px;">
+                    🎯 CAPTURA AUTOMÁTICA
+                </div>
+                <div class="integration-callout" style="bottom: 15%; right: -210px;">
+                    📧 LEADS CALIFICADOS
+                </div>
+            </div>
+
+            <!-- Benefit Metrics -->
+            <div class="integration-metrics">
+                <div class="int-metric">
+                    <span class="int-metric-value">+45%</span>
+                    <span class="int-metric-label">Conversión web</span>
+                </div>
+                <div class="int-metric">
+                    <span class="int-metric-value">< 2min</span>
+                    <span class="int-metric-label">Tiempo respuesta</span>
+                </div>
+                <div class="int-metric">
+                    <span class="int-metric-value">85%</span>
+                    <span class="int-metric-label">Resolución automática</span>
                 </div>
             </div>
         </div>
@@ -1911,7 +2162,7 @@
         .feature-text {
             font-size: 26px;
             font-weight: 700;
-            color: #2D2D2D;
+            color: #e5e7eb;
         }
         
         /* CRM Dashboard */
@@ -3422,7 +3673,7 @@
         .feature-text {
             font-size: 26px;
             font-weight: 700;
-            color: #2D2D2D;
+            color: #e5e7eb;
         }
         
         /* Copilot Interface */
