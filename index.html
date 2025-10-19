@@ -55,27 +55,27 @@
         width: 100%;
         height: 100%;
         box-sizing: border-box;
-        overflow: auto; /* Allow scrolling if content overflows */
+        overflow: hidden; /* Prevent internal scrolling */
     }
 
     /* Standardize padding for all slides except special layouts */
     .slide-wrapper:not(.slide-1):not(.slide-4):not(.slide-5):not(.slide-6):not(.slide-7) .slide-container {
-        padding: 50px 70px !important;
+        padding: 5%; /* Use percentage for responsive padding */
     }
 
     /* Special slides with custom layouts keep minimal padding */
     .slide-1 .slide-container {
-        padding: 60px !important;
+        padding: 5% !important;
     }
 
     .slide-4 .slide-container,
     .slide-5 .slide-container {
-        padding: 60px 80px !important;
+        padding: 5% !important;
     }
 
     .slide-6 .slide-container,
     .slide-7 .slide-container {
-        padding: 40px 50px !important;
+        padding: 5% !important;
     }
 
     /* Ensure browser mockups and website content are properly contained */
@@ -142,8 +142,9 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 60px;
+        padding: 5%; /* Adjusted for consistency */
         position: relative;
+        box-sizing: border-box; /* Ensure padding is included in width/height */
     }
 
     /* Enhanced decorative line with gradient */
@@ -286,7 +287,8 @@
         width: 100%;
         height: 100%;
         background: #FAFAFA;
-        padding: 45px 100px;
+        padding: 5%; /* Adjusted for consistency */
+        box-sizing: border-box; /* Ensure padding is included in width/height */
     }
     .title {
         font-size: 72px;
@@ -379,12 +381,13 @@
         width: 100%;
         height: 100%;
         background: linear-gradient(135deg, #1A1A1A 0%, #000000 100%);
-        padding: 60px 80px;
+        padding: 5%; /* Adjusted for consistency */
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
         color: #E0E0E0;
+        box-sizing: border-box; /* Ensure padding is included in width/height */
     }
     .title {
         font-size: 72px;
@@ -474,11 +477,12 @@
         width: 100%;
         height: 100%;
         background: linear-gradient(135deg, #E8F0FE 0%, #D0E0FF 100%);
-        padding: 60px 80px;
+        padding: 5%; /* Adjusted for consistency */
         display: flex;
         align-items: center;
         justify-content: space-between;
         color: #2C3E50;
+        box-sizing: border-box; /* Ensure padding is included in width/height */
     }
     .content-left {
         flex: 1;
@@ -577,12 +581,13 @@
         width: 100%;
         height: 100%;
         background: linear-gradient(135deg, #FDFDFD 0%, #F0F0F0 100%);
-        padding: 60px 80px;
+        padding: 5%; /* Adjusted for consistency */
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         color: #333;
+        box-sizing: border-box; /* Ensure padding is included in width/height */
     }
     .title {
         font-size: 68px;
@@ -704,13 +709,14 @@
         width: 100%;
         height: 100%;
         background: linear-gradient(135deg, #1A2A3A 0%, #0A1A2A 100%);
-        padding: 40px 50px;
+        padding: 5%; /* Adjusted for consistency */
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         color: #E0E0E0;
         position: relative;
+        box-sizing: border-box; /* Ensure padding is included in width/height */
     }
     .title {
         font-size: 68px;
@@ -854,13 +860,14 @@
         width: 100%;
         height: 100%;
         background: linear-gradient(135deg, #F0F4F8 0%, #D9E2EC 100%);
-        padding: 40px 50px;
+        padding: 5%; /* Adjusted for consistency */
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         color: #2C3E50;
         position: relative;
+        box-sizing: border-box; /* Ensure padding is included in width/height */
     }
     .title {
         font-size: 68px;
@@ -990,13 +997,14 @@
         width: 100%;
         height: 100%;
         background: linear-gradient(135deg, #1E3A5F 0%, #0A1A2A 100%);
-        padding: 50px 70px;
+        padding: 5%; /* Adjusted for consistency */
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         color: #E0E0E0;
         position: relative;
+        box-sizing: border-box; /* Ensure padding is included in width/height */
     }
     .title {
         font-size: 68px;
@@ -1118,13 +1126,14 @@
         width: 100%;
         height: 100%;
         background: linear-gradient(135deg, #FDFDFD 0%, #F0F0F0 100%);
-        padding: 50px 70px;
+        padding: 5%; /* Adjusted for consistency */
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         color: #333;
         position: relative;
+        box-sizing: border-box; /* Ensure padding is included in width/height */
     }
     .title {
         font-size: 68px;
@@ -1314,12 +1323,13 @@
         width: 100%;
         height: 100%;
         background: linear-gradient(135deg, #1A1A1A 0%, #000000 100%);
-        padding: 50px 70px;
+        padding: 5%; /* Adjusted for consistency */
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         color: #E0E0E0;
+        box-sizing: border-box; /* Ensure padding is included in width/height */
     }
     .title {
         font-size: 68px;
@@ -1432,12 +1442,13 @@
         width: 100%;
         height: 100%;
         background: linear-gradient(135deg, #E8F0FE 0%, #D0E0FF 100%);
-        padding: 50px 70px;
+        padding: 5%; /* Adjusted for consistency */
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         color: #2C3E50;
+        box-sizing: border-box; /* Ensure padding is included in width/height */
     }
     .title {
         font-size: 68px;
@@ -1534,12 +1545,13 @@
         width: 100%;
         height: 100%;
         background: linear-gradient(135deg, #1A1A1A 0%, #000000 100%);
-        padding: 60px 80px;
+        padding: 5%; /* Adjusted for consistency */
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         color: #E0E0E0;
+        box-sizing: border-box; /* Ensure padding is included in width/height */
     }
     .title {
         font-size: 72px;
@@ -1635,13 +1647,14 @@
         width: 100%;
         height: 100%;
         background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%);
-        padding: 60px 80px;
+        padding: 5%; /* Adjusted for consistency */
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         color: #E0E0E0;
         position: relative;
+        box-sizing: border-box; /* Ensure padding is included in width/height */
     }
     .title {
         font-size: 72px;
