@@ -25,7 +25,7 @@
 
     .slide-wrapper {
         position: relative;
-        overflow: hidden;
+        overflow: visible; /* Allow content to flow */
         margin-bottom: 60px;
         isolation: isolate;
         z-index: 1;
@@ -37,6 +37,7 @@
             0 20px 60px rgba(0, 0, 0, 0.3),
             0 0 0 1px rgba(255, 255, 255, 0.05);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: block !important; /* Ensure all slides are visible */
     }
     .slide-wrapper:hover {
         transform: translateY(-4px);
@@ -1714,53 +1715,23 @@
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const slideWrappers = document.querySelectorAll('.slide-wrapper');
-        let currentSlideIndex = 0;
 
         function showSlide(index) {
             slideWrappers.forEach((wrapper, i) => {
-                wrapper.style.display = (i === index) ? 'block' : 'none';
+                wrapper.style.display = 'block'; // Always display all slides
             });
         }
 
-        function nextSlide() {
-            currentSlideIndex = (currentSlideIndex + 1) % slideWrappers.length;
-            showSlide(currentSlideIndex);
-        }
 
-        function prevSlide() {
-            currentSlideIndex = (currentSlideIndex - 1 + slideWrappers.length) % slideWrappers.length;
-            showSlide(currentSlideIndex);
-        }
 
-        // Initial display
-        showSlide(currentSlideIndex);
 
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight') {
-                nextSlide();
-            } else if (e.key === 'ArrowLeft') {
-                prevSlide();
-            }
-        });
 
-        // Optional: Add touch/swipe gestures for mobile
-        let touchstartX = 0;
-        let touchendX = 0;
+        // Initial display - show all slides
+        slideWrappers.forEach(wrapper => wrapper.style.display = 'block');
 
-        function checkDirection() {
-            if (touchendX < touchstartX) nextSlide();
-            if (touchendX > touchstartX) prevSlide();
-        }
 
-        document.addEventListener('touchstart', e => {
-            touchstartX = e.changedTouches[0].screenX;
-        });
 
-        document.addEventListener('touchend', e => {
-            touchendX = e.changedTouches[0].screenX;
-            checkDirection();
-        });
+
     });
 </script>
 
