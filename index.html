@@ -3454,36 +3454,45 @@
 <div class="slide-wrapper slide-10" id="slide-10">
     
     <style>
-        .slide-10 { 
+        .slide-10 {
         body {
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
         .slide-container {
             width: 100%;
             height: 100%;
-            background: #FAFAFA;
-            padding: 40px 60px;
+            background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+            padding: 50px 70px;
             display: flex;
             flex-direction: column;
         }
         .module-title {
-            font-size: 48px;
-            font-weight: 800;
-            color: #2D2D2D;
-            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            font-weight: 900;
+            color: #111827;
+            margin-bottom: 20px;
+            letter-spacing: -1.5px;
+            line-height: 1.05;
         }
         .module-subtitle {
-            font-size: 20px;
-            color: #666666;
-            margin-bottom: 30px;
+            font-size: 22px;
+            color: #6b7280;
+            font-weight: 600;
+            margin-bottom: 36px;
+            letter-spacing: -0.3px;
         }
         .module-price {
-            font-size: 18px;
-            color: #FF8A65;
-            font-weight: 700;
-            margin-bottom: 30px;
+            font-size: 20px;
+            background: linear-gradient(135deg, #FF8A65 0%, #FF6B45 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+            margin-bottom: 36px;
+            letter-spacing: -0.5px;
         }
         
         .content-grid {
@@ -3501,37 +3510,56 @@
         
         .feature-item {
             background: white;
-            padding: 18px 22px;
-            border-radius: 10px;
-            border: 1px solid #E0E0E0;
+            padding: 24px 28px;
+            border-radius: 24px;
+            border: none;
+            box-shadow:
+                0 10px 40px rgba(0,0,0,0.08),
+                0 0 0 1px rgba(0,0,0,0.02);
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 18px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .feature-item:hover {
+            transform: translateY(-4px);
+            box-shadow:
+                0 20px 60px rgba(255, 107, 69, 0.15),
+                0 0 0 1px rgba(255, 138, 101, 0.1);
         }
         .feature-icon {
-            font-size: 28px;
+            font-size: 32px;
             flex-shrink: 0;
         }
         .feature-text {
-            font-size: 16px;
-            color: #2D2D2D;
-            font-weight: 600;
+            font-size: 18px;
+            color: #111827;
+            font-weight: 700;
+            letter-spacing: -0.3px;
         }
-        
+
         .highlight-box {
             background: white;
-            border: 2px solid #FF8A65;
-            border-radius: 12px;
-            padding: 24px;
+            border: 3px solid;
+            border-image: linear-gradient(135deg, #FF8A65 0%, #FF6B45 100%) 1;
+            border-radius: 24px;
+            padding: 32px;
+            box-shadow:
+                0 20px 60px rgba(255, 107, 69, 0.12),
+                0 0 0 1px rgba(255, 138, 101, 0.05);
         }
         .highlight-title {
-            font-size: 20px;
-            font-weight: 800;
-            color: #FF8A65;
-            margin-bottom: 16px;
+            font-size: 24px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #FF8A65 0%, #FF6B45 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            letter-spacing: -0.5px;
         }
         .validation-list {
             display: flex;
@@ -3668,67 +3696,83 @@
 <div class="slide-wrapper slide-11" id="slide-11">
     
     <style>
-        .slide-11 { 
+        .slide-11 {
         body {
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
         .slide-container {
             width: 100%;
             height: 100%;
-            background: #FAFAFA;
+            background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
             padding: 30px 60px;
             display: flex;
             flex-direction: column;
         }
         .demo-title {
+            font-family: 'Playfair Display', serif;
             font-size: 48px;
-            font-weight: 800;
-            color: #2D2D2D;
+            font-weight: 900;
+            color: #111827;
             margin-bottom: 15px;
             text-align: center;
+            letter-spacing: -1.5px;
         }
         .demo-subtitle {
-            font-size: 18px;
-            color: #666666;
+            font-size: 20px;
+            color: #6b7280;
             text-align: center;
             margin-bottom: 20px;
+            font-weight: 600;
+            letter-spacing: -0.3px;
         }
         
         /* Main Interface */
         .interface {
             background: white;
-            border-radius: 16px;
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            box-shadow:
+                0 20px 60px rgba(0,0,0,0.08),
+                0 0 0 1px rgba(0,0,0,0.02);
             flex: 1;
-            border: 1px solid #E0E0E0;
+            border: none;
             display: flex;
             flex-direction: column;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+        .interface:hover {
+            transform: translateY(-4px);
+            box-shadow:
+                0 30px 80px rgba(0,0,0,0.12),
+                0 0 0 1px rgba(255, 138, 101, 0.1);
+        }
+
         /* Header */
         .interface-header {
-            background: #F5F5F5;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e5e5e5 100%);
             padding: 16px 28px;
-            border-bottom: 1px solid #E0E0E0;
+            border-bottom: none;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         .interface-title {
+            font-family: 'Playfair Display', serif;
             font-size: 22px;
-            font-weight: 800;
-            color: #2D2D2D;
+            font-weight: 900;
+            color: #111827;
+            letter-spacing: -0.5px;
         }
         .zero-hallucination-badge {
-            background: #FF8A65;
+            background: linear-gradient(135deg, #FF8A65 0%, #FF6B45 100%);
             color: white;
-            padding: 7px 14px;
-            border-radius: 7px;
+            padding: 8px 16px;
+            border-radius: 50px;
             font-size: 13px;
-            font-weight: 700;
+            font-weight: 900;
+            box-shadow: 0 8px 24px rgba(255, 107, 69, 0.3);
         }
         
         /* Content Area - Split View */
@@ -3806,21 +3850,23 @@
             font-weight: 700;
         }
         .total-stats {
-            background: #FF8A65;
+            background: linear-gradient(135deg, #FF8A65 0%, #FF6B45 100%);
             color: white;
-            padding: 10px;
-            border-radius: 8px;
+            padding: 14px;
+            border-radius: 24px;
             text-align: center;
             margin-top: 10px;
+            box-shadow: 0 10px 40px rgba(255, 107, 69, 0.3);
         }
         .total-number {
-            font-size: 24px;
-            font-weight: 800;
+            font-size: 28px;
+            font-weight: 900;
             margin-bottom: 2px;
+            letter-spacing: -1px;
         }
         .total-label {
             font-size: 11px;
-            font-weight: 600;
+            font-weight: 700;
         }
         
         /* Copilot Chat (Right) */
@@ -4055,16 +4101,16 @@
 <div class="slide-wrapper slide-12" id="slide-12">
     
     <style>
-        .slide-12 { 
+        .slide-12 {
         body {
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
         .slide-container {
             width: 100%;
             height: 100%;
-            background: #FAFAFA;
+            background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
             padding: 45px 70px;
             display: flex;
             gap: 50px;
@@ -4080,27 +4126,35 @@
         }
         .module-badge {
             display: inline-block;
-            background: rgba(102,126,234,0.2);
-            color: #666666;
-            padding: 10px 20px;
-            border-radius: 20px;
+            background: rgba(255, 138, 101, 0.2);
+            color: #FF6B45;
+            padding: 12px 28px;
+            border-radius: 50px;
             font-size: 14px;
-            font-weight: 800;
+            font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 20px;
+            box-shadow: 0 8px 24px rgba(255, 107, 69, 0.2);
         }
         .module-title {
-            font-size: 42px;
-            font-weight: 800;
-            color: #2D2D2D;
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 900;
+            color: #111827;
             margin-bottom: 15px;
-            line-height: 1.1;
+            line-height: 1.05;
+            letter-spacing: -1.5px;
         }
         .module-price {
-            font-size: 42px;
-            font-weight: 800;
-                        margin-bottom: 40px;
+            font-size: 48px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #FF8A65 0%, #FF6B45 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 40px;
+            letter-spacing: -1px;
         }
         
         .features-list {
@@ -4114,38 +4168,49 @@
             gap: 18px;
         }
         .feature-icon {
-            width: 42px;
-            height: 42px;
-            background: #FF8A65;
+            width: 46px;
+            height: 46px;
+            background: linear-gradient(135deg, #FF8A65 0%, #FF6B45 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
+            font-size: 22px;
             flex-shrink: 0;
-            box-shadow: 0 4px 12px rgba(16,185,129,0.4);
+            box-shadow: 0 8px 24px rgba(255, 107, 69, 0.4);
         }
         .feature-text {
-            font-size: 26px;
-            font-weight: 700;
-            color: #e5e7eb;
+            font-size: 22px;
+            font-weight: 800;
+            color: #111827;
+            letter-spacing: -0.3px;
         }
-        
+
         /* Copilot Interface */
         .copilot-interface {
-            background: rgba(255,255,255,0.05);
+            background: white;
             border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            border: 1px solid rgba(102,126,234,0.3);
+            box-shadow:
+                0 20px 60px rgba(0,0,0,0.08),
+                0 0 0 1px rgba(0,0,0,0.02);
+            border: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .copilot-interface:hover {
+            transform: translateY(-4px);
+            box-shadow:
+                0 30px 80px rgba(255, 107, 69, 0.12),
+                0 0 0 1px rgba(255, 138, 101, 0.1);
         }
         .copilot-header {
-            background: #FF8A65;
-            padding: 18px 24px;
-            color: #2D2D2D;
+            background: linear-gradient(135deg, #FF8A65 0%, #FF6B45 100%);
+            padding: 20px 28px;
+            color: white;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 4px 12px rgba(255, 107, 69, 0.2);
         }
         .header-left {
             display: flex;
@@ -4334,26 +4399,28 @@
 <div class="slide-wrapper slide-13" id="slide-13">
     
     <style>
-        .slide-13 { 
+        .slide-13 {
         body {
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
         .slide-container {
             width: 100%;
             height: 100%;
-            background: #FAFAFA;
+            background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
             padding: 20px 60px;
             display: flex;
             flex-direction: column;
         }
         .demo-title {
+            font-family: 'Playfair Display', serif;
             font-size: 48px;
-            font-weight: 800;
-            color: #2D2D2D;
+            font-weight: 900;
+            color: #111827;
             margin-bottom: 15px;
             text-align: center;
+            letter-spacing: -1.5px;
         }
         
         /* Document Generator App */
@@ -4809,23 +4876,26 @@
 <div class="slide-wrapper slide-14" id="slide-14">
     
     <style>
-        .slide-14 { 
+        .slide-14 {
         body {
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
         .slide-container {
             width: 100%;
             height: 100%;
-            background: #FAFAFA;
+            background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
             padding: 50px 80px;
         }
         .title {
+            font-family: 'Playfair Display', serif;
             font-size: 64px;
-            font-weight: 800;
-                        margin-bottom: 45px;
+            font-weight: 900;
+            margin-bottom: 45px;
             text-align: center;
+            color: #111827;
+            letter-spacing: -2px;
         }
         .benefits-grid {
             display: grid;
@@ -4834,11 +4904,13 @@
         }
         .benefit-box {
             background: white;
-            border-radius: 20px;
-            padding: 35px 40px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-radius: 24px;
+            padding: 38px 44px;
+            box-shadow:
+                0 10px 40px rgba(0,0,0,0.08),
+                0 0 0 1px rgba(0,0,0,0.02);
             border: 3px solid transparent;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
         }
@@ -4849,32 +4921,36 @@
             left: 0;
             right: 0;
             height: 6px;
-            background: #FF8A65;
+            background: linear-gradient(135deg, #FF8A65 0%, #FF6B45 100%);
         }
         .benefit-box:hover {
             transform: translateY(-6px);
-            box-shadow: 0 20px 60px rgba(16,185,129,0.2);
+            box-shadow:
+                0 30px 80px rgba(255, 107, 69, 0.15),
+                0 0 0 1px rgba(255, 138, 101, 0.1);
             border-color: #FF8A65;
         }
         .benefit-number {
             display: inline-block;
-            width: 50px;
-            height: 50px;
-            background: #FF8A65;
-            color: #2D2D2D;
+            width: 54px;
+            height: 54px;
+            background: linear-gradient(135deg, #FF8A65 0%, #FF6B45 100%);
+            color: white;
             text-align: center;
-            line-height: 50px;
-            font-weight: 800;
-            font-size: 26px;
+            line-height: 54px;
+            font-weight: 900;
+            font-size: 28px;
             margin-bottom: 18px;
             border-radius: 50%;
-            box-shadow: 0 6px 20px rgba(16,185,129,0.3);
+            box-shadow: 0 8px 24px rgba(255, 107, 69, 0.4);
         }
         .benefit-title {
-            font-size: 30px;
-            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 900;
             color: #111827;
             margin-bottom: 12px;
+            letter-spacing: -0.5px;
         }
         .benefit-desc {
             font-size: 20px;
@@ -4915,26 +4991,28 @@
 <div class="slide-wrapper slide-15" id="slide-15">
     
     <style>
-        .slide-15 { 
+        .slide-15 {
         body {
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
         .slide-container {
             width: 100%;
             height: 100%;
-            background: #FAFAFA;
+            background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
             padding: 35px 60px;
             display: flex;
             flex-direction: column;
         }
         .title {
-            font-size: 48px;
-            font-weight: 800;
-            color: #2D2D2D;
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            font-weight: 900;
+            color: #111827;
             margin-bottom: 30px;
             text-align: center;
+            letter-spacing: -1.5px;
         }
         
         .plans-grid {
@@ -5169,26 +5247,28 @@
 <div class="slide-wrapper slide-16" id="slide-16">
     
     <style>
-        .slide-16 { 
+        .slide-16 {
         body {
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
         .slide-container {
             width: 100%;
             height: 100%;
-            background: #FAFAFA;
+            background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
             padding: 35px 60px;
             display: flex;
             flex-direction: column;
         }
         .title {
-            font-size: 48px;
-            font-weight: 800;
-            color: #2D2D2D;
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            font-weight: 900;
+            color: #111827;
             margin-bottom: 30px;
             text-align: center;
+            letter-spacing: -1.5px;
         }
         
         .timeline-section {
@@ -5389,43 +5469,50 @@
 <div class="slide-wrapper slide-17" id="slide-17">
     
     <style>
-        .slide-17 { 
+        .slide-17 {
         body {
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
         .slide-container {
             width: 100%;
             height: 100%;
-            background: #FAFAFA;
+            background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: #2D2D2D;
+            color: #111827;
             padding: 80px;
         }
         .thanks-title {
+            font-family: 'Playfair Display', serif;
             font-size: 96px;
-            font-weight: 800;
+            font-weight: 900;
             margin-bottom: 50px;
+            letter-spacing: -3px;
         }
         .thanks-text {
             font-size: 28px;
-            font-weight: 400;
+            font-weight: 600;
             margin-bottom: 70px;
-            opacity: 0.95;
+            opacity: 0.9;
             max-width: 900px;
-            line-height: 1.6; 
+            line-height: 1.6;
+            color: #6b7280;
+            letter-spacing: -0.5px;
         }
         .brand {
-            background: white;
-            color: #FF8A65;
-            padding: 35px 70px;
-            font-size: 42px;
-            font-weight: 800;
+            background: linear-gradient(135deg, #FF8A65 0%, #FF6B45 100%);
+            color: white;
+            padding: 40px 80px;
+            font-size: 46px;
+            font-weight: 900;
+            border-radius: 32px;
+            box-shadow: 0 20px 60px rgba(255, 107, 69, 0.3);
+            letter-spacing: -1px;
         }
      }
     </style>
